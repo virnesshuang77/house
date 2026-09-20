@@ -1,609 +1,556 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
-
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>台灣買房租屋比較網</title>
 
+    <meta
+        name="description"
+        content="台灣買房租屋比較網，提供全台灣本島各縣市房價、租金、房價所得比與買房租屋比較資料。"
+    >
 
     <style>
-
         * {
             box-sizing: border-box;
         }
 
-
         body {
-
             margin: 0;
-
-            padding: 0;
-
-            background: #f5f6f8;
-
-            color: #111827;
-
             font-family:
                 -apple-system,
                 BlinkMacSystemFont,
                 "Segoe UI",
                 "Noto Sans TC",
                 "Microsoft JhengHei",
+                Arial,
                 sans-serif;
-        }
 
+            background: #f5f7fb;
+            color: #1f2937;
+        }
 
         .container {
-
-            width: min(
-                1160px,
-                calc(100% - 28px)
-            );
-
+            width: 92%;
+            max-width: 1200px;
             margin: 0 auto;
-
-            padding: 30px 0 60px;
         }
 
-
-        /* =========================
-           標題
-        ========================= */
+        header {
+            text-align: center;
+            padding: 35px 15px 25px;
+        }
 
         h1 {
-
             margin: 0;
-
-            font-size: 30px;
-
-            line-height: 1.3;
-
-            letter-spacing: -0.5px;
+            font-size: 32px;
+            font-weight: 700;
+            color: #111827;
         }
-
 
         .subtitle {
-
-            margin-top: 8px;
-
-            margin-bottom: 28px;
-
-            color: #6b7280;
-
+            margin-top: 10px;
             font-size: 15px;
+            color: #6b7280;
         }
 
-
-        /* =========================
-           卡片
-        ========================= */
-
-        .card {
-
+        .section {
             background: #ffffff;
-
-            border: 1px solid #dfe3e8;
-
-            border-radius: 12px;
-
-            overflow: hidden;
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 22px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
-
-
-        /* =========================
-           地圖
-        ========================= */
-
-        .map-card {
-
-            padding: 22px 20px 18px;
-        }
-
 
         .section-title {
+            margin: 0 0 15px 0;
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+        }
 
-            margin: 0;
+        /* 地圖 */
 
+        .map-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #taiwanMap {
+            width: 100%;
+            height: 380px;
+            display: block;
+        }
+
+        .county {
+            fill: #dbeafe;
+            stroke: #ffffff;
+            stroke-width: 1.2px;
+            cursor: pointer;
+            transition:
+                fill 0.15s ease,
+                transform 0.15s ease;
+        }
+
+        .county:hover {
+            fill: #3b82f6;
+        }
+
+        .county.selected {
+            fill: #2563eb;
+        }
+
+        .county-label {
+            pointer-events: none;
+            font-size: 11px;
+            fill: #374151;
+            text-anchor: middle;
+            dominant-baseline: middle;
+            font-weight: 600;
+        }
+
+        /* 地圖提示 */
+
+        #mapTooltip {
+            position: fixed;
+            display: none;
+            z-index: 9999;
+
+            padding: 8px 12px;
+
+            background: rgba(17, 24, 39, 0.92);
+            color: white;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+            pointer-events: none;
+
+            white-space: nowrap;
+        }
+
+        /* 表格 */
+
+        .table-title {
             font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #111827;
+        }
 
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        thead {
+            background: #eff6ff;
+        }
+
+        th {
+            padding: 13px 10px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1e3a8a;
+            border-bottom: 2px solid #dbeafe;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 12px 10px;
+            font-size: 14px;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+            white-space: nowrap;
+        }
+
+        tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        /* 建議 */
+
+        .recommendation-buy {
+            color: #16a34a;
             font-weight: 700;
         }
 
+        .recommendation-rent {
+            color: #dc2626;
+            font-weight: 700;
+        }
 
-        .section-description {
-
-            margin-top: 5px;
-
+        .recommendation-even {
             color: #6b7280;
-
-            font-size: 14px;
+            font-weight: 700;
         }
 
+        /* 說明 */
 
-        #taiwanMap {
+        .notice {
+            margin-top: 18px;
+            padding: 15px 17px;
 
-            width: 100%;
-
-            height: 380px;
-
-            margin-top: 8px;
-
-            position: relative;
-        }
-
-
-        #taiwanMap svg {
-
-            display: block;
-
-            width: 100%;
-
-            height: 100%;
-        }
-
-
-        /* =========================
-           地圖縣市
-        ========================= */
-
-        .county {
-
-            transition:
-                fill 0.15s ease,
-                stroke-width 0.15s ease;
-        }
-
-
-        .county-label {
-
-            user-select: none;
-
-            pointer-events: none;
-        }
-
-
-        /* =========================
-           Tooltip
-        ========================= */
-
-        #mapTooltip {
-
-            display: none;
-
-            position: fixed;
-
-            z-index: 9999;
-
-            padding: 7px 10px;
-
-            background: #111827;
-
-            color: #ffffff;
+            background: #f9fafb;
+            border-left: 4px solid #3b82f6;
 
             border-radius: 6px;
 
             font-size: 13px;
-
-            pointer-events: none;
-
-            box-shadow:
-                0 4px 12px
-                rgba(0, 0, 0, 0.15);
-        }
-
-
-        /* =========================
-           表格
-        ========================= */
-
-        .table-card {
-
-            margin-top: 16px;
-        }
-
-
-        .table-header {
-
-            padding: 18px 20px;
-
-            border-bottom:
-                1px solid #e5e7eb;
-        }
-
-
-        .table-header h2 {
-
-            margin: 0;
-
-            font-size: 19px;
-        }
-
-
-        .table-wrapper {
-
-            width: 100%;
-
-            overflow-x: auto;
-        }
-
-
-        table {
-
-            width: 100%;
-
-            border-collapse: collapse;
-
-            font-size: 15px;
-        }
-
-
-        th {
-
-            padding: 15px 16px;
-
-            background: #fafafa;
-
-            color: #374151;
-
-            font-weight: 700;
-
-            text-align: right;
-
-            white-space: nowrap;
-
-            border-bottom:
-                1px solid #e5e7eb;
-        }
-
-
-        th:first-child {
-
-            text-align: left;
-        }
-
-
-        td {
-
-            padding: 15px 16px;
-
-            text-align: right;
-
-            border-bottom:
-                1px solid #f0f1f3;
-
-            white-space: nowrap;
-        }
-
-
-        td:first-child {
-
-            text-align: left;
-
-            font-weight: 600;
-        }
-
-
-        tbody tr:last-child td {
-
-            border-bottom: none;
-        }
-
-
-        tbody tr:hover {
-
-            background: #f8fafc;
-        }
-
-
-        /* =========================
-           建議
-        ========================= */
-
-        .recommendation-buy {
-
-            color: #2563eb;
-
-            font-weight: 700;
-        }
-
-
-        .recommendation-rent {
-
-            color: #64748b;
-
-            font-weight: 700;
-        }
-
-
-        .recommendation-even {
-
+            line-height: 1.8;
             color: #6b7280;
-
-            font-weight: 700;
         }
 
-
-        /* =========================
-           警語
-        ========================= */
-
-        .notice {
-
-            padding: 14px 18px;
-
-            color: #6b7280;
-
-            font-size: 13px;
-
-            line-height: 1.7;
-
-            border-top:
-                1px solid #e5e7eb;
-        }
-
-
-        /* =========================
-           資料來源
-        ========================= */
+        /* 資料來源 */
 
         .sources {
-
-            margin-top: 18px;
-
-            padding: 0 4px;
-
-            color: #6b7280;
-
             font-size: 13px;
-
             line-height: 1.8;
+            color: #6b7280;
         }
 
+        .sources a {
+            color: #2563eb;
+            text-decoration: none;
+        }
 
-        /* =========================
-           手機
-        ========================= */
+        .sources a:hover {
+            text-decoration: underline;
+        }
 
-        @media (max-width: 700px) {
+        /* 瀏覽人數 */
+
+        .visitor-counter {
+            margin-top: 35px;
+            padding-top: 20px;
+            padding-bottom: 30px;
+
+            border-top: 1px solid #e5e7eb;
+
+            text-align: center;
+
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .visitor-counter span {
+            font-weight: 700;
+            color: #374151;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 10px 15px 35px;
+
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        /* 手機 */
+
+        @media (max-width: 768px) {
 
             .container {
-
-                width:
-                    min(
-                        100% - 18px,
-                        1160px
-                    );
-
-                padding-top: 22px;
+                width: 94%;
             }
 
+            header {
+                padding-top: 25px;
+            }
 
             h1 {
-
-                font-size: 25px;
+                font-size: 26px;
             }
-
 
             .subtitle {
-
                 font-size: 14px;
-
-                margin-bottom: 20px;
             }
 
-
-            .map-card {
-
-                padding:
-                    18px 12px 14px;
+            .section {
+                padding: 16px;
+                border-radius: 10px;
             }
 
+            .section-title {
+                font-size: 18px;
+            }
 
             #taiwanMap {
-
                 height: 320px;
             }
 
-
             th,
             td {
-
-                padding:
-                    13px 12px;
+                padding: 10px 8px;
+                font-size: 13px;
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
+    <!-- ==================== 標題 ==================== -->
 
-<div class="container">
+    <header>
+        <h1>
+            台灣買房租屋比較網
+        </h1>
 
-
-    <!-- =========================
-         標題
-    ========================= -->
-
-    <h1>
-        台灣買房租屋比較網
-    </h1>
-
-
-    <div class="subtitle">
-        每月2號更新資料
-    </div>
-
-
-    <!-- =========================
-         地圖
-    ========================= -->
-
-    <section class="card map-card">
-
-
-        <h2 class="section-title">
-            選擇縣市
-        </h2>
-
-
-        <div class="section-description">
-            點擊縣市即可查看該縣市的房價、租金與所得資料
+        <div class="subtitle">
+            每月2號更新資料
         </div>
+    </header>
 
 
-        <div id="taiwanMap"></div>
+    <main class="container">
 
+        <!-- ==================== 台灣地圖 ==================== -->
 
-        <div id="mapTooltip"></div>
+        <section class="section">
 
-
-    </section>
-
-
-    <!-- =========================
-         房價資料
-    ========================= -->
-
-    <section class="card table-card">
-
-
-        <div class="table-header">
-
-            <h2>
-                台北市住宅市場資料
+            <h2 class="section-title">
+                台灣各縣市住宅市場
             </h2>
 
+            <div class="map-wrapper">
+                <svg
+                    id="taiwanMap"
+                    viewBox="0 0 800 900"
+                    preserveAspectRatio="xMidYMid meet">
+                </svg>
+            </div>
+
+        </section>
+
+
+        <!-- ==================== 資料表 ==================== -->
+
+        <section class="section">
+
+            <div
+                id="tableTitle"
+                class="table-title">
+                台北市住宅市場資料
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>行政區</th>
+                            <th>中位數房價</th>
+                            <th>平均租金</th>
+                            <th>房價/所得</th>
+                            <th>建議</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="housingTableBody">
+
+                        <tr>
+                            <td colspan="5">
+                                資料載入中...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="notice">
+
+                <strong>買房／租屋比較說明：</strong>
+
+                本網站以目前房價與平均月租金進行簡單的
+                <strong>40年買房與租屋金額比較</strong>。
+
+                <br>
+
+                計算方式為：
+
+                <strong>
+                    40年租金 = 平均月租金 × 12 × 40
+                </strong>
+
+                <br>
+
+                此比較僅為簡化的金額比較，
+                未計入房貸利息、頭期款機會成本、
+                房屋稅、地價稅、管理費、修繕費、
+                房價變化以及未來租金變化等因素。
+
+                <br>
+
+                因此「買房」或「租屋」僅代表目前資料下的
+                簡單數學比較，不代表實際投資或居住決策。
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== 資料來源 ==================== -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                資料來源
+            </h2>
+
+            <div class="sources">
+
+                <p>
+                    房價資料：
+                    <a
+                        href="https://plvr.land.moi.gov.tw/DownloadOpenData"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        內政部不動產資訊平台
+                    </a>
+                </p>
+
+                <p>
+                    租金資料：
+                    <a
+                        href="https://data.gov.tw/dataset/25118"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        政府資料開放平台
+                    </a>
+                </p>
+
+                <p>
+                    所得資料：
+                    <a
+                        href="https://data.gov.tw/dataset/9415"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        行政院主計總處
+                    </a>
+                </p>
+
+                <p>
+                    地圖資料：
+                    Taiwan Atlas
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== 網頁瀏覽人數 ==================== -->
+
+        <div class="visitor-counter">
+
+            👁 網頁瀏覽人數：
+            <span id="visitorCount">
+                載入中...
+            </span>
+
         </div>
 
-
-        <div class="table-wrapper">
-
-
-            <table id="housingTable">
+    </main>
 
 
-                <thead>
+    <!-- ==================== Footer ==================== -->
 
-                    <tr>
-
-                        <th>
-                            行政區
-                        </th>
-
-                        <th>
-                            中位數房價
-                        </th>
-
-                        <th>
-                            平均租金
-                        </th>
-
-                        <th>
-                            房價/所得
-                        </th>
-
-                        <th>
-                            建議
-                        </th>
-
-                    </tr>
-
-                </thead>
+    <footer>
+        台灣買房租屋比較網
+    </footer>
 
 
-                <tbody>
+    <!-- ==================== D3 ==================== -->
 
-                </tbody>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
-
-            </table>
-
-
-        </div>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 
 
-        <!-- =========================
-             警語
-        ========================= -->
+    <!-- ==================== CounterAPI ==================== -->
 
-        <div class="notice">
-
-            ※「建議」僅根據目前中位數房價與平均月租，
-            比較 40 年的單純金額：
-            <strong>
-                中位數房價 vs. 平均月租 × 12 × 40
-            </strong>。
-
-            <br>
-
-            ※若中位數房價低於 40 年租金，顯示「買房」；
-            若高於 40 年租金，顯示「租屋」；
-            兩者差距在 5% 以內則顯示「持平」。
-
-            <br>
-
-            ※此計算未納入房貸利息、頭期款機會成本、
-            房屋稅費、維修費、房價變化及租金變化，
-            僅供參考，不代表實際投資或購屋建議。
-
-        </div>
+    <script
+        async
+        src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js">
+    </script>
 
 
-    </section>
+    <!-- ==================== 網頁瀏覽人數 ==================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            async function () {
+
+                try {
+
+                    /*
+                     * 這個 workspace 名稱請保持唯一。
+                     * 建議直接使用自己的網站名稱。
+                     */
+
+                    const counter = new Counter({
+                        workspace: "virness-taiwan-housing"
+                    });
 
 
-    <!-- =========================
-         資料來源
-    ========================= -->
+                    /*
+                     * 每次有人開啟網頁，
+                     * page-views 就 +1
+                     */
 
-    <div class="sources">
-
-        <strong>資料來源</strong>
-
-        <br>
-
-        內政部不動產資訊平台、
-        行政院主計總處家庭收支調查。
-
-    </div>
+                    const result =
+                        await counter.up("page-views");
 
 
-</div>
+                    document.getElementById(
+                        "visitorCount"
+                    ).textContent =
+                        Number(result.value)
+                            .toLocaleString("zh-TW");
+
+                } catch (error) {
+
+                    console.error(
+                        "瀏覽人數載入失敗：",
+                        error
+                    );
+
+                    document.getElementById(
+                        "visitorCount"
+                    ).textContent = "—";
+
+                }
+
+            }
+        );
+
+    </script>
 
 
-<!-- =========================
-     D3
-========================= -->
+    <!-- ==================== 房價資料 ==================== -->
 
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-
-
-<!-- =========================
-     TopoJSON
-========================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
-
-
-<!-- =========================
-     Website JavaScript
-========================= -->
-
-<script src="housing.js?v=8"></script>
+    <script src="housing.js?v=9"></script>
 
 
 </body>
-
 </html>
