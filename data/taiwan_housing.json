@@ -1,1 +1,1661 @@
-[]
+[
+  {
+    "city": "南投縣",
+    "district": "中寮鄉",
+    "median_price_per_ping": 135494,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "南投縣",
+    "district": "南投市",
+    "median_price_per_ping": 419623,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "南投縣",
+    "district": "名間鄉",
+    "median_price_per_ping": 1341296,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "南投縣",
+    "district": "國姓鄉",
+    "median_price_per_ping": 232301,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "南投縣",
+    "district": "埔里鎮",
+    "median_price_per_ping": 166174,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "南投縣",
+    "district": "水里鄉",
+    "median_price_per_ping": 106874,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "南投縣",
+    "district": "竹山鎮",
+    "median_price_per_ping": 200945,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "南投縣",
+    "district": "草屯鎮",
+    "median_price_per_ping": 152851,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "南投縣",
+    "district": "魚池鄉",
+    "median_price_per_ping": 104770,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "中區",
+    "median_price_per_ping": 220945,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "北區",
+    "median_price_per_ping": 258815,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "北屯區",
+    "median_price_per_ping": 455618,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "南區",
+    "median_price_per_ping": 259124,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "南屯區",
+    "median_price_per_ping": 494136,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "后里區",
+    "median_price_per_ping": 332268,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "外埔區",
+    "median_price_per_ping": 132327,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "大安區",
+    "median_price_per_ping": 82714,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "大甲區",
+    "median_price_per_ping": 251603,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "大肚區",
+    "median_price_per_ping": 509264,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "大里區",
+    "median_price_per_ping": 242747,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "大雅區",
+    "median_price_per_ping": 232383,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "太平區",
+    "median_price_per_ping": 304701,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "新社區",
+    "median_price_per_ping": 539567,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "東勢區",
+    "median_price_per_ping": 252532,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "東區",
+    "median_price_per_ping": 240740,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "梧棲區",
+    "median_price_per_ping": 304752,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "沙鹿區",
+    "median_price_per_ping": 345694,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "清水區",
+    "median_price_per_ping": 255230,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "潭子區",
+    "median_price_per_ping": 282512,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "烏日區",
+    "median_price_per_ping": 367570,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "西區",
+    "median_price_per_ping": 295825,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "西屯區",
+    "median_price_per_ping": 314747,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "豐原區",
+    "median_price_per_ping": 240562,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "霧峰區",
+    "median_price_per_ping": 181220,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台中市",
+    "district": "龍井區",
+    "median_price_per_ping": 356995,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "中山區",
+    "median_price_per_ping": 848489,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "中正區",
+    "median_price_per_ping": 907955,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "信義區",
+    "median_price_per_ping": 785856,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "內湖區",
+    "median_price_per_ping": 608501,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "北投區",
+    "median_price_per_ping": 697157,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "南港區",
+    "median_price_per_ping": 623583,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "士林區",
+    "median_price_per_ping": 699736,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "大同區",
+    "median_price_per_ping": 898767,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "大安區",
+    "median_price_per_ping": 1116182,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "文山區",
+    "median_price_per_ping": 653841,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "松山區",
+    "median_price_per_ping": 1033570,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台北市",
+    "district": "萬華區",
+    "median_price_per_ping": 646635,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "下營區",
+    "median_price_per_ping": 276063,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "中西區",
+    "median_price_per_ping": 234750,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "仁德區",
+    "median_price_per_ping": 237711,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "佳里區",
+    "median_price_per_ping": 191494,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "六甲區",
+    "median_price_per_ping": 205987,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "北區",
+    "median_price_per_ping": 235382,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "南區",
+    "median_price_per_ping": 313421,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "善化區",
+    "median_price_per_ping": 319795,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "學甲區",
+    "median_price_per_ping": 165977,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "安南區",
+    "median_price_per_ping": 273150,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "安定區",
+    "median_price_per_ping": 253630,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "安平區",
+    "median_price_per_ping": 193074,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "後壁區",
+    "median_price_per_ping": 232354,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "新化區",
+    "median_price_per_ping": 261354,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "新市區",
+    "median_price_per_ping": 272724,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "新營區",
+    "median_price_per_ping": 157636,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "東區",
+    "median_price_per_ping": 252727,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "東山區",
+    "median_price_per_ping": 200043,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "柳營區",
+    "median_price_per_ping": 159524,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "楠西區",
+    "median_price_per_ping": 28641,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "歸仁區",
+    "median_price_per_ping": 278031,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "永康區",
+    "median_price_per_ping": 245914,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "玉井區",
+    "median_price_per_ping": 174686,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "西港區",
+    "median_price_per_ping": 195597,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "關廟區",
+    "median_price_per_ping": 312450,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "鹽水區",
+    "median_price_per_ping": 200337,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台南市",
+    "district": "麻豆區",
+    "median_price_per_ping": 266102,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "三地門鄉",
+    "median_price_per_ping": 25821,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "九如鄉",
+    "median_price_per_ping": 213709,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "內埔鄉",
+    "median_price_per_ping": 185764,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "屏東市",
+    "median_price_per_ping": 196038,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "崁頂鄉",
+    "median_price_per_ping": 57124,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "恆春鎮",
+    "median_price_per_ping": 157701,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "新園鄉",
+    "median_price_per_ping": 239131,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "新埤鄉",
+    "median_price_per_ping": 92119,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "東港鎮",
+    "median_price_per_ping": 225127,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "枋寮鄉",
+    "median_price_per_ping": 246767,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "林邊鄉",
+    "median_price_per_ping": 99845,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "潮州鎮",
+    "median_price_per_ping": 200218,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "牡丹鄉",
+    "median_price_per_ping": 15051,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "竹田鄉",
+    "median_price_per_ping": 153331,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "萬丹鄉",
+    "median_price_per_ping": 201871,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "萬巒鄉",
+    "median_price_per_ping": 228774,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "長治鄉",
+    "median_price_per_ping": 222744,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "台東縣",
+    "district": "高樹鄉",
+    "median_price_per_ping": 272793,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義市",
+    "district": "嘉義市",
+    "median_price_per_ping": 213696,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "中埔鄉",
+    "median_price_per_ping": 75970,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "大林鎮",
+    "median_price_per_ping": 209273,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "太保市",
+    "median_price_per_ping": 254577,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "新港鄉",
+    "median_price_per_ping": 199250,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "朴子市",
+    "median_price_per_ping": 279648,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "東石鄉",
+    "median_price_per_ping": 64136,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "梅山鄉",
+    "median_price_per_ping": 272417,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "民雄鄉",
+    "median_price_per_ping": 278096,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "水上鄉",
+    "median_price_per_ping": 204826,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "溪口鄉",
+    "median_price_per_ping": 94314,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "番路鄉",
+    "median_price_per_ping": 128545,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "嘉義縣",
+    "district": "竹崎鄉",
+    "median_price_per_ping": 149889,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "基隆市",
+    "district": "七堵區",
+    "median_price_per_ping": 210241,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "基隆市",
+    "district": "中山區",
+    "median_price_per_ping": 285787,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "基隆市",
+    "district": "中正區",
+    "median_price_per_ping": 162240,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "基隆市",
+    "district": "仁愛區",
+    "median_price_per_ping": 181975,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "基隆市",
+    "district": "信義區",
+    "median_price_per_ping": 191250,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "基隆市",
+    "district": "安樂區",
+    "median_price_per_ping": 160086,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "基隆市",
+    "district": "暖暖區",
+    "median_price_per_ping": 140734,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "宜蘭縣",
+    "district": "三星鄉",
+    "median_price_per_ping": 235083,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "宜蘭縣",
+    "district": "五結鄉",
+    "median_price_per_ping": 305116,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "宜蘭縣",
+    "district": "冬山鄉",
+    "median_price_per_ping": 208304,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "宜蘭縣",
+    "district": "員山鄉",
+    "median_price_per_ping": 250760,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "宜蘭縣",
+    "district": "壯圍鄉",
+    "median_price_per_ping": 202830,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "宜蘭縣",
+    "district": "宜蘭市",
+    "median_price_per_ping": 240519,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "宜蘭縣",
+    "district": "礁溪鄉",
+    "median_price_per_ping": 289828,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "宜蘭縣",
+    "district": "羅東鎮",
+    "median_price_per_ping": 239005,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "宜蘭縣",
+    "district": "蘇澳鎮",
+    "median_price_per_ping": 184570,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "宜蘭縣",
+    "district": "頭城鎮",
+    "median_price_per_ping": 230403,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "二林鎮",
+    "median_price_per_ping": 249645,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "北斗鎮",
+    "median_price_per_ping": 279745,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "和美鎮",
+    "median_price_per_ping": 300979,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "員林市",
+    "median_price_per_ping": 134769,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "埔心鄉",
+    "median_price_per_ping": 258871,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "埔鹽鄉",
+    "median_price_per_ping": 165727,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "埤頭鄉",
+    "median_price_per_ping": 232026,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "大城鄉",
+    "median_price_per_ping": 93051,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "彰化市",
+    "median_price_per_ping": 261155,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "永靖鄉",
+    "median_price_per_ping": 208102,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "溪州鄉",
+    "median_price_per_ping": 257111,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "溪湖鎮",
+    "median_price_per_ping": 314053,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "田中鎮",
+    "median_price_per_ping": 277056,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "社頭鄉",
+    "median_price_per_ping": 235759,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "福興鄉",
+    "median_price_per_ping": 134096,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "秀水鄉",
+    "median_price_per_ping": 244859,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "竹塘鄉",
+    "median_price_per_ping": 38374,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "線西鄉",
+    "median_price_per_ping": 268909,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "花壇鄉",
+    "median_price_per_ping": 71164,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "芳苑鄉",
+    "median_price_per_ping": 120820,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "彰化縣",
+    "district": "鹿港鎮",
+    "median_price_per_ping": 158117,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "三峽區",
+    "median_price_per_ping": 394911,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "三芝區",
+    "median_price_per_ping": 278140,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "三重區",
+    "median_price_per_ping": 607428,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "中和區",
+    "median_price_per_ping": 529793,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "五股區",
+    "median_price_per_ping": 240600,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "八里區",
+    "median_price_per_ping": 281048,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "土城區",
+    "median_price_per_ping": 485696,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "新店區",
+    "median_price_per_ping": 557990,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "新莊區",
+    "median_price_per_ping": 515907,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "板橋區",
+    "median_price_per_ping": 539898,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "林口區",
+    "median_price_per_ping": 344863,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "樹林區",
+    "median_price_per_ping": 371711,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "永和區",
+    "median_price_per_ping": 541018,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "汐止區",
+    "median_price_per_ping": 418278,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "泰山區",
+    "median_price_per_ping": 287074,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "淡水區",
+    "median_price_per_ping": 332777,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "深坑區",
+    "median_price_per_ping": 301478,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "瑞芳區",
+    "median_price_per_ping": 161514,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "萬里區",
+    "median_price_per_ping": 98436,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "蘆洲區",
+    "median_price_per_ping": 507950,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "貢寮區",
+    "median_price_per_ping": 98496,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "金山區",
+    "median_price_per_ping": 128807,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新北市",
+    "district": "鶯歌區",
+    "median_price_per_ping": 327398,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新竹市",
+    "district": "新竹市",
+    "median_price_per_ping": 355117,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新竹縣",
+    "district": "寶山鄉",
+    "median_price_per_ping": 231739,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新竹縣",
+    "district": "新埔鎮",
+    "median_price_per_ping": 601121,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新竹縣",
+    "district": "新豐鄉",
+    "median_price_per_ping": 196228,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新竹縣",
+    "district": "湖口鄉",
+    "median_price_per_ping": 253645,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新竹縣",
+    "district": "竹北市",
+    "median_price_per_ping": 530021,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新竹縣",
+    "district": "竹東鎮",
+    "median_price_per_ping": 266853,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "新竹縣",
+    "district": "芎林鄉",
+    "median_price_per_ping": 494800,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "中壢區",
+    "median_price_per_ping": 302808,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "八德區",
+    "median_price_per_ping": 229076,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "大園區",
+    "median_price_per_ping": 388036,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "大溪區",
+    "median_price_per_ping": 179861,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "平鎮區",
+    "median_price_per_ping": 248364,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "新屋區",
+    "median_price_per_ping": 248379,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "桃園區",
+    "median_price_per_ping": 309630,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "楊梅區",
+    "median_price_per_ping": 236314,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "蘆竹區",
+    "median_price_per_ping": 288919,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "觀音區",
+    "median_price_per_ping": 280754,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "龍潭區",
+    "median_price_per_ping": 266122,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "桃園市",
+    "district": "龜山區",
+    "median_price_per_ping": 371625,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "苗栗縣",
+    "district": "三義鄉",
+    "median_price_per_ping": 109179,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "苗栗縣",
+    "district": "公館鄉",
+    "median_price_per_ping": 183246,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "苗栗縣",
+    "district": "大湖鄉",
+    "median_price_per_ping": 86036,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "苗栗縣",
+    "district": "後龍鎮",
+    "median_price_per_ping": 308600,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "苗栗縣",
+    "district": "竹南鎮",
+    "median_price_per_ping": 297600,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "苗栗縣",
+    "district": "苗栗市",
+    "median_price_per_ping": 178337,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "苗栗縣",
+    "district": "通霄鎮",
+    "median_price_per_ping": 69322,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "苗栗縣",
+    "district": "造橋鄉",
+    "median_price_per_ping": 121686,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "苗栗縣",
+    "district": "銅鑼鄉",
+    "median_price_per_ping": 155425,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "苗栗縣",
+    "district": "頭份市",
+    "median_price_per_ping": 239421,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "二崙鄉",
+    "median_price_per_ping": 140572,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "元長鄉",
+    "median_price_per_ping": 143511,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "北港鎮",
+    "median_price_per_ping": 154241,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "古坑鄉",
+    "median_price_per_ping": 183246,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "土庫鎮",
+    "median_price_per_ping": 193689,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "崙背鄉",
+    "median_price_per_ping": 216534,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "斗六市",
+    "median_price_per_ping": 152329,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "斗南鎮",
+    "median_price_per_ping": 257808,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "林內鄉",
+    "median_price_per_ping": 56965,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "莿桐鄉",
+    "median_price_per_ping": 104797,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "虎尾鎮",
+    "median_price_per_ping": 236770,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "褒忠鄉",
+    "median_price_per_ping": 199484,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "西螺鎮",
+    "median_price_per_ping": 224235,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "雲林縣",
+    "district": "麥寮鄉",
+    "median_price_per_ping": 144666,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "三民區",
+    "median_price_per_ping": 245139,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "仁武區",
+    "median_price_per_ping": 221536,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "六龜區",
+    "median_price_per_ping": 64896,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "前金區",
+    "median_price_per_ping": 308912,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "前鎮區",
+    "median_price_per_ping": 199835,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "大寮區",
+    "median_price_per_ping": 181934,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "大樹區",
+    "median_price_per_ping": 106179,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "大社區",
+    "median_price_per_ping": 201717,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "小港區",
+    "median_price_per_ping": 223689,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "岡山區",
+    "median_price_per_ping": 171990,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "左營區",
+    "median_price_per_ping": 360841,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "新興區",
+    "median_price_per_ping": 334691,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "旗山區",
+    "median_price_per_ping": 153987,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "林園區",
+    "median_price_per_ping": 166317,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "楠梓區",
+    "median_price_per_ping": 258701,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "橋頭區",
+    "median_price_per_ping": 172102,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "湖內區",
+    "median_price_per_ping": 169423,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "燕巢區",
+    "median_price_per_ping": 281402,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "苓雅區",
+    "median_price_per_ping": 240279,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "茄萣區",
+    "median_price_per_ping": 62144,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "路竹區",
+    "median_price_per_ping": 252139,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "那瑪夏區",
+    "median_price_per_ping": 20813,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "阿蓮區",
+    "median_price_per_ping": 250116,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "鳥松區",
+    "median_price_per_ping": 301484,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "鳳山區",
+    "median_price_per_ping": 232010,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "鹽埕區",
+    "median_price_per_ping": 168585,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  },
+  {
+    "city": "高雄市",
+    "district": "鼓山區",
+    "median_price_per_ping": 475545,
+    "average_monthly_rent": null,
+    "price_income_ratio": null
+  }
+]
