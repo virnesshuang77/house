@@ -675,9 +675,7 @@ def download_income_csv():
     temp_dir = Path(
         tempfile.mkdtemp()
     )
-
-    income_file =
-        temp_dir / "income.csv"
+    income_file = temp_dir / "income.csv"
 
     command = [
 
