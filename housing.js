@@ -469,7 +469,7 @@ function drawMap() {
                 d3.select(this)
                     .attr(
                         "fill",
-                        "#cbd5e1"
+                        "#3b82f6"
                     );
 
                 showTooltip(
