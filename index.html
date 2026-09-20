@@ -3,238 +3,382 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>台灣行政區房價與租金</title>
+    <title>台灣行政區房價、租金與所得</title>
 
+    <style>
 
-<style>
+        * {
+            box-sizing: border-box;
+        }
 
-* {
-    box-sizing: border-box;
-}
+        body {
+            margin: 0;
 
+            background: #f5f6f8;
 
-body {
+            color: #222;
 
-    margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                "Noto Sans TC",
+                "Microsoft JhengHei",
+                sans-serif;
+        }
 
-    background: #f5f6f8;
 
-    color: #222;
+        .container {
 
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        "Noto Sans TC",
-        "Microsoft JhengHei",
-        sans-serif;
-}
+            max-width: 1200px;
 
+            margin: auto;
 
-.container {
+            padding: 30px 20px;
+        }
 
-    max-width: 1200px;
 
-    margin: auto;
+        h1 {
 
-    padding: 30px 20px;
-}
+            margin: 0;
 
+            font-size: 28px;
 
-h1 {
+            font-weight: 700;
+        }
 
-    margin: 0;
 
-    font-size: 28px;
+        .subtitle {
 
-    font-weight: 700;
-}
+            margin-top: 8px;
 
+            margin-bottom: 25px;
 
-.subtitle {
+            color: #777;
 
-    margin-top: 8px;
+            font-size: 15px;
 
-    margin-bottom: 25px;
+            line-height: 1.7;
+        }
 
-    color: #777;
 
-    font-size: 15px;
-}
+        /* =========================
+           搜尋區
+        ========================= */
 
+        .toolbar {
 
-.toolbar {
+            display: flex;
 
-    display: flex;
+            gap: 10px;
 
-    gap: 10px;
+            flex-wrap: wrap;
 
-    flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
 
-    margin-bottom: 18px;
-}
 
+        select,
+        input {
 
-select,
-input {
+            height: 42px;
 
-    height: 42px;
+            border: 1px solid #d7dbe0;
 
-    border: 1px solid #d7dbe0;
+            border-radius: 8px;
 
-    border-radius: 8px;
+            background: white;
 
-    background: white;
+            padding: 0 12px;
 
-    padding: 0 12px;
+            font-size: 15px;
 
-    font-size: 15px;
-}
+            outline: none;
+        }
 
 
-select {
+        select:focus,
+        input:focus {
 
-    min-width: 150px;
-}
+            border-color: #999;
+        }
 
 
-input {
+        select {
 
-    width: 260px;
-}
+            min-width: 150px;
+        }
 
 
-.table-container {
+        input {
 
-    background: white;
+            width: 260px;
+        }
 
-    border: 1px solid #e2e5e9;
 
-    border-radius: 12px;
+        /* =========================
+           筆數
+        ========================= */
 
-    overflow-x: auto;
-}
+        .count {
 
+            margin-top: 10px;
 
-table {
+            margin-bottom: 10px;
 
-    width: 100%;
+            color: #666;
 
-    border-collapse: collapse;
+            font-size: 14px;
+        }
 
-    min-width: 720px;
-}
 
+        /* =========================
+           表格
+        ========================= */
 
-thead {
+        .table-container {
 
-    background: #fafafa;
-}
+            background: white;
 
+            border: 1px solid #e2e5e9;
 
-th,
-td {
+            border-radius: 12px;
 
-    padding: 14px 16px;
+            overflow-x: auto;
+        }
 
-    border-bottom: 1px solid #eeeeee;
-}
 
+        table {
 
-th {
+            width: 100%;
 
-    font-weight: 600;
+            border-collapse: collapse;
 
-    white-space: nowrap;
-}
+            min-width: 720px;
+        }
 
 
-td {
+        thead {
 
-    white-space: nowrap;
-}
+            background: #fafafa;
+        }
 
 
-td.number,
-th.number {
+        th,
+        td {
 
-    text-align: right;
-}
+            padding: 14px 16px;
 
+            border-bottom: 1px solid #eeeeee;
+        }
 
-tbody tr:hover {
 
-    background: #f8fafc;
-}
+        th {
 
+            font-weight: 600;
 
-.empty {
+            white-space: nowrap;
+        }
 
-    text-align: center;
 
-    color: #888;
+        td {
 
-    padding: 35px;
-}
+            white-space: nowrap;
+        }
 
 
-.footer {
+        td.number,
+        th.number {
 
-    margin-top: 15px;
+            text-align: right;
+        }
 
-    color: #777;
 
-    font-size: 13px;
+        tbody tr:hover {
 
-    line-height: 1.7;
-}
+            background: #f8fafc;
+        }
 
 
-.count {
+        .empty {
 
-    margin-bottom: 10px;
+            text-align: center;
 
-    color: #666;
+            color: #888;
 
-    font-size: 14px;
-}
+            padding: 35px;
+        }
 
 
-@media (max-width: 650px) {
+        /* =========================
+           資料說明
+        ========================= */
 
-    .container {
+        .notice {
 
-        padding: 20px 12px;
-    }
+            margin-top: 15px;
 
+            padding: 14px 16px;
 
-    h1 {
+            background: #fff;
 
-        font-size: 23px;
-    }
+            border: 1px solid #e2e5e9;
 
+            border-radius: 10px;
 
-    input {
+            color: #666;
 
-        width: 100%;
-    }
+            font-size: 13px;
 
+            line-height: 1.8;
+        }
 
-    select {
 
-        width: 100%;
-    }
+        .notice strong {
 
-}
+            color: #333;
+        }
 
-</style>
+
+        /* =========================
+           租屋 / 買屋分析區
+        ========================= */
+
+        .analysis-section {
+
+            margin-top: 30px;
+
+            padding: 22px;
+
+            background: white;
+
+            border: 1px solid #e2e5e9;
+
+            border-radius: 12px;
+        }
+
+
+        .analysis-section h2 {
+
+            margin: 0 0 8px 0;
+
+            font-size: 21px;
+        }
+
+
+        .analysis-description {
+
+            margin: 0;
+
+            color: #777;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        .analysis-placeholder {
+
+            margin-top: 18px;
+
+            padding: 25px;
+
+            background: #fafafa;
+
+            border: 1px dashed #d7dbe0;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            color: #888;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           Footer
+        ========================= */
+
+        .footer {
+
+            margin-top: 25px;
+
+            padding-bottom: 20px;
+
+            color: #777;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        .footer-title {
+
+            color: #555;
+
+            font-weight: 600;
+
+            margin-bottom: 4px;
+        }
+
+
+        /* =========================
+           手機
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            .container {
+
+                padding: 20px 12px;
+            }
+
+
+            h1 {
+
+                font-size: 23px;
+            }
+
+
+            .subtitle {
+
+                font-size: 14px;
+            }
+
+
+            input {
+
+                width: 100%;
+            }
+
+
+            select {
+
+                width: 100%;
+            }
+
+
+            .analysis-section {
+
+                padding: 18px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -245,20 +389,27 @@ tbody tr:hover {
 <div class="container">
 
 
+    <!-- =========================
+         標題
+    ========================= -->
+
     <h1>
-        台灣行政區房價與租金
+        台灣行政區房價、租金與所得
     </h1>
 
 
     <div class="subtitle">
 
-        全台灣本島各縣市、鄉鎮市區房價與租金資料
+        全台灣本島各縣市、鄉鎮市區住宅市場資料
 
     </div>
 
 
-    <div class="toolbar">
+    <!-- =========================
+         搜尋
+    ========================= -->
 
+    <div class="toolbar">
 
         <select id="citySelect">
 
@@ -275,9 +426,12 @@ tbody tr:hover {
             placeholder="搜尋行政區，例如：中壢區"
         >
 
-
     </div>
 
+
+    <!-- =========================
+         筆數
+    ========================= -->
 
     <div
         class="count"
@@ -285,11 +439,13 @@ tbody tr:hover {
     ></div>
 
 
+    <!-- =========================
+         房價表格
+    ========================= -->
+
     <div class="table-container">
 
-
         <table>
-
 
             <thead>
 
@@ -321,24 +477,116 @@ tbody tr:hover {
 
             <tbody id="tableBody">
 
+                <tr>
+
+                    <td
+                        colspan="4"
+                        class="empty"
+                    >
+                        資料載入中……
+                    </td>
+
+                </tr>
+
             </tbody>
 
-
         </table>
-
 
     </div>
 
 
+    <!-- =========================
+         租金資料說明
+    ========================= -->
+
+    <div class="notice">
+
+        <strong>
+            租金資料說明：
+        </strong>
+
+        顯示「—」代表目前官方租賃實價登錄資料中，
+        該行政區符合條件的租賃案件較少或暫無資料，
+        屬於正常現象。
+
+        <br>
+
+        「—」不代表當地沒有出租房屋，
+        也不代表租金為 0 元。
+
+    </div>
+
+
+    <!-- =========================
+         買房 / 租房分析
+    ========================= -->
+
+    <div class="analysis-section">
+
+        <h2>
+            🏠 租屋 vs 買屋
+        </h2>
+
+
+        <p class="analysis-description">
+
+            比較不同持有年限下，
+            租屋與購屋可能產生的累積成本。
+
+        </p>
+
+
+        <div class="analysis-placeholder">
+
+            租屋／買屋成本分析功能<br>
+
+            即將加入
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         資料來源
+    ========================= -->
+
     <div class="footer">
 
-        房價：內政部不動產實價登錄資料。<br>
+        <div class="footer-title">
+            資料來源
+        </div>
 
-        租金：內政部不動產租賃資料。<br>
 
-        房價/所得：目前尚未載入所得資料。<br>
+        房價：
+        內政部不動產交易實價查詢服務網
 
-        行政區範圍：台灣本島，不包含澎湖、金門、連江。
+
+        <br>
+
+
+        租金：
+        內政部租賃實價登錄資料
+
+
+        <br>
+
+
+        所得：
+        行政院主計總處
+
+
+        <br>
+
+
+        行政區範圍：
+        台灣本島，不包含澎湖、金門、連江
+
+
+        <br>
+
+
+        資料會透過 GitHub Actions 定期更新。
 
     </div>
 
@@ -346,13 +594,11 @@ tbody tr:hover {
 </div>
 
 
-<!--
-========================================================
-載入房價資料
-========================================================
--->
+<!-- =========================
+     JavaScript
+========================= -->
 
-<script src="housing.js?v=2"></script>
+<script src="housing.js?v=3"></script>
 
 
 </body>
