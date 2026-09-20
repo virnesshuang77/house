@@ -1,320 +1,239 @@
 name: Update Taiwan Housing Data
 
 on:
-
-  # 手動執行
   workflow_dispatch:
 
-  # 每月 2、12、22 日台灣時間早上 06:00 執行
+  # 每月 2 日台灣時間早上 6:00
   # GitHub Actions 使用 UTC
   schedule:
     - cron: "0 22 1 * *"
 
+permissions:
+  contents: write
 
 jobs:
-
   update-housing:
-
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-
 
     steps:
 
-      # ==================================================
+      # --------------------------------------------------
       # 1. 下載 GitHub Repository
-      # ==================================================
+      # --------------------------------------------------
 
       - name: Checkout repository
-
         uses: actions/checkout@v4
 
 
-      # ==================================================
+      # --------------------------------------------------
       # 2. 安裝 Python
-      # ==================================================
+      # --------------------------------------------------
 
       - name: Setup Python
-
         uses: actions/setup-python@v5
-
         with:
           python-version: "3.12"
 
 
-      # ==================================================
-      # 3. 清除舊的實價登錄 CSV
-      # ==================================================
+      # --------------------------------------------------
+      # 3. 清理舊的實價登錄 CSV
+      # --------------------------------------------------
 
-      - name: Clean old raw data
-
+      - name: Clean raw data
+        shell: bash
         run: |
+          rm -f raw/*_lvr_land_*.csv
+          rm -f raw/*_lvr_land_*.CSV
+          rm -f raw/*lvr_land*.csv
+          rm -f raw/*lvr_land*.CSV
 
-          mkdir -p raw
-
-          find raw -type f \
-            \( -name "*.csv" -o -name "*.CSV" \) \
-            ! -name "income_ratio.csv" \
-            -delete
+          echo "目前 raw 資料："
+          ls -lah raw || true
 
 
-      # ==================================================
-      # 4. 建立暫存下載資料夾
-      # ==================================================
+      # --------------------------------------------------
+      # 4. 下載內政部最新 Open Data
+      # --------------------------------------------------
 
-      - name: Create download directory
-
+      - name: Download MOI Open Data
+        shell: bash
         run: |
+          set -e
 
-          mkdir -p /tmp/housing
+          URL="https://plvr.land.moi.gov.tw/Download?fileName=lvr_landcsv.zip&type=zip"
 
-
-      # ==================================================
-      # 5. 下載內政部最新實價登錄批次資料
-      # ==================================================
-
-      - name: Download MOI real estate data
-
-        run: |
-
-          echo "開始下載內政部實價登錄資料..."
+          echo "開始下載："
+          echo "$URL"
 
           curl \
-            -L \
             --fail \
+            --location \
             --retry 5 \
             --retry-delay 5 \
-            -o /tmp/housing/lvr_landcsv.zip \
-            "https://plvr.land.moi.gov.tw/Download?type=zip&fileName=lvr_landcsv.zip"
+            --connect-timeout 30 \
+            --max-time 600 \
+            -A "Mozilla/5.0" \
+            -o /tmp/lvr_landcsv.zip \
+            "$URL"
 
-          echo "下載完成"
+          echo "下載完成："
+          ls -lh /tmp/lvr_landcsv.zip
 
-          ls -lh /tmp/housing/lvr_landcsv.zip
+          echo "檔案類型："
+          file /tmp/lvr_landcsv.zip
 
 
-      # ==================================================
-      # 6. 解壓縮
-      # ==================================================
+      # --------------------------------------------------
+      # 5. 解壓縮
+      # --------------------------------------------------
 
       - name: Extract MOI data
-
+        shell: bash
         run: |
+          set -e
 
-          mkdir -p /tmp/housing/extracted
+          rm -rf /tmp/lvr_data
+          mkdir -p /tmp/lvr_data
 
-          unzip \
-            -o \
-            /tmp/housing/lvr_landcsv.zip \
-            -d /tmp/housing/extracted
-
+          unzip -o /tmp/lvr_landcsv.zip \
+            -d /tmp/lvr_data
 
           echo "解壓縮完成"
-
           echo "檔案列表："
 
-          find /tmp/housing/extracted \
+          find /tmp/lvr_data \
             -type f \
             | head -100
 
 
-      # ==================================================
-      # 7. 找出 CSV 並放進 raw
-      # ==================================================
+      # --------------------------------------------------
+      # 6. 複製 CSV 到 raw
+      # --------------------------------------------------
 
       - name: Copy CSV files
-
+        shell: bash
         run: |
+          set -e
 
-          find /tmp/housing/extracted \
+          find /tmp/lvr_data \
             -type f \
-            \( -name "*.csv" -o -name "*.CSV" \) \
+            \( -iname "*.csv" \) \
             -exec cp {} raw/ \;
 
-
-          echo "raw 資料："
+          echo "raw CSV："
 
           find raw \
             -maxdepth 1 \
             -type f \
-            -print
+            -iname "*.csv" \
+            -printf "%f\n" \
+            | sort
 
 
-      # ==================================================
-      # 8. 檢查 CSV 數量
-      # ==================================================
+      # --------------------------------------------------
+      # 7. 確認 CSV 確實存在
+      # --------------------------------------------------
 
-      - name: Check downloaded data
-
+      - name: Validate downloaded CSV
+        shell: bash
         run: |
-
-          CSV_COUNT=$(find raw \
+          COUNT=$(find raw \
             -maxdepth 1 \
             -type f \
-            \( -name "*.csv" -o -name "*.CSV" \) \
+            -iname "*.csv" \
             ! -name "income_ratio.csv" \
             | wc -l)
 
+          echo "CSV 資料筆數：$COUNT"
 
-          echo "找到 CSV：${CSV_COUNT} 個"
-
-
-          if [ "$CSV_COUNT" -eq 0 ]; then
-
+          if [ "$COUNT" -eq 0 ]; then
             echo "錯誤：沒有找到任何實價登錄 CSV"
-
             exit 1
-
           fi
 
 
-      # ==================================================
-      # 9. 執行 Python 資料整理
-      # ==================================================
+      # --------------------------------------------------
+      # 8. 執行 Python 建立 JSON
+      # --------------------------------------------------
 
       - name: Build housing JSON
-
         run: |
-
           python build_data.py
 
 
-      # ==================================================
-      # 10. 檢查 JSON
-      # ==================================================
+      # --------------------------------------------------
+      # 9. 檢查 JSON
+      # --------------------------------------------------
 
       - name: Validate JSON
-
+        shell: bash
         run: |
+          set -e
 
           test -f data/taiwan_housing.json
 
-
-          python - <<'PY'
-
+          COUNT=$(python - <<'PY'
           import json
 
-          path = "data/taiwan_housing.json"
-
           with open(
-              path,
+              "data/taiwan_housing.json",
               "r",
               encoding="utf-8"
           ) as f:
-
               data = json.load(f)
 
-
-          print(
-              "JSON 資料筆數：",
-              len(data)
+          print(len(data))
+          PY
           )
 
+          echo "JSON 資料筆數：$COUNT"
 
-          if not isinstance(data, list):
+          if [ "$COUNT" -eq 0 ]; then
+            echo "錯誤：JSON 是空的"
+            exit 1
+          fi
 
-              raise SystemExit(
-                  "錯誤：JSON 不是陣列"
-              )
-
-
-          if len(data) == 0:
-
-              raise SystemExit(
-                  "錯誤：JSON 是空的"
-              )
+          echo "JSON 驗證成功"
 
 
-          price_count = sum(
-              1
-              for item in data
-              if item.get(
-                  "median_price_per_ping"
-              ) is not None
-          )
+      # --------------------------------------------------
+      # 10. 顯示前幾筆資料
+      # --------------------------------------------------
 
+      - name: Show generated data
+        run: |
+          python - <<'PY'
+          import json
 
-          rent_count = sum(
-              1
-              for item in data
-              if item.get(
-                  "average_monthly_rent"
-              ) is not None
-          )
+          with open(
+              "data/taiwan_housing.json",
+              "r",
+              encoding="utf-8"
+          ) as f:
+              data = json.load(f)
 
+          print("前 5 筆：")
 
-          print(
-              "有房價資料的行政區：",
-              price_count
-          )
-
-
-          print(
-              "有租金資料的行政區：",
-              rent_count
-          )
-
-
-          if price_count == 0:
-
-              raise SystemExit(
-                  "錯誤：沒有任何房價資料"
-              )
-
-
-          if rent_count == 0:
-
-              raise SystemExit(
-                  "錯誤：沒有任何租金資料"
-              )
-
+          for row in data[:5]:
+              print(row)
           PY
 
 
-      # ==================================================
-      # 11. 顯示 Git 變更
-      # ==================================================
+      # --------------------------------------------------
+      # 11. 提交更新
+      # --------------------------------------------------
 
-      - name: Check changes
-
+      - name: Commit updated data
+        shell: bash
         run: |
-
-          git status
-
-          git diff --stat
-
-
-      # ==================================================
-      # 12. 提交新的 JSON
-      # ==================================================
-
-      - name: Commit updated housing data
-
-        run: |
-
-          git config \
-            user.name \
-            "github-actions[bot]"
-
-
-          git config \
-            user.email \
-            "41898282+github-actions[bot]@users.noreply.github.com"
-
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add data/taiwan_housing.json
 
-
           if git diff --cached --quiet; then
-
-            echo "資料沒有變化"
-
+            echo "沒有資料變化"
           else
-
-            git commit \
-              -m "Update Taiwan housing data"
-
+            git commit -m "Update Taiwan housing data"
             git push
-
           fi
