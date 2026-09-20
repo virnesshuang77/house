@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>台灣買房租屋比較網</title>
+    <title>台灣行政區房價、租金與所得</title>
 
 
     <style>
@@ -164,6 +164,8 @@
         .county-label {
 
             user-select: none;
+
+            pointer-events: none;
         }
 
 
@@ -198,24 +200,6 @@
 
 
         /* =========================
-           目前選擇
-        ========================= */
-
-        .selected-city {
-
-            text-align: center;
-
-            margin-top: -2px;
-
-            font-size: 25px;
-
-            font-weight: 700;
-
-            color: #2563eb;
-        }
-
-
-        /* =========================
            表格
         ========================= */
 
@@ -229,7 +213,8 @@
 
             padding: 18px 20px;
 
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom:
+                1px solid #e5e7eb;
         }
 
 
@@ -318,7 +303,7 @@
 
 
         /* =========================
-           建議欄
+           建議
         ========================= */
 
         .recommendation-buy {
@@ -427,12 +412,6 @@
             }
 
 
-            .selected-city {
-
-                font-size: 23px;
-            }
-
-
             th,
             td {
 
@@ -488,14 +467,6 @@
 
 
         <div id="mapTooltip"></div>
-
-
-        <div
-            id="selectedCity"
-            class="selected-city"
-        >
-            台北市
-        </div>
 
 
     </section>
@@ -554,8 +525,6 @@
 
                 <tbody>
 
-                    <!-- JavaScript 產生 -->
-
                 </tbody>
 
 
@@ -581,7 +550,7 @@
 
             ※若中位數房價低於 40 年租金，顯示「買房」；
             若高於 40 年租金，顯示「租屋」；
-            兩者接近則顯示「持平」。
+            兩者差距在 5% 以內則顯示「持平」。
 
             <br>
 
@@ -632,7 +601,7 @@
      Website JavaScript
 ========================= -->
 
-<script src="housing.js?v=7"></script>
+<script src="housing.js?v=8"></script>
 
 
 </body>
