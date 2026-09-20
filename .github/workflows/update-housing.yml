@@ -1,0 +1,112 @@
+name: Update Taiwan Housing Data
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # 每月 2 日、12 日、22 日台灣時間上午 6:00
+    # GitHub Actions 使用 UTC，所以是前一天 22:00 UTC
+    - cron: "0 22 1,11,21 * *"
+
+  push:
+    paths:
+      - "build_data.py"
+      - "raw/**"
+      - ".github/workflows/update-housing.yml"
+
+
+jobs:
+
+  update-housing:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+
+      # ============================================
+      # 下載 GitHub Repository
+      # ============================================
+
+      - name: Checkout repository
+
+        uses: actions/checkout@v4
+
+
+      # ============================================
+      # 安裝 Python
+      # ============================================
+
+      - name: Setup Python
+
+        uses: actions/setup-python@v5
+
+        with:
+          python-version: "3.12"
+
+
+      # ============================================
+      # 執行資料整理
+      # ============================================
+
+      - name: Build housing data
+
+        run: |
+
+          python build_data.py
+
+
+      # ============================================
+      # 檢查 JSON 是否成功產生
+      # ============================================
+
+      - name: Check output
+
+        run: |
+
+          test -f data/taiwan_housing.json
+
+          python -c "
+          import json
+
+          with open(
+              'data/taiwan_housing.json',
+              encoding='utf-8'
+          ) as f:
+              data = json.load(f)
+
+          print('行政區資料筆數:', len(data))
+
+          if not isinstance(data, list):
+              raise SystemExit('JSON 格式錯誤')
+          "
+
+
+      # ============================================
+      # 自動提交更新
+      # ============================================
+
+      - name: Commit updated data
+
+        run: |
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/taiwan_housing.json
+
+          if git diff --cached --quiet; then
+
+            echo "沒有新的資料變化"
+
+          else
+
+            git commit \
+              -m "Update Taiwan housing data"
+
+            git push
+
+          fi
