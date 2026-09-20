@@ -1,98 +1,36 @@
 import csv
 import json
-import statistics
 import re
 import subprocess
+import tempfile
+import zipfile
 from pathlib import Path
+from statistics import median
+from collections import defaultdict
 
 
 # ============================================================
-# 基本設定
+# 路徑
 # ============================================================
 
-RAW_DIR = Path("raw")
-DATA_DIR = Path("data")
-OUTPUT_FILE = DATA_DIR / "taiwan_housing.json"
+BASE_DIR = Path(__file__).resolve().parent
 
-PING_PER_SQM = 3.305785
+RAW_DIR = BASE_DIR / "raw"
 
+DATA_DIR = BASE_DIR / "data"
 
-# ============================================================
-# 台灣縣市代碼
-#
-# A 台北市
-# B 台中市
-# C 基隆市
-# D 台南市
-# E 高雄市
-# F 新北市
-# G 宜蘭縣
-# H 桃園市
-# I 嘉義市
-# J 新竹縣
-# K 苗栗縣
-# M 南投縣
-# N 彰化縣
-# O 新竹市
-# P 雲林縣
-# Q 嘉義縣
-# T 屏東縣
-# U 花蓮縣
-# V 台東縣
-#
-# W 金門
-# X 澎湖
-# Z 連江
-#
-# 本專案只保留台灣本島
-# ============================================================
+DATA_DIR.mkdir(
+    exist_ok=True
+)
 
-CITY_CODES = {
-
-    "A": "台北市",
-    "B": "台中市",
-    "C": "基隆市",
-    "D": "台南市",
-    "E": "高雄市",
-    "F": "新北市",
-    "G": "宜蘭縣",
-    "H": "桃園市",
-    "I": "嘉義市",
-    "J": "新竹縣",
-    "K": "苗栗縣",
-    "M": "南投縣",
-    "N": "彰化縣",
-    "O": "新竹市",
-    "P": "雲林縣",
-    "Q": "嘉義縣",
-    "T": "屏東縣",
-    "U": "花蓮縣",
-    "V": "台東縣",
-
-}
-
-
-# ============================================================
-# 主計總處官方資料
-#
-# Dataset 9415
-# 家庭收支調查-平均每戶可支配所得按區域別分
-# ============================================================
-
-INCOME_DATASET_URL = (
-    "https://data.gov.tw/dataset/9415"
+OUTPUT_FILE = (
+    DATA_DIR /
+    "taiwan_housing.json"
 )
 
 
 # ============================================================
-# 主計總處 CSV
-#
-# 注意：
-# GitHub Actions 上 curl 驗證此政府網站 SSL 時會失敗，
-# 因此下面 curl 使用 -k。
-#
-# -k 只用於下載這個官方 CSV，
-# 不影響後續資料解析。
+# 官方主計總處所得資料
 # ============================================================
 
 INCOME_CSV_URL = (
@@ -103,60 +41,150 @@ INCOME_CSV_URL = (
 
 
 # ============================================================
-# 主計總處 CSV 欄位
-#
-# 主計總處使用「臺」
-# 本網站統一使用「台」
+# 縣市代碼
+# 內政部實價登錄檔名第一碼
 # ============================================================
 
-INCOME_CITY_FIELDS = {
+CITY_CODES = {
 
-    "台北市": "臺北市-元",
-    "新北市": "新北市-元",
-    "桃園市": "桃園市-元",
-    "台中市": "臺中市-元",
-    "台南市": "臺南市-元",
-    "高雄市": "高雄市-元",
+    "A": "台北市",
 
-    "宜蘭縣": "宜蘭縣-元",
-    "新竹縣": "新竹縣-元",
-    "苗栗縣": "苗栗縣-元",
-    "彰化縣": "彰化縣-元",
-    "南投縣": "南投縣-元",
-    "雲林縣": "雲林縣-元",
-    "嘉義縣": "嘉義縣-元",
-    "屏東縣": "屏東縣-元",
-    "台東縣": "臺東縣-元",
-    "花蓮縣": "花蓮縣-元",
+    "B": "台中市",
 
-    "基隆市": "基隆市-元",
-    "新竹市": "新竹市-元",
-    "嘉義市": "嘉義市-元",
+    "C": "基隆市",
 
+    "D": "台南市",
+
+    "E": "高雄市",
+
+    "F": "新北市",
+
+    "G": "宜蘭縣",
+
+    "H": "桃園市",
+
+    "I": "嘉義市",
+
+    "J": "新竹縣",
+
+    "K": "苗栗縣",
+
+    "M": "南投縣",
+
+    "N": "彰化縣",
+
+    "O": "新竹市",
+
+    "P": "雲林縣",
+
+    "Q": "嘉義縣",
+
+    "T": "屏東縣",
+
+    "U": "花蓮縣",
+
+    "V": "台東縣",
+}
+
+
+# 排除離島
+EXCLUDED_CITIES = {
+    "澎湖縣",
+    "金門縣",
+    "連江縣",
 }
 
 
 # ============================================================
-# 數字清理
+# 住宅關鍵字
 # ============================================================
+
+RESIDENTIAL_KEYWORDS = [
+
+    "住宅大樓",
+
+    "華廈",
+
+    "公寓",
+
+    "透天厝",
+
+    "套房",
+
+    "別墅",
+
+    "住宅",
+
+]
+
+
+EXCLUDED_KEYWORDS = [
+
+    "工廠",
+
+    "廠房",
+
+    "辦公",
+
+    "辦公室",
+
+    "店面",
+
+    "商業",
+
+    "倉庫",
+
+    "墓地",
+
+    "停車位",
+
+    "車位",
+
+]
+
+
+# ============================================================
+# 中文數字 / 欄位工具
+# ============================================================
+
+def normalize_text(value):
+
+    if value is None:
+        return ""
+
+    return str(value).strip()
+
+
+def normalize_city_name(value):
+
+    value = normalize_text(value)
+
+    return value.replace(
+        "臺",
+        "台"
+    )
+
 
 def clean_number(value):
 
     if value is None:
         return None
 
-    value = str(value).strip()
+    text = str(value).strip()
 
-    if not value:
+    if not text:
         return None
 
-    value = value.replace(",", "")
-    value = value.replace(" ", "")
-    value = value.replace("　", "")
+    text = (
+        text
+        .replace(",", "")
+        .replace(" ", "")
+        .replace("\ufeff", "")
+    )
 
     try:
 
-        return float(value)
+        return float(text)
 
     except ValueError:
 
@@ -164,84 +192,26 @@ def clean_number(value):
 
 
 # ============================================================
-# 縣市名稱標準化
+# CSV 讀取
 # ============================================================
 
-def normalize_city_name(name):
-
-    if name is None:
-        return ""
-
-    return (
-        str(name)
-        .strip()
-        .replace("臺", "台")
-    )
-
-
-# ============================================================
-# 從檔名判斷縣市
-# ============================================================
-
-def detect_city_from_filename(filename):
-
-    name = filename.upper()
-
-    match = re.match(
-        r"([A-Z])_",
-        name
-    )
-
-    if not match:
-        return None
-
-    code = match.group(1)
-
-    return CITY_CODES.get(code)
-
-
-# ============================================================
-# 判斷資料類型
-#
-# _a = 買賣
-# _b = 預售
-# _c = 租賃
-# ============================================================
-
-def get_file_type(filename):
-
-    name = filename.lower()
-
-    if "_lvr_land_c.csv" in name:
-        return "rent"
-
-    if "_lvr_land_a.csv" in name:
-        return "sale"
-
-    if "_lvr_land_b.csv" in name:
-        return "presale"
-
-    return None
-
-
-# ============================================================
-# 讀 CSV
-# ============================================================
-
-def read_csv_file(filepath):
+def read_csv_file(path):
 
     encodings = [
         "utf-8-sig",
         "utf-8",
         "cp950",
+        "big5",
     ]
+
+    last_error = None
 
     for encoding in encodings:
 
         try:
 
             with open(
-                filepath,
+                path,
                 "r",
                 encoding=encoding,
                 newline=""
@@ -249,118 +219,89 @@ def read_csv_file(filepath):
 
                 reader = csv.DictReader(f)
 
-                headers = reader.fieldnames or []
-
                 rows = list(reader)
 
-                return headers, rows
-
-        except UnicodeDecodeError:
-
-            continue
+                return rows
 
         except Exception as e:
 
-            print(
-                f"讀取失敗：{filepath}"
-            )
+            last_error = e
 
-            print(e)
-
-            return [], []
-
-
-    print(
-        f"無法讀取：{filepath}"
+    raise RuntimeError(
+        f"無法讀取 CSV：{path}\n{last_error}"
     )
-
-    return [], []
 
 
 # ============================================================
-# 判斷是不是住宅
+# 找欄位
+# ============================================================
+
+def get_field(row, names):
+
+    for name in names:
+
+        if name in row:
+
+            return row[name]
+
+    return ""
+
+
+# ============================================================
+# 判斷住宅
 # ============================================================
 
 def is_residential(row):
 
-    building_type = str(
-        row.get("建物型態", "")
-    ).strip()
+    building_type = normalize_text(
+        get_field(
+            row,
+            [
+                "建物型態",
+                "rps11",
+                "建物型態"
+            ]
+        )
+    )
 
-
-    main_use = str(
-        row.get("主要用途", "")
-    ).strip()
-
-
-    target = str(
-        row.get("交易標的", "")
-    ).strip()
-
-
-    text = (
-        building_type
-        + " "
-        + main_use
-        + " "
-        + target
+    main_use = normalize_text(
+        get_field(
+            row,
+            [
+                "主要用途",
+                "rps12",
+                "主要用途"
+            ]
+        )
     )
 
 
-    # --------------------------------------------------------
-    # 排除非住宅
-    # --------------------------------------------------------
+    # 先排除非住宅
+    for keyword in EXCLUDED_KEYWORDS:
 
-    excluded_keywords = [
+        if (
+            keyword in building_type
+            or keyword in main_use
+        ):
 
-        "工廠",
-        "廠房",
-        "辦公",
-        "辦公室",
-        "店面",
-        "商業",
-        "倉庫",
-        "墓地",
-        "停車位",
-        "車位",
-
-    ]
+            return False
 
 
-    if any(
-        keyword in text
-        for keyword in excluded_keywords
-    ):
+    # 建物型態
+    for keyword in RESIDENTIAL_KEYWORDS:
 
-        return False
+        if keyword in building_type:
 
-
-    # --------------------------------------------------------
-    # 住宅
-    # --------------------------------------------------------
-
-    residential_keywords = [
-
-        "住宅大樓",
-        "華廈",
-        "公寓",
-        "透天厝",
-        "套房",
-        "別墅",
-        "住宅",
-
-    ]
+            return True
 
 
-    if any(
-        keyword in text
-        for keyword in residential_keywords
-    ):
+    # 主要用途
+    if "住家" in main_use:
 
         return True
 
 
-    if "住家" in main_use:
+    if "住宅" in main_use:
 
         return True
 
@@ -369,422 +310,384 @@ def is_residential(row):
 
 
 # ============================================================
-# 行政區
+# 取得行政區
 # ============================================================
 
 def get_district(row):
 
-    return str(
-        row.get("鄉鎮市區", "")
+    district = normalize_text(
+        get_field(
+            row,
+            [
+                "鄉鎮市區",
+                "district",
+                "District",
+                "rps00",
+            ]
+        )
+    )
+
+
+    # 清理 BOM
+    district = district.replace(
+        "\ufeff",
+        ""
     ).strip()
 
 
-# ============================================================
-# 房屋單價
-#
-# 官方欄位：
-# 單價元平方公尺
-#
-# 轉換：
-# 元/平方公尺 × 3.305785
-# =
-# 元/坪
-# ============================================================
-
-def get_sale_unit_price(row):
-
-    fields = [
-
-        "單價元平方公尺",
-        "單價每平方公尺",
-
-    ]
-
-
-    for field in fields:
-
-        value = clean_number(
-            row.get(field)
-        )
-
-
-        if (
-            value is not None
-            and value > 0
-        ):
-
-            return value
-
-
-    return None
+    return district
 
 
 # ============================================================
-# 房屋總價
+# 從檔名取得縣市
 # ============================================================
 
-def get_total_price(row):
+def get_city_from_filename(path):
 
-    fields = [
+    name = path.name.upper()
 
-        "總價元",
-        "交易總價元",
-        "總價",
+    # 例如：
+    # A_lvr_land_a.csv
+    # A_lvr_land_b.csv
+    # A_lvr_land_c.csv
 
-    ]
-
-
-    for field in fields:
-
-        value = clean_number(
-            row.get(field)
-        )
-
-
-        if (
-            value is not None
-            and value > 0
-        ):
-
-            return value
-
-
-    return None
-
-
-# ============================================================
-# 租金
-# ============================================================
-
-def get_rent_value(row):
-
-    fields = [
-
-        "總額元",
-        "租金總額",
-        "每月租金",
-        "租金",
-
-    ]
-
-
-    for field in fields:
-
-        value = clean_number(
-            row.get(field)
-        )
-
-
-        if (
-            value is not None
-            and value > 0
-        ):
-
-            return value
-
-
-    return None
-
-
-# ============================================================
-# 處理買賣
-# ============================================================
-
-def process_sale_file(
-    filepath,
-    result
-):
-
-    city = detect_city_from_filename(
-        filepath.name
+    match = re.match(
+        r"^([A-Z])",
+        name
     )
 
 
-    if not city:
+    if not match:
 
-        print(
-            f"跳過非本島縣市：{filepath.name}"
-        )
-
-        return
+        return None
 
 
-    headers, rows = read_csv_file(
-        filepath
+    code = match.group(1)
+
+
+    city = CITY_CODES.get(
+        code
     )
 
 
-    if not headers:
+    if city in EXCLUDED_CITIES:
 
-        return
+        return None
+
+
+    return city
+
+
+# ============================================================
+# 找房價 CSV
+# ============================================================
+
+def get_sales_files():
+
+    files = []
+
+    for path in RAW_DIR.rglob("*.csv"):
+
+        name = path.name.lower()
+
+        # a = 買賣
+        # b = 預售
+        if (
+            "_a" in name
+            or "_b" in name
+        ):
+
+            city = get_city_from_filename(
+                path
+            )
+
+            if city:
+
+                files.append(
+                    path
+                )
+
+    return files
+
+
+# ============================================================
+# 找租賃 CSV
+# ============================================================
+
+def get_rent_files():
+
+    files = []
+
+    for path in RAW_DIR.rglob("*.csv"):
+
+        name = path.name.lower()
+
+        # c = 租賃
+        if "_c" in name:
+
+            city = get_city_from_filename(
+                path
+            )
+
+            if city:
+
+                files.append(
+                    path
+                )
+
+    return files
+
+
+# ============================================================
+# 房價資料
+# key = (city, district)
+# ============================================================
+
+def collect_sales_data():
+
+    result = defaultdict(
+        lambda: {
+
+            "prices": [],
+
+            "price_per_ping": []
+
+        }
+    )
+
+
+    files = get_sales_files()
 
 
     print(
-        f"處理買賣："
-        f"{filepath.name} -> {city}"
+        f"找到房價 CSV：{len(files)} 個"
     )
 
 
-    count = 0
+    for path in files:
+
+        city = get_city_from_filename(
+            path
+        )
 
 
-    for row in rows:
-
-        if not is_residential(row):
-
+        if not city:
             continue
 
 
-        district = get_district(row)
-
-
-        if not district:
-
-            continue
-
-
-        unit_price = get_sale_unit_price(
-            row
+        print(
+            f"處理房價：{path.name}"
         )
 
 
-        if unit_price is None:
-
-            continue
-
-
-        price_per_ping = (
-            unit_price
-            * PING_PER_SQM
+        rows = read_csv_file(
+            path
         )
 
 
-        if price_per_ping <= 0:
+        for row in rows:
 
-            continue
-
-
-        total_price = get_total_price(
-            row
-        )
+            district = get_district(
+                row
+            )
 
 
-        key = (
-            f"{city}|{district}"
-        )
+            if not district:
+
+                continue
 
 
-        if key not in result:
+            if not is_residential(
+                row
+            ):
 
-            result[key] = {
-
-                "city": city,
-
-                "district": district,
-
-                "prices": [],
-
-                "total_prices": [],
-
-                "rents": [],
-
-            }
+                continue
 
 
-        result[key]["prices"].append(
-            price_per_ping
-        )
+            total_price = clean_number(
+                get_field(
+                    row,
+                    [
+                        "總價元",
+                        "rps21",
+                        "總價"
+                    ]
+                )
+            )
 
 
-        if total_price is not None:
+            unit_price = clean_number(
+                get_field(
+                    row,
+                    [
+                        "單價元平方公尺",
+                        "rps22",
+                        "單價元平方公尺"
+                    ]
+                )
+            )
 
-            result[key]["total_prices"].append(
+
+            if (
+                total_price is None
+                or total_price <= 0
+            ):
+
+                continue
+
+
+            key = (
+                city,
+                district
+            )
+
+
+            result[key][
+                "prices"
+            ].append(
                 total_price
             )
 
 
-        count += 1
+            if (
+                unit_price is not None
+                and unit_price > 0
+            ):
+
+                # 每平方公尺
+                # → 每坪
+                ping_price = (
+                    unit_price *
+                    3.305785
+                )
+
+
+                result[key][
+                    "price_per_ping"
+                ].append(
+                    ping_price
+                )
+
+
+    return result
+
+
+# ============================================================
+# 租金資料
+# key = (city, district)
+# ============================================================
+
+def collect_rent_data():
+
+    result = defaultdict(
+        list
+    )
+
+
+    files = get_rent_files()
 
 
     print(
-        f"  有效住宅買賣：{count}"
+        f"找到租金 CSV：{len(files)} 個"
     )
 
 
-# ============================================================
-# 處理租賃
-# ============================================================
+    for path in files:
 
-def process_rent_file(
-    filepath,
-    result
-):
-
-    city = detect_city_from_filename(
-        filepath.name
-    )
+        city = get_city_from_filename(
+            path
+        )
 
 
-    if not city:
+        if not city:
+            continue
+
 
         print(
-            f"跳過非本島縣市：{filepath.name}"
-        )
-
-        return
-
-
-    headers, rows = read_csv_file(
-        filepath
-    )
-
-
-    if not headers:
-
-        return
-
-
-    print(
-        f"處理租賃："
-        f"{filepath.name} -> {city}"
-    )
-
-
-    count = 0
-
-
-    for row in rows:
-
-        if not is_residential(row):
-
-            continue
-
-
-        district = get_district(row)
-
-
-        if not district:
-
-            continue
-
-
-        rent = get_rent_value(
-            row
+            f"處理租金：{path.name}"
         )
 
 
-        if rent is None:
-
-            continue
-
-
-        if rent <= 0:
-
-            continue
-
-
-        key = (
-            f"{city}|{district}"
+        rows = read_csv_file(
+            path
         )
 
 
-        if key not in result:
+        for row in rows:
 
-            result[key] = {
-
-                "city": city,
-
-                "district": district,
-
-                "prices": [],
-
-                "total_prices": [],
-
-                "rents": [],
-
-            }
+            district = get_district(
+                row
+            )
 
 
-        result[key]["rents"].append(
-            rent
-        )
+            if not district:
+
+                continue
 
 
-        count += 1
+            if not is_residential(
+                row
+            ):
+
+                continue
 
 
-    print(
-        f"  有效住宅租賃：{count}"
-    )
+            rent = clean_number(
+                get_field(
+                    row,
+                    [
+                        "總額元",
+                        "rps22",
+                        "總額"
+                    ]
+                )
+            )
+
+
+            if (
+                rent is None
+                or rent <= 0
+            ):
+
+                continue
+
+
+            key = (
+                city,
+                district
+            )
+
+
+            result[key].append(
+                rent
+            )
+
+
+    return result
 
 
 # ============================================================
-# 下載主計總處 CSV
-#
-# 使用 curl
-#
-# -k：
-# 忽略該官方站點在 GitHub Runner
-# 上出現的 SSL 憑證鏈驗證問題。
+# 下載主計總處所得
 # ============================================================
 
 def download_income_csv():
 
-    RAW_DIR.mkdir(
-        parents=True,
-        exist_ok=True
+    temp_dir = Path(
+        tempfile.mkdtemp()
     )
 
-
-    income_file = (
-        RAW_DIR
-        / "income_latest.csv"
-    )
-
-
-    print()
-    print("=" * 70)
-    print("下載主計總處家庭收支資料")
-    print("=" * 70)
-
-
-    print(
-        f"資料來源："
-        f"{INCOME_DATASET_URL}"
-    )
-
-
-    print(
-        "使用 curl 下載官方 CSV..."
-    )
-
+    income_file =
+        temp_dir / "income.csv"
 
     command = [
 
         "curl",
 
-        # ----------------------------------------------------
-        # 關鍵：
-        # 忽略 SSL 憑證驗證問題
-        # ----------------------------------------------------
-
         "-k",
-
-        # ----------------------------------------------------
-        # 遇 HTTP error 直接失敗
-        # ----------------------------------------------------
 
         "-f",
 
-        # ----------------------------------------------------
-        # 跟隨重新導向
-        # ----------------------------------------------------
-
         "-L",
-
-        # ----------------------------------------------------
-        # 重試
-        # ----------------------------------------------------
 
         "--retry",
         "3",
@@ -792,107 +695,30 @@ def download_income_csv():
         "--retry-delay",
         "2",
 
-        # ----------------------------------------------------
-        # Timeout
-        # ----------------------------------------------------
-
         "--connect-timeout",
         "30",
 
         "--max-time",
         "120",
 
-        # ----------------------------------------------------
-        # User Agent
-        # ----------------------------------------------------
-
         "-A",
         "Mozilla/5.0",
-
-        # ----------------------------------------------------
-        # 輸出檔案
-        # ----------------------------------------------------
 
         "-o",
         str(income_file),
 
-        # ----------------------------------------------------
-        # URL
-        # ----------------------------------------------------
-
         INCOME_CSV_URL,
-
     ]
 
 
-    try:
-
-        result = subprocess.run(
-
-            command,
-
-            stdout=subprocess.PIPE,
-
-            stderr=subprocess.PIPE,
-
-            text=True,
-
-            check=False,
-
-        )
-
-
-    except FileNotFoundError:
-
-        raise RuntimeError(
-            "GitHub Runner 找不到 curl。"
-        )
-
-
-    if result.returncode != 0:
-
-        print()
-        print(
-            "curl 下載失敗："
-        )
-
-        print(
-            result.stderr
-        )
-
-        raise RuntimeError(
-            "無法下載主計總處官方所得資料。"
-        )
-
-
-    if not income_file.exists():
-
-        raise RuntimeError(
-            "curl 執行完成，"
-            "但所得 CSV 不存在。"
-        )
-
-
-    file_size = (
-        income_file.stat().st_size
+    print(
+        "下載主計總處所得資料..."
     )
 
 
-    if file_size == 0:
-
-        raise RuntimeError(
-            "所得 CSV 是空檔案。"
-        )
-
-
-    print(
-        "所得資料下載完成。"
-    )
-
-
-    print(
-        f"檔案大小："
-        f"{file_size:,} bytes"
+    subprocess.run(
+        command,
+        check=True
     )
 
 
@@ -900,715 +726,342 @@ def download_income_csv():
 
 
 # ============================================================
-# 解析主計總處所得資料
+# 讀取所得
 # ============================================================
 
 def load_income_data():
 
-    income_file = (
+    income_file =
         download_income_csv()
-    )
 
 
-    headers, rows = read_csv_file(
-        income_file
-    )
-
-
-    if not headers:
-
-        raise RuntimeError(
-            "主計總處所得 CSV 沒有欄位。"
+    rows =
+        read_csv_file(
+            income_file
         )
 
 
     if not rows:
 
         raise RuntimeError(
-            "主計總處所得 CSV 沒有資料。"
+            "主計總處所得 CSV 沒有資料"
         )
 
 
-    print()
-    print(
-        f"所得資料筆數："
-        f"{len(rows)}"
+    latest = rows[-1]
+
+
+    year_value = get_field(
+        latest,
+        [
+            "年",
+            "year",
+            "Year"
+        ]
     )
 
 
-    # --------------------------------------------------------
-    # 找出最新年度
-    # --------------------------------------------------------
-
-    year_rows = []
-
-
-    for row in rows:
-
-        year_raw = str(
-            row.get("年", "")
-        ).strip()
-
-
-        match = re.search(
-            r"(19|20)\d{2}",
-            year_raw
+    year_text =
+        normalize_text(
+            year_value
         )
 
 
-        if not match:
+    income_map = {}
+
+
+    for key, value in latest.items():
+
+        if not key:
 
             continue
 
 
-        year = int(
-            match.group(0)
-        )
+        if "元" not in key:
+
+            continue
 
 
-        year_rows.append(
-            (
-                year,
-                row
+        city_name =
+            key.replace(
+                "-元",
+                ""
+            ).strip()
+
+
+        city_name =
+            normalize_city_name(
+                city_name
             )
-        )
 
 
-    if not year_rows:
-
-        raise RuntimeError(
-            "無法從所得資料判斷年度。"
-        )
-
-
-    latest_year = max(
-
-        year
-
-        for year, row
-        in year_rows
-
-    )
-
-
-    latest_rows = [
-
-        row
-
-        for year, row
-        in year_rows
-
-        if year == latest_year
-
-    ]
-
-
-    if not latest_rows:
-
-        raise RuntimeError(
-            "找不到最新年度所得資料。"
-        )
-
-
-    latest_row = latest_rows[-1]
-
-
-    print()
-    print(
-        f"最新所得年度："
-        f"{latest_year}"
-    )
-
-
-    # --------------------------------------------------------
-    # 各縣市所得
-    # --------------------------------------------------------
-
-    income_data = {}
-
-
-    for city, field in INCOME_CITY_FIELDS.items():
-
-        value = clean_number(
-            latest_row.get(field)
-        )
+        number =
+            clean_number(
+                value
+            )
 
 
         if (
-            value is not None
-            and value > 0
+            number is None
+            or number <= 0
         ):
 
-            income_data[city] = {
-
-                "income": round(value),
-
-                "year": latest_year,
-
-            }
+            continue
 
 
-            print(
-                f"  {city}: "
-                f"{value:,.0f} 元"
-            )
+        income_map[
+            city_name
+        ] = number
 
 
-        else:
-
-            print(
-                f"  WARNING："
-                f"{city} 找不到所得資料"
-            )
-
-
-    print()
     print(
-        f"成功取得縣市所得："
-        f"{len(income_data)}"
+        "所得資料年份：",
+        year_text
     )
 
 
-    # --------------------------------------------------------
-    # 防呆
-    #
-    # 台灣本島 19 個縣市
-    # 如果少太多代表資料格式可能變了
-    # --------------------------------------------------------
-
-    if len(income_data) < 10:
-
-        raise RuntimeError(
-
-            "成功取得的縣市所得資料過少，"
-            "可能是官方 CSV 欄位格式發生變化。"
-
-        )
+    print(
+        "所得資料：",
+        income_map
+    )
 
 
-    return income_data
+    return (
+        income_map,
+        year_text
+    )
 
 
 # ============================================================
-# 主程式
+# 產生最終 JSON
 # ============================================================
 
-def main():
+def build_output():
 
-    RAW_DIR.mkdir(
-        parents=True,
-        exist_ok=True
-    )
+    sales =
+        collect_sales_data()
 
 
-    DATA_DIR.mkdir(
-        parents=True,
-        exist_ok=True
-    )
+    rents =
+        collect_rent_data()
 
 
-    result = {}
-
-
-    # ========================================================
-    # 只處理真正的主要 CSV
-    #
-    # 不再把：
-    #
-    # *_build.csv
-    # *_land.csv
-    # *_park.csv
-    # schema-*.csv
-    #
-    # 當成主要資料
-    # ========================================================
-
-    csv_files = []
-
-
-    for filepath in sorted(
-        RAW_DIR.glob("*.csv")
-    ):
-
-        file_type = get_file_type(
-            filepath.name
-        )
-
-
-        if file_type in (
-            "sale",
-            "rent",
-            "presale"
-        ):
-
-            csv_files.append(
-                filepath
-            )
-
-
-    print()
-    print("=" * 70)
-    print(
-        "台灣住宅房價 / 租金 / 所得資料建置"
-    )
-    print("=" * 70)
-
-
-    print(
-        f"找到主要內政部 CSV："
-        f"{len(csv_files)} 個"
-    )
-
-
-    sale_files = 0
-    rent_files = 0
-    presale_files = 0
-
-
-    # ========================================================
-    # 處理內政部資料
-    # ========================================================
-
-    for filepath in csv_files:
-
-        file_type = get_file_type(
-            filepath.name
-        )
-
-
-        if file_type == "sale":
-
-            sale_files += 1
-
-            process_sale_file(
-                filepath,
-                result
-            )
-
-
-        elif file_type == "rent":
-
-            rent_files += 1
-
-            process_rent_file(
-                filepath,
-                result
-            )
-
-
-        elif file_type == "presale":
-
-            presale_files += 1
-
-            print(
-                f"跳過預售屋："
-                f"{filepath.name}"
-            )
-
-
-    print()
-    print(
-        f"買賣主檔："
-        f"{sale_files}"
-    )
-
-
-    print(
-        f"租賃主檔："
-        f"{rent_files}"
-    )
-
-
-    print(
-        f"預售屋主檔："
-        f"{presale_files}"
-    )
-
-
-    # ========================================================
-    # 取得所得
-    # ========================================================
-
-    income_data = (
+    income_map, income_year =
         load_income_data()
-    )
 
 
-    # ========================================================
-    # 建立 JSON
-    # ========================================================
+    # 所有「縣市 + 行政區」
+    all_keys =
+        set(sales.keys()) |
+        set(rents.keys())
+
 
     output = []
 
 
-    for key in sorted(
-        result.keys()
+    for city, district in sorted(
+        all_keys,
+        key=lambda x: (
+            x[0],
+            x[1]
+        )
     ):
 
-        item = result[key]
-
-
-        prices = (
-            item["prices"]
-        )
-
-
-        total_prices = (
-            item["total_prices"]
-        )
-
-
-        rents = (
-            item["rents"]
-        )
-
-
-        # ----------------------------------------------------
-        # 中位數房價
-        # ----------------------------------------------------
-
-        median_price = None
-
-
-        if prices:
-
-            median_price = round(
-
-                statistics.median(
-                    prices
-                )
-
+        sales_info =
+            sales.get(
+                (city, district),
+                {}
             )
 
 
-        # ----------------------------------------------------
-        # 中位數總價
-        # ----------------------------------------------------
-
-        median_total_price = None
-
-
-        if total_prices:
-
-            median_total_price = round(
-
-                statistics.median(
-                    total_prices
-                )
-
+        prices =
+            sales_info.get(
+                "prices",
+                []
             )
 
 
-        # ----------------------------------------------------
-        # 平均租金
-        # ----------------------------------------------------
-
-        average_rent = None
-
-
-        if rents:
-
-            average_rent = round(
-
-                statistics.mean(
-                    rents
-                )
-
+        price_per_ping =
+            sales_info.get(
+                "price_per_ping",
+                []
             )
 
 
-        # ----------------------------------------------------
-        # 所得
-        # ----------------------------------------------------
-
-        city = item["city"]
-
-
-        income_info = (
-            income_data.get(city)
-        )
-
-
-        annual_disposable_income = None
-
-        income_year = None
-
-        price_income_ratio = None
-
-
-        if income_info:
-
-            annual_disposable_income = (
-                income_info["income"]
+        rent_values =
+            rents.get(
+                (city, district),
+                []
             )
 
 
-            income_year = (
-                income_info["year"]
-            )
-
-
-            # ------------------------------------------------
-            # 房價 / 所得
-            #
-            # 中位數房屋總價
-            # ÷
-            # 年平均每戶可支配所得
-            # ------------------------------------------------
-
-            if (
-
-                median_total_price is not None
-
-                and
-
-                annual_disposable_income is not None
-
-                and
-
-                annual_disposable_income > 0
-
-            ):
-
-                price_income_ratio = round(
-
-                    median_total_price
-                    /
-                    annual_disposable_income,
-
-                    2
-
-                )
-
-
-        # ----------------------------------------------------
-        # 如果完全沒有房價與租金
-        # 就不輸出
-        # ----------------------------------------------------
-
-        if (
-
-            median_price is None
-
-            and
-
-            average_rent is None
-
-        ):
+        if not prices:
 
             continue
 
 
-        # ----------------------------------------------------
-        # 輸出
-        # ----------------------------------------------------
+        median_total_price =
+            median(
+                prices
+            )
 
-        output.append({
+
+        median_price_per_ping =
+            median(
+                price_per_ping
+            ) if price_per_ping else None
+
+
+        average_monthly_rent = (
+            sum(rent_values) /
+            len(rent_values)
+            if rent_values
+            else None
+        )
+
+
+        annual_income =
+            income_map.get(
+                city
+            )
+
+
+        price_income_ratio = None
+
+
+        if (
+            annual_income
+            and annual_income > 0
+        ):
+
+            price_income_ratio = (
+                median_total_price /
+                annual_income
+            )
+
+
+        item = {
 
             "city":
                 city,
 
             "district":
-                item["district"],
-
-            "median_price_per_ping":
-                median_price,
+                district,
 
             "median_total_price":
-                median_total_price,
+                round(
+                    median_total_price,
+                    0
+                ),
+
+            "median_price_per_ping":
+                round(
+                    median_price_per_ping,
+                    0
+                )
+                if median_price_per_ping
+                else None,
 
             "average_monthly_rent":
-                average_rent,
+                round(
+                    average_monthly_rent,
+                    0
+                )
+                if average_monthly_rent
+                else None,
 
             "annual_disposable_income":
-                annual_disposable_income,
+                round(
+                    annual_income,
+                    0
+                )
+                if annual_income
+                else None,
 
             "income_year":
                 income_year,
 
             "price_income_ratio":
-                price_income_ratio,
+                round(
+                    price_income_ratio,
+                    2
+                )
+                if price_income_ratio
+                else None,
+        }
 
-        })
 
-
-    # ========================================================
-    # 排序
-    # ========================================================
-
-    output.sort(
-
-        key=lambda x: (
-
-            x["city"],
-
-            x["district"]
-
+        output.append(
+            item
         )
 
-    )
-
 
     # ========================================================
-    # 寫入 JSON
+    # 寫 JSON
     # ========================================================
 
     with open(
-
         OUTPUT_FILE,
-
         "w",
-
         encoding="utf-8"
-
     ) as f:
 
         json.dump(
-
             output,
-
             f,
-
             ensure_ascii=False,
-
             indent=2
-
         )
 
-
-    # ========================================================
-    # 統計
-    # ========================================================
-
-    price_count = sum(
-
-        1
-
-        for item in output
-
-        if (
-
-            item[
-                "median_price_per_ping"
-            ]
-
-            is not None
-
-        )
-
-    )
-
-
-    total_price_count = sum(
-
-        1
-
-        for item in output
-
-        if (
-
-            item[
-                "median_total_price"
-            ]
-
-            is not None
-
-        )
-
-    )
-
-
-    rent_count = sum(
-
-        1
-
-        for item in output
-
-        if (
-
-            item[
-                "average_monthly_rent"
-            ]
-
-            is not None
-
-        )
-
-    )
-
-
-    ratio_count = sum(
-
-        1
-
-        for item in output
-
-        if (
-
-            item[
-                "price_income_ratio"
-            ]
-
-            is not None
-
-        )
-
-    )
-
-
-    # ========================================================
-    # 完成
-    # ========================================================
 
     print()
-    print("=" * 70)
-    print("完成！")
-    print("=" * 70)
-
+    print(
+        "========================================"
+    )
 
     print(
-        f"行政區資料筆數："
-        f"{len(output)}"
+        f"完成：{OUTPUT_FILE}"
+    )
+
+    print(
+        f"資料筆數：{len(output)}"
+    )
+
+    print(
+        "========================================"
     )
 
 
-    print(
-        f"有房價資料："
-        f"{price_count}"
+    # ========================================================
+    # 檢查行政區
+    # ========================================================
+
+    cities = defaultdict(
+        list
     )
 
 
-    print(
-        f"有房屋總價資料："
-        f"{total_price_count}"
-    )
+    for item in output:
+
+        cities[
+            item["city"]
+        ].append(
+            item["district"]
+        )
 
 
-    print(
-        f"有租金資料："
-        f"{rent_count}"
-    )
+    for city in sorted(cities):
 
-
-    print(
-        f"有房價所得比："
-        f"{ratio_count}"
-    )
-
-
-    print(
-        f"輸出："
-        f"{OUTPUT_FILE}"
-    )
-
-
-    print("=" * 70)
+        print(
+            f"{city}："
+            f"{len(cities[city])} 個行政區"
+        )
 
 
 # ============================================================
-# 執行
+# Main
 # ============================================================
 
 if __name__ == "__main__":
 
-    main()
+    build_output()
