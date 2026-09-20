@@ -1,13 +1,18 @@
 // ========================================
-// 台灣行政區房價、租金與所得
+// 台灣買房租屋比較網
+// housing.js
 // ========================================
 
 const DATA_URL =
-    "data/taiwan_housing.json?v=9";
+    "data/taiwan_housing.json?v=10";
 
 const MAP_URL =
     "https://cdn.jsdelivr.net/npm/taiwan-atlas@2021.9.20/counties-10t.json";
 
+
+// ========================================
+// 排除離島
+// ========================================
 
 const EXCLUDED = new Set([
     "澎湖縣",
@@ -16,15 +21,21 @@ const EXCLUDED = new Set([
 ]);
 
 
+// ========================================
+// 全域變數
+// ========================================
+
 let housingData = [];
 
 let mapTopology = null;
 
 let selectedCityName = "台北市";
 
+let resizeTimer = null;
+
 
 // ========================================
-// 名稱統一
+// 統一縣市名稱
 // ========================================
 
 function normalizeCityName(name) {
@@ -125,7 +136,7 @@ function formatRatio(value) {
 
 
 // ========================================
-// 40 年租屋 / 買房
+// 40 年買房 / 租屋簡單比較
 // ========================================
 
 function getRecommendation(
@@ -138,6 +149,7 @@ function getRecommendation(
 
     const rent =
         Number(monthlyRent);
+
 
     if (
         !Number.isFinite(price) ||
@@ -227,14 +239,12 @@ async function loadHousingData() {
     }
 
 
-    housingData =
+    const data =
         await response.json();
 
 
     if (
-        !Array.isArray(
-            housingData
-        )
+        !Array.isArray(data)
     ) {
 
         throw new Error(
@@ -243,43 +253,30 @@ async function loadHousingData() {
     }
 
 
+    housingData = data;
+
+
     console.log(
         "房價資料載入完成：",
         housingData
     );
 
 
-    // 顯示目前資料筆數
     console.log(
         `共有 ${housingData.length} 筆行政區資料`
     );
 
 
-    renderTable(
-        "台北市"
-    );
+    // 預設台北市
+    renderTable("台北市");
 }
 
 
 // ========================================
-// 載入地圖
+// 載入地圖資料
 // ========================================
 
 async function loadMap() {
-
-    const container =
-        document.getElementById(
-            "taiwanMap"
-        );
-
-
-    if (!container) {
-
-        throw new Error(
-            "找不到 #taiwanMap"
-        );
-    }
-
 
     const response =
         await fetch(
@@ -307,10 +304,15 @@ async function loadMap() {
 
 
 // ========================================
-// 畫地圖
+// 取得地圖 SVG
+//
+// 你的 index.html 已經有：
+// <svg id="taiwanMap"></svg>
+//
+// 所以這裡絕對不能再建立第二個 SVG。
 // ========================================
 
-function drawMap() {
+function getMapSvg() {
 
     const container =
         document.getElementById(
@@ -319,44 +321,83 @@ function drawMap() {
 
 
     if (!container) {
+
+        throw new Error(
+            "找不到 #taiwanMap"
+        );
+    }
+
+
+    const svg =
+        d3.select(container);
+
+
+    // 確保是 SVG
+    if (
+        container.tagName.toLowerCase()
+        !== "svg"
+    ) {
+
+        throw new Error(
+            "#taiwanMap 必須是 SVG"
+        );
+    }
+
+
+    return {
+        element: container,
+        selection: svg
+    };
+}
+
+
+// ========================================
+// 建立地圖
+// ========================================
+
+function drawMap() {
+
+    if (!mapTopology) {
         return;
     }
 
 
-    container.innerHTML = "";
+    const {
+        element,
+        selection: svg
+    } = getMapSvg();
 
 
+    // 清空舊地圖
+    svg.selectAll("*").remove();
+
+
+    // 實際尺寸
     const width =
-        container.clientWidth ||
+        element.clientWidth ||
         1000;
 
 
     const height =
-        container.clientHeight ||
+        element.clientHeight ||
         380;
 
 
-    const svg =
-        d3
-            .select(container)
-            .append("svg")
-            .attr(
-                "width",
-                "100%"
-            )
-            .attr(
-                "height",
-                "100%"
-            )
-            .attr(
-                "viewBox",
-                `0 0 ${width} ${height}`
-            )
-            .attr(
-                "preserveAspectRatio",
-                "xMidYMid meet"
-            );
+    // 修正 SVG ViewBox
+    svg
+        .attr(
+            "viewBox",
+            `0 0 ${width} ${height}`
+        )
+        .attr(
+            "preserveAspectRatio",
+            "xMidYMid meet"
+        );
 
+
+    // ====================================
+    // 取得縣市
+    // ====================================
 
     const counties =
         topojson.feature(
@@ -365,15 +406,21 @@ function drawMap() {
         );
 
 
+    // ====================================
+    // 只保留台灣本島
+    // ====================================
+
     const taiwanCounties =
         counties.features.filter(
             feature => {
 
                 const city =
                     normalizeCityName(
-                        feature.properties
+                        feature
+                            .properties
                             ?.COUNTYNAME
                     );
+
 
                 return !EXCLUDED.has(
                     city
@@ -382,21 +429,46 @@ function drawMap() {
         );
 
 
+    if (
+        taiwanCounties.length === 0
+    ) {
+
+        throw new Error(
+            "找不到台灣本島縣市地圖資料"
+        );
+    }
+
+
+    // ====================================
+    // GeoJSON FeatureCollection
+    // ====================================
+
+    const mainlandFeatureCollection = {
+        type: "FeatureCollection",
+        features: taiwanCounties
+    };
+
+
+    // ====================================
+    // 地圖投影
+    //
+    // 重要：
+    // 只對台灣本島 fit，
+    // 不讓澎湖、金門、連江把台灣縮小。
+    // ====================================
+
     const projection =
         d3
             .geoMercator()
-            .fitSize(
+            .fitExtent(
                 [
-                    width - 60,
-                    height - 30
+                    [20, 10],
+                    [
+                        width - 20,
+                        height - 10
+                    ]
                 ],
-                {
-                    type:
-                        "FeatureCollection",
-
-                    features:
-                        taiwanCounties
-                }
+                mainlandFeatureCollection
             );
 
 
@@ -408,9 +480,17 @@ function drawMap() {
             );
 
 
+    // ====================================
+    // 地圖群組
+    // ====================================
+
     const mapGroup =
         svg
-            .append("g");
+            .append("g")
+            .attr(
+                "class",
+                "taiwan-map-group"
+            );
 
 
     // ====================================
@@ -419,7 +499,9 @@ function drawMap() {
 
     const countyPaths =
         mapGroup
-            .selectAll(".county")
+            .selectAll(
+                ".county"
+            )
             .data(
                 taiwanCounties
             )
@@ -428,7 +510,6 @@ function drawMap() {
 
 
     countyPaths
-
         .attr(
             "class",
             "county"
@@ -450,7 +531,20 @@ function drawMap() {
 
         .attr(
             "fill",
-            "#e8edf2"
+            d => {
+
+                const city =
+                    normalizeCityName(
+                        d.properties
+                            ?.COUNTYNAME
+                    );
+
+
+                return city ===
+                    selectedCityName
+                    ? "#2563eb"
+                    : "#dbeafe";
+            }
         )
 
         .attr(
@@ -460,7 +554,20 @@ function drawMap() {
 
         .attr(
             "stroke-width",
-            1.5
+            d => {
+
+                const city =
+                    normalizeCityName(
+                        d.properties
+                            ?.COUNTYNAME
+                    );
+
+
+                return city ===
+                    selectedCityName
+                    ? 2
+                    : 1.2;
+            }
         )
 
         .style(
@@ -485,12 +592,10 @@ function drawMap() {
 
 
             d3.select(this)
-
                 .attr(
                     "fill",
                     "#3b82f6"
                 )
-
                 .attr(
                     "stroke-width",
                     2
@@ -543,12 +648,10 @@ function drawMap() {
             ) {
 
                 d3.select(this)
-
                     .attr(
                         "fill",
                         "#2563eb"
                     )
-
                     .attr(
                         "stroke-width",
                         2
@@ -557,15 +660,13 @@ function drawMap() {
             } else {
 
                 d3.select(this)
-
                     .attr(
                         "fill",
-                        "#e8edf2"
+                        "#dbeafe"
                     )
-
                     .attr(
                         "stroke-width",
-                        1.5
+                        1.2
                     );
             }
 
@@ -576,7 +677,7 @@ function drawMap() {
 
 
     // ====================================
-    // 點擊
+    // 點擊縣市
     // ====================================
 
     countyPaths.on(
@@ -602,17 +703,13 @@ function drawMap() {
     // ====================================
 
     mapGroup
-
         .selectAll(
             ".county-label"
         )
-
         .data(
             taiwanCounties
         )
-
         .enter()
-
         .append("text")
 
         .attr(
@@ -626,6 +723,7 @@ function drawMap() {
 
                 const centroid =
                     path.centroid(d);
+
 
                 return `
                     translate(
@@ -675,9 +773,8 @@ function drawMap() {
         );
 
 
-    // 預設台北
-    selectCity(
-        "台北市"
+    console.log(
+        "台灣地圖繪製完成"
     );
 }
 
@@ -686,20 +783,85 @@ function drawMap() {
 // Tooltip
 // ========================================
 
+function getTooltipElement() {
+
+    let tooltip =
+        document.getElementById(
+            "mapTooltip"
+        );
+
+
+    // 如果 index.html 沒有 tooltip，
+    // 自動建立一個。
+    if (!tooltip) {
+
+        tooltip =
+            document.createElement(
+                "div"
+            );
+
+
+        tooltip.id =
+            "mapTooltip";
+
+
+        tooltip.style.position =
+            "fixed";
+
+
+        tooltip.style.display =
+            "none";
+
+
+        tooltip.style.zIndex =
+            "9999";
+
+
+        tooltip.style.padding =
+            "8px 12px";
+
+
+        tooltip.style.background =
+            "rgba(17, 24, 39, 0.92)";
+
+
+        tooltip.style.color =
+            "#ffffff";
+
+
+        tooltip.style.borderRadius =
+            "7px";
+
+
+        tooltip.style.fontSize =
+            "13px";
+
+
+        tooltip.style.pointerEvents =
+            "none";
+
+
+        tooltip.style.whiteSpace =
+            "nowrap";
+
+
+        document.body.appendChild(
+            tooltip
+        );
+    }
+
+
+    return tooltip;
+}
+
+
 function showTooltip(
     event,
     city
 ) {
 
     const tooltip =
-        document.getElementById(
-            "mapTooltip"
-        );
-
-
-    if (!tooltip) {
-        return;
-    }
+        getTooltipElement();
 
 
     tooltip.textContent =
@@ -772,17 +934,28 @@ function selectCity(
         );
 
 
+    if (!city) {
+        return;
+    }
+
+
     selectedCityName =
         city;
 
 
+    console.log(
+        "目前選擇縣市：",
+        city
+    );
+
+
     // ====================================
-    // 更新標題
+    // 更新表格標題
     // ====================================
 
     const tableTitle =
-        document.querySelector(
-            ".table-header h2"
+        document.getElementById(
+            "tableTitle"
         );
 
 
@@ -794,59 +967,52 @@ function selectCity(
 
 
     // ====================================
-    // 地圖全部恢復灰色
+    // 更新地圖顏色
     // ====================================
 
     d3.selectAll(
         ".county"
     )
-
         .attr(
             "fill",
-            "#e8edf2"
-        )
-
-        .attr(
-            "stroke-width",
-            1.5
-        );
-
-
-    // ====================================
-    // 選中的縣市變藍
-    // ====================================
-
-    d3.selectAll(
-        ".county"
-    )
-
-        .filter(
             function() {
 
-                return (
+                const mapCity =
                     normalizeCityName(
                         d3.select(this)
                             .attr(
                                 "data-city"
                             )
-                    ) === city
-                );
+                    );
+
+
+                return mapCity === city
+                    ? "#2563eb"
+                    : "#dbeafe";
             }
         )
-
-        .attr(
-            "fill",
-            "#2563eb"
-        )
-
         .attr(
             "stroke-width",
-            2
+            function() {
+
+                const mapCity =
+                    normalizeCityName(
+                        d3.select(this)
+                            .attr(
+                                "data-city"
+                            )
+                    );
+
+
+                return mapCity === city
+                    ? 2
+                    : 1.2;
+            }
         );
 
 
     // ====================================
-    // 更新行政區表格
+    // 更新表格
     // ====================================
 
     renderTable(
@@ -863,13 +1029,26 @@ function renderTable(
     selectedCity = "台北市"
 ) {
 
+    // ====================================
+    // 你的 index.html 是：
+    //
+    // <tbody id="housingTableBody">
+    //
+    // 所以直接找這個 ID。
+    // ====================================
+
     const tbody =
-        document.querySelector(
-            "#housingTable tbody"
+        document.getElementById(
+            "housingTableBody"
         );
 
 
     if (!tbody) {
+
+        console.error(
+            "找不到 #housingTableBody"
+        );
+
         return;
     }
 
@@ -884,24 +1063,23 @@ function renderTable(
 
 
     // ====================================
-    // 非常重要：
+    // city 篩選
     //
-    // city 用來篩選縣市
-    // district 用來顯示行政區
+    // district 顯示行政區
     // ====================================
 
     const rows =
         housingData.filter(
             row => {
 
-                const city =
+                const rowCity =
                     normalizeCityName(
                         row.city
                     );
 
 
                 return (
-                    city ===
+                    rowCity ===
                     normalizedCity
                 );
             }
@@ -915,7 +1093,7 @@ function renderTable(
 
 
     // ====================================
-    // 排序
+    // 行政區排序
     // ====================================
 
     rows.sort(
@@ -925,6 +1103,7 @@ function renderTable(
                 String(
                     a.district || ""
                 );
+
 
             const districtB =
                 String(
@@ -941,49 +1120,34 @@ function renderTable(
 
 
     // ====================================
-    // 建立每一列
+    // 建立表格
     // ====================================
 
     rows.forEach(
         row => {
 
-            // ----------------------------
-            // 真正的行政區
-            // ----------------------------
-
+            // 行政區
             const district =
                 row.district ||
                 "—";
 
 
-            // ----------------------------
-            // 房價
-            // ----------------------------
-
+            // 中位數房價
             const medianPrice =
                 row.median_total_price;
 
 
-            // ----------------------------
-            // 租金
-            // ----------------------------
-
+            // 平均租金
             const rent =
                 row.average_monthly_rent;
 
 
-            // ----------------------------
             // 房價所得比
-            // ----------------------------
-
             const ratio =
                 row.price_income_ratio;
 
 
-            // ----------------------------
             // 建議
-            // ----------------------------
-
             const recommendation =
                 getRecommendation(
                     medianPrice,
@@ -1015,7 +1179,7 @@ function renderTable(
                         rent !== undefined
                             ? formatNumber(
                                 rent
-                              ) + " 元"
+                            ) + " 元"
                             : "—"
                     }
                 </td>
@@ -1027,13 +1191,9 @@ function renderTable(
                 </td>
 
                 <td
-                    class="${
-                        recommendation.className
-                    }"
+                    class="${recommendation.className}"
                 >
-                    ${
-                        recommendation.text
-                    }
+                    ${recommendation.text}
                 </td>
 
             `;
@@ -1086,7 +1246,7 @@ function renderTable(
 
 
 // ========================================
-// 錯誤畫面
+// 地圖錯誤
 // ========================================
 
 function showMapError(
@@ -1104,46 +1264,86 @@ function showMapError(
     }
 
 
-    container.innerHTML = `
+    // SVG 裡面不能直接塞 div，
+    // 所以用 SVG text 顯示錯誤。
 
-        <div style="
-            height:100%;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            text-align:center;
-            padding:30px;
-        ">
+    const svg =
+        d3.select(
+            container
+        );
 
-            <div>
 
-                <div style="
-                    font-size:40px;
-                    margin-bottom:12px;
-                ">
-                    ⚠️
-                </div>
+    svg.selectAll("*")
+        .remove();
 
-                <div style="
-                    font-size:18px;
-                    font-weight:700;
-                    margin-bottom:8px;
-                ">
-                    地圖載入失敗
-                </div>
 
-                <div style="
-                    color:#6b7280;
-                    font-size:13px;
-                ">
-                    ${message}
-                </div>
+    const width =
+        container.clientWidth ||
+        1000;
 
-            </div>
 
-        </div>
+    const height =
+        container.clientHeight ||
+        380;
 
-    `;
+
+    svg
+        .attr(
+            "viewBox",
+            `0 0 ${width} ${height}`
+        );
+
+
+    svg.append("text")
+        .attr(
+            "x",
+            width / 2
+        )
+        .attr(
+            "y",
+            height / 2 - 10
+        )
+        .attr(
+            "text-anchor",
+            "middle"
+        )
+        .style(
+            "font-size",
+            "18px"
+        )
+        .style(
+            "font-weight",
+            "700"
+        )
+        .text(
+            "地圖載入失敗"
+        );
+
+
+    svg.append("text")
+        .attr(
+            "x",
+            width / 2
+        )
+        .attr(
+            "y",
+            height / 2 + 20
+        )
+        .attr(
+            "text-anchor",
+            "middle"
+        )
+        .style(
+            "font-size",
+            "13px"
+        )
+        .style(
+            "fill",
+            "#6b7280"
+        )
+        .text(
+            message
+        );
 }
 
 
@@ -1153,37 +1353,83 @@ function showMapError(
 
 async function init() {
 
+    console.log(
+        "台灣買房租屋比較網開始啟動"
+    );
+
+
+    // ====================================
+    // 房價資料
+    // ====================================
+
     try {
 
-        console.log(
-            "My Housing 開始啟動"
-        );
-
-
         await loadHousingData();
-
-
-        await loadMap();
-
-
-        console.log(
-            "My Housing 啟動完成"
-        );
-
 
     } catch (error) {
 
         console.error(
-            "My Housing 啟動失敗：",
+            "房價資料載入失敗：",
+            error
+        );
+
+
+        const tbody =
+            document.getElementById(
+                "housingTableBody"
+            );
+
+
+        if (tbody) {
+
+            tbody.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="5"
+                        style="
+                            text-align:center;
+                            padding:30px;
+                            color:#dc2626;
+                        "
+                    >
+                        房價資料載入失敗
+                    </td>
+
+                </tr>
+
+            `;
+        }
+    }
+
+
+    // ====================================
+    // 地圖
+    // ====================================
+
+    try {
+
+        await loadMap();
+
+    } catch (error) {
+
+        console.error(
+            "地圖載入失敗：",
             error
         );
 
 
         showMapError(
             error.message ||
-            "請開啟 F12 查看錯誤"
+            "請重新整理網頁"
         );
     }
+
+
+    console.log(
+        "台灣買房租屋比較網啟動完成"
+    );
 }
 
 
@@ -1200,9 +1446,6 @@ document.addEventListener(
 // ========================================
 // 視窗縮放
 // ========================================
-
-let resizeTimer = null;
-
 
 window.addEventListener(
     "resize",
