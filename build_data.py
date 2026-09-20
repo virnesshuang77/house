@@ -19,6 +19,32 @@ PING_PER_SQM = 3.305785
 
 # ============================================================
 # 台灣縣市代碼
+#
+# A 台北市
+# B 台中市
+# C 基隆市
+# D 台南市
+# E 高雄市
+# F 新北市
+# G 宜蘭縣
+# H 桃園市
+# I 嘉義市
+# J 新竹縣
+# K 苗栗縣
+# M 南投縣
+# N 彰化縣
+# O 新竹市
+# P 雲林縣
+# Q 嘉義縣
+# T 屏東縣
+# U 花蓮縣
+# V 台東縣
+#
+# W 金門
+# X 澎湖
+# Z 連江
+#
+# 本專案只保留台灣本島
 # ============================================================
 
 CITY_CODES = {
@@ -47,7 +73,7 @@ CITY_CODES = {
 
 
 # ============================================================
-# 主計總處
+# 主計總處官方資料
 #
 # Dataset 9415
 # 家庭收支調查-平均每戶可支配所得按區域別分
@@ -58,7 +84,17 @@ INCOME_DATASET_URL = (
 )
 
 
+# ============================================================
 # 主計總處 CSV
+#
+# 注意：
+# GitHub Actions 上 curl 驗證此政府網站 SSL 時會失敗，
+# 因此下面 curl 使用 -k。
+#
+# -k 只用於下載這個官方 CSV，
+# 不影響後續資料解析。
+# ============================================================
+
 INCOME_CSV_URL = (
     "https://ws.dgbas.gov.tw/001/Upload/461/relfile/11525/"
     "232214/006-%E5%B9%B3%E5%9D%87%E6%AF%8F%E6%88%B6%E5%8F%AF%E6%94%AF%E9%85%8D"
@@ -67,7 +103,10 @@ INCOME_CSV_URL = (
 
 
 # ============================================================
-# 主計總處縣市欄位
+# 主計總處 CSV 欄位
+#
+# 主計總處使用「臺」
+# 本網站統一使用「台」
 # ============================================================
 
 INCOME_CITY_FIELDS = {
@@ -116,9 +155,11 @@ def clean_number(value):
     value = value.replace("　", "")
 
     try:
+
         return float(value)
 
     except ValueError:
+
         return None
 
 
@@ -237,7 +278,7 @@ def read_csv_file(filepath):
 
 
 # ============================================================
-# 判斷是否為住宅
+# 判斷是不是住宅
 # ============================================================
 
 def is_residential(row):
@@ -246,13 +287,16 @@ def is_residential(row):
         row.get("建物型態", "")
     ).strip()
 
+
     main_use = str(
         row.get("主要用途", "")
     ).strip()
 
+
     target = str(
         row.get("交易標的", "")
     ).strip()
+
 
     text = (
         building_type
@@ -261,6 +305,11 @@ def is_residential(row):
         + " "
         + target
     )
+
+
+    # --------------------------------------------------------
+    # 排除非住宅
+    # --------------------------------------------------------
 
     excluded_keywords = [
 
@@ -277,6 +326,7 @@ def is_residential(row):
 
     ]
 
+
     if any(
         keyword in text
         for keyword in excluded_keywords
@@ -284,6 +334,10 @@ def is_residential(row):
 
         return False
 
+
+    # --------------------------------------------------------
+    # 住宅
+    # --------------------------------------------------------
 
     residential_keywords = [
 
@@ -296,6 +350,7 @@ def is_residential(row):
         "住宅",
 
     ]
+
 
     if any(
         keyword in text
@@ -326,6 +381,14 @@ def get_district(row):
 
 # ============================================================
 # 房屋單價
+#
+# 官方欄位：
+# 單價元平方公尺
+#
+# 轉換：
+# 元/平方公尺 × 3.305785
+# =
+# 元/坪
 # ============================================================
 
 def get_sale_unit_price(row):
@@ -337,11 +400,13 @@ def get_sale_unit_price(row):
 
     ]
 
+
     for field in fields:
 
         value = clean_number(
             row.get(field)
         )
+
 
         if (
             value is not None
@@ -368,11 +433,13 @@ def get_total_price(row):
 
     ]
 
+
     for field in fields:
 
         value = clean_number(
             row.get(field)
         )
+
 
         if (
             value is not None
@@ -400,11 +467,13 @@ def get_rent_value(row):
 
     ]
 
+
     for field in fields:
 
         value = clean_number(
             row.get(field)
         )
+
 
         if (
             value is not None
@@ -421,11 +490,15 @@ def get_rent_value(row):
 # 處理買賣
 # ============================================================
 
-def process_sale_file(filepath, result):
+def process_sale_file(
+    filepath,
+    result
+):
 
     city = detect_city_from_filename(
         filepath.name
     )
+
 
     if not city:
 
@@ -440,13 +513,15 @@ def process_sale_file(filepath, result):
         filepath
     )
 
+
     if not headers:
 
         return
 
 
     print(
-        f"處理買賣：{filepath.name} -> {city}"
+        f"處理買賣："
+        f"{filepath.name} -> {city}"
     )
 
 
@@ -462,6 +537,7 @@ def process_sale_file(filepath, result):
 
         district = get_district(row)
 
+
         if not district:
 
             continue
@@ -470,6 +546,7 @@ def process_sale_file(filepath, result):
         unit_price = get_sale_unit_price(
             row
         )
+
 
         if unit_price is None:
 
@@ -538,11 +615,15 @@ def process_sale_file(filepath, result):
 # 處理租賃
 # ============================================================
 
-def process_rent_file(filepath, result):
+def process_rent_file(
+    filepath,
+    result
+):
 
     city = detect_city_from_filename(
         filepath.name
     )
+
 
     if not city:
 
@@ -557,13 +638,15 @@ def process_rent_file(filepath, result):
         filepath
     )
 
+
     if not headers:
 
         return
 
 
     print(
-        f"處理租賃：{filepath.name} -> {city}"
+        f"處理租賃："
+        f"{filepath.name} -> {city}"
     )
 
 
@@ -579,6 +662,7 @@ def process_rent_file(filepath, result):
 
         district = get_district(row)
 
+
         if not district:
 
             continue
@@ -587,6 +671,7 @@ def process_rent_file(filepath, result):
         rent = get_rent_value(
             row
         )
+
 
         if rent is None:
 
@@ -636,11 +721,11 @@ def process_rent_file(filepath, result):
 # ============================================================
 # 下載主計總處 CSV
 #
-# 重要：
-# 不再使用 Python urllib
+# 使用 curl
 #
-# 改用 GitHub Runner 上的 curl
-# 避免 urllib SSL CERTIFICATE_VERIFY_FAILED
+# -k：
+# 忽略該官方站點在 GitHub Runner
+# 上出現的 SSL 憑證鏈驗證問題。
 # ============================================================
 
 def download_income_csv():
@@ -664,7 +749,8 @@ def download_income_csv():
 
 
     print(
-        f"資料來源：{INCOME_DATASET_URL}"
+        f"資料來源："
+        f"{INCOME_DATASET_URL}"
     )
 
 
@@ -677,7 +763,28 @@ def download_income_csv():
 
         "curl",
 
-        "-fL",
+        # ----------------------------------------------------
+        # 關鍵：
+        # 忽略 SSL 憑證驗證問題
+        # ----------------------------------------------------
+
+        "-k",
+
+        # ----------------------------------------------------
+        # 遇 HTTP error 直接失敗
+        # ----------------------------------------------------
+
+        "-f",
+
+        # ----------------------------------------------------
+        # 跟隨重新導向
+        # ----------------------------------------------------
+
+        "-L",
+
+        # ----------------------------------------------------
+        # 重試
+        # ----------------------------------------------------
 
         "--retry",
         "3",
@@ -685,17 +792,33 @@ def download_income_csv():
         "--retry-delay",
         "2",
 
+        # ----------------------------------------------------
+        # Timeout
+        # ----------------------------------------------------
+
         "--connect-timeout",
         "30",
 
         "--max-time",
         "120",
 
+        # ----------------------------------------------------
+        # User Agent
+        # ----------------------------------------------------
+
         "-A",
         "Mozilla/5.0",
 
+        # ----------------------------------------------------
+        # 輸出檔案
+        # ----------------------------------------------------
+
         "-o",
         str(income_file),
+
+        # ----------------------------------------------------
+        # URL
+        # ----------------------------------------------------
 
         INCOME_CSV_URL,
 
@@ -737,7 +860,6 @@ def download_income_csv():
             result.stderr
         )
 
-
         raise RuntimeError(
             "無法下載主計總處官方所得資料。"
         )
@@ -746,7 +868,8 @@ def download_income_csv():
     if not income_file.exists():
 
         raise RuntimeError(
-            "curl 執行完成，但所得 CSV 不存在。"
+            "curl 執行完成，"
+            "但所得 CSV 不存在。"
         )
 
 
@@ -763,12 +886,13 @@ def download_income_csv():
 
 
     print(
-        f"所得資料下載完成。"
+        "所得資料下載完成。"
     )
 
 
     print(
-        f"檔案大小：{file_size:,} bytes"
+        f"檔案大小："
+        f"{file_size:,} bytes"
     )
 
 
@@ -776,7 +900,7 @@ def download_income_csv():
 
 
 # ============================================================
-# 解析所得資料
+# 解析主計總處所得資料
 # ============================================================
 
 def load_income_data():
@@ -807,12 +931,13 @@ def load_income_data():
 
     print()
     print(
-        f"所得資料筆數：{len(rows)}"
+        f"所得資料筆數："
+        f"{len(rows)}"
     )
 
 
     # --------------------------------------------------------
-    # 找最新年度
+    # 找出最新年度
     # --------------------------------------------------------
 
     year_rows = []
@@ -852,14 +977,17 @@ def load_income_data():
     if not year_rows:
 
         raise RuntimeError(
-            "無法從所得 CSV 判斷年度。"
+            "無法從所得資料判斷年度。"
         )
 
 
     latest_year = max(
+
         year
+
         for year, row
         in year_rows
+
     )
 
 
@@ -885,8 +1013,10 @@ def load_income_data():
     latest_row = latest_rows[-1]
 
 
+    print()
     print(
-        f"最新所得年度：{latest_year}"
+        f"最新所得年度："
+        f"{latest_year}"
     )
 
 
@@ -939,11 +1069,20 @@ def load_income_data():
     )
 
 
+    # --------------------------------------------------------
+    # 防呆
+    #
+    # 台灣本島 19 個縣市
+    # 如果少太多代表資料格式可能變了
+    # --------------------------------------------------------
+
     if len(income_data) < 10:
 
         raise RuntimeError(
+
             "成功取得的縣市所得資料過少，"
             "可能是官方 CSV 欄位格式發生變化。"
+
         )
 
 
@@ -971,12 +1110,18 @@ def main():
     result = {}
 
 
-    # --------------------------------------------------------
-    # 只處理真正的主資料
+    # ========================================================
+    # 只處理真正的主要 CSV
     #
-    # 不再把 build / land / park / schema 等檔案
-    # 當成主要 CSV
-    # --------------------------------------------------------
+    # 不再把：
+    #
+    # *_build.csv
+    # *_land.csv
+    # *_park.csv
+    # schema-*.csv
+    #
+    # 當成主要資料
+    # ========================================================
 
     csv_files = []
 
@@ -1003,7 +1148,9 @@ def main():
 
     print()
     print("=" * 70)
-    print("台灣住宅房價 / 租金 / 所得資料建置")
+    print(
+        "台灣住宅房價 / 租金 / 所得資料建置"
+    )
     print("=" * 70)
 
 
@@ -1018,9 +1165,9 @@ def main():
     presale_files = 0
 
 
-    # --------------------------------------------------------
-    # 處理資料
-    # --------------------------------------------------------
+    # ========================================================
+    # 處理內政部資料
+    # ========================================================
 
     for filepath in csv_files:
 
@@ -1061,30 +1208,35 @@ def main():
 
     print()
     print(
-        f"買賣主檔：{sale_files}"
+        f"買賣主檔："
+        f"{sale_files}"
     )
+
 
     print(
-        f"租賃主檔：{rent_files}"
+        f"租賃主檔："
+        f"{rent_files}"
     )
+
 
     print(
-        f"預售屋主檔：{presale_files}"
+        f"預售屋主檔："
+        f"{presale_files}"
     )
 
 
-    # --------------------------------------------------------
+    # ========================================================
     # 取得所得
-    # --------------------------------------------------------
+    # ========================================================
 
     income_data = (
         load_income_data()
     )
 
 
-    # --------------------------------------------------------
+    # ========================================================
     # 建立 JSON
-    # --------------------------------------------------------
+    # ========================================================
 
     output = []
 
@@ -1112,7 +1264,7 @@ def main():
 
 
         # ----------------------------------------------------
-        # 中位數單價
+        # 中位數房價
         # ----------------------------------------------------
 
         median_price = None
@@ -1121,9 +1273,11 @@ def main():
         if prices:
 
             median_price = round(
+
                 statistics.median(
                     prices
                 )
+
             )
 
 
@@ -1137,9 +1291,11 @@ def main():
         if total_prices:
 
             median_total_price = round(
+
                 statistics.median(
                     total_prices
                 )
+
             )
 
 
@@ -1153,9 +1309,11 @@ def main():
         if rents:
 
             average_rent = round(
+
                 statistics.mean(
                     rents
                 )
+
             )
 
 
@@ -1193,21 +1351,30 @@ def main():
             # ------------------------------------------------
             # 房價 / 所得
             #
-            # 中位數總價
+            # 中位數房屋總價
             # ÷
             # 年平均每戶可支配所得
             # ------------------------------------------------
 
             if (
+
                 median_total_price is not None
-                and annual_disposable_income is not None
-                and annual_disposable_income > 0
+
+                and
+
+                annual_disposable_income is not None
+
+                and
+
+                annual_disposable_income > 0
+
             ):
 
                 price_income_ratio = round(
 
                     median_total_price
-                    / annual_disposable_income,
+                    /
+                    annual_disposable_income,
 
                     2
 
@@ -1215,16 +1382,26 @@ def main():
 
 
         # ----------------------------------------------------
-        # 沒有任何資料就跳過
+        # 如果完全沒有房價與租金
+        # 就不輸出
         # ----------------------------------------------------
 
         if (
+
             median_price is None
-            and average_rent is None
+
+            and
+
+            average_rent is None
+
         ):
 
             continue
 
+
+        # ----------------------------------------------------
+        # 輸出
+        # ----------------------------------------------------
 
         output.append({
 
@@ -1255,9 +1432,9 @@ def main():
         })
 
 
-    # --------------------------------------------------------
+    # ========================================================
     # 排序
-    # --------------------------------------------------------
+    # ========================================================
 
     output.sort(
 
@@ -1272,14 +1449,18 @@ def main():
     )
 
 
-    # --------------------------------------------------------
-    # 輸出 JSON
-    # --------------------------------------------------------
+    # ========================================================
+    # 寫入 JSON
+    # ========================================================
 
     with open(
+
         OUTPUT_FILE,
+
         "w",
+
         encoding="utf-8"
+
     ) as f:
 
         json.dump(
@@ -1295,9 +1476,9 @@ def main():
         )
 
 
-    # --------------------------------------------------------
+    # ========================================================
     # 統計
-    # --------------------------------------------------------
+    # ========================================================
 
     price_count = sum(
 
@@ -1306,10 +1487,13 @@ def main():
         for item in output
 
         if (
+
             item[
                 "median_price_per_ping"
             ]
+
             is not None
+
         )
 
     )
@@ -1322,10 +1506,13 @@ def main():
         for item in output
 
         if (
+
             item[
                 "median_total_price"
             ]
+
             is not None
+
         )
 
     )
@@ -1338,10 +1525,13 @@ def main():
         for item in output
 
         if (
+
             item[
                 "average_monthly_rent"
             ]
+
             is not None
+
         )
 
     )
@@ -1354,14 +1544,21 @@ def main():
         for item in output
 
         if (
+
             item[
                 "price_income_ratio"
             ]
+
             is not None
+
         )
 
     )
 
+
+    # ========================================================
+    # 完成
+    # ========================================================
 
     print()
     print("=" * 70)
