@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,14 +13,12 @@
     >
 
     <style>
-
         * {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
-
             font-family:
                 -apple-system,
                 BlinkMacSystemFont,
@@ -33,370 +29,236 @@
                 sans-serif;
 
             background: #f5f7fb;
-
             color: #1f2937;
         }
 
-
         .container {
             width: 92%;
-
             max-width: 1200px;
-
             margin: 0 auto;
         }
 
-
-        /* =========================
-           標題
-        ========================= */
-
         header {
             text-align: center;
-
-            padding:
-                35px 15px 25px;
+            padding: 35px 15px 25px;
         }
-
 
         h1 {
             margin: 0;
-
             font-size: 32px;
-
             font-weight: 700;
-
             color: #111827;
         }
-
 
         .subtitle {
             margin-top: 10px;
-
             font-size: 15px;
-
             color: #6b7280;
         }
 
-
-        /* =========================
-           區塊
-        ========================= */
-
         .section {
             background: #ffffff;
-
             border-radius: 14px;
-
             padding: 22px;
-
             margin-bottom: 22px;
-
-            box-shadow:
-                0 2px 10px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
 
-
         .section-title {
-            margin:
-                0 0 15px 0;
-
+            margin: 0 0 15px 0;
             font-size: 20px;
-
             font-weight: 700;
-
             color: #111827;
         }
 
-
-        /* =========================
-           台灣地圖
-        ========================= */
+        /* 地圖 */
 
         .map-wrapper {
             width: 100%;
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
         }
 
-
         #taiwanMap {
             width: 100%;
-
             height: 380px;
-
             display: block;
         }
 
-
         .county {
             fill: #dbeafe;
-
             stroke: #ffffff;
-
             stroke-width: 1.2px;
-
             cursor: pointer;
-
             transition:
-                fill 0.15s ease;
+                fill 0.15s ease,
+                transform 0.15s ease;
         }
-
 
         .county:hover {
             fill: #3b82f6;
         }
 
-
         .county.selected {
             fill: #2563eb;
         }
 
-
         .county-label {
             pointer-events: none;
-
             font-size: 11px;
-
             fill: #374151;
-
             text-anchor: middle;
-
             dominant-baseline: middle;
-
             font-weight: 600;
         }
 
-
-        /* =========================
-           地圖提示
-        ========================= */
+        /* 地圖提示 */
 
         #mapTooltip {
             position: fixed;
-
             display: none;
-
             z-index: 9999;
 
-            padding:
-                8px 12px;
+            padding: 8px 12px;
 
-            background:
-                rgba(17, 24, 39, 0.92);
-
+            background: rgba(17, 24, 39, 0.92);
             color: white;
 
             border-radius: 7px;
 
             font-size: 13px;
-
             pointer-events: none;
 
             white-space: nowrap;
         }
 
-
-        /* =========================
-           表格
-        ========================= */
+        /* 表格 */
 
         .table-title {
             font-size: 19px;
-
             font-weight: 700;
-
             margin-bottom: 15px;
-
             color: #111827;
         }
 
-
         .table-container {
             width: 100%;
-
             overflow-x: auto;
         }
 
-
         table {
             width: 100%;
-
             border-collapse: collapse;
-
             min-width: 650px;
         }
-
 
         thead {
             background: #eff6ff;
         }
 
-
         th {
-            padding:
-                13px 10px;
-
+            padding: 13px 10px;
             font-size: 14px;
-
             font-weight: 700;
-
             color: #1e3a8a;
-
-            border-bottom:
-                2px solid #dbeafe;
-
+            border-bottom: 2px solid #dbeafe;
             white-space: nowrap;
         }
-
 
         td {
-            padding:
-                12px 10px;
-
+            padding: 12px 10px;
             font-size: 14px;
-
             text-align: center;
-
-            border-bottom:
-                1px solid #e5e7eb;
-
+            border-bottom: 1px solid #e5e7eb;
             white-space: nowrap;
         }
-
 
         tbody tr:hover {
             background: #f8fafc;
         }
 
-
-        /* =========================
-           建議
-        ========================= */
+        /* 建議 */
 
         .recommendation-buy {
             color: #16a34a;
-
             font-weight: 700;
         }
-
 
         .recommendation-rent {
             color: #dc2626;
-
             font-weight: 700;
         }
-
 
         .recommendation-even {
             color: #6b7280;
-
             font-weight: 700;
         }
 
-
-        /* =========================
-           說明
-        ========================= */
+        /* 說明 */
 
         .notice {
             margin-top: 18px;
-
-            padding:
-                15px 17px;
+            padding: 15px 17px;
 
             background: #f9fafb;
-
-            border-left:
-                4px solid #3b82f6;
+            border-left: 4px solid #3b82f6;
 
             border-radius: 6px;
 
             font-size: 13px;
-
             line-height: 1.8;
-
             color: #6b7280;
         }
 
-
-        /* =========================
-           資料來源
-        ========================= */
+        /* 資料來源 */
 
         .sources {
             font-size: 13px;
-
             line-height: 1.8;
-
             color: #6b7280;
         }
 
-
         .sources a {
             color: #2563eb;
-
             text-decoration: none;
         }
-
 
         .sources a:hover {
             text-decoration: underline;
         }
 
-
-        /* =========================
-           瀏覽人數
-        ========================= */
+        /* 瀏覽人數 */
 
         .visitor-counter {
             margin-top: 35px;
-
             padding-top: 20px;
-
             padding-bottom: 30px;
 
-            border-top:
-                1px solid #e5e7eb;
+            border-top: 1px solid #e5e7eb;
 
             text-align: center;
 
             color: #6b7280;
-
             font-size: 13px;
         }
 
-
         .visitor-counter span {
             font-weight: 700;
-
             color: #374151;
         }
 
-
-        /* =========================
-           Footer
-        ========================= */
+        /* Footer */
 
         footer {
             text-align: center;
-
-            padding:
-                10px 15px 35px;
+            padding: 10px 15px 35px;
 
             font-size: 12px;
-
             color: #9ca3af;
         }
 
-
-        /* =========================
-           手機版
-        ========================= */
+        /* 手機 */
 
         @media (max-width: 768px) {
 
@@ -404,63 +266,45 @@
                 width: 94%;
             }
 
-
             header {
                 padding-top: 25px;
             }
-
 
             h1 {
                 font-size: 26px;
             }
 
-
             .subtitle {
                 font-size: 14px;
             }
 
-
             .section {
                 padding: 16px;
-
                 border-radius: 10px;
             }
-
 
             .section-title {
                 font-size: 18px;
             }
 
-
             #taiwanMap {
                 height: 320px;
             }
 
-
             th,
             td {
-                padding:
-                    10px 8px;
-
+                padding: 10px 8px;
                 font-size: 13px;
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         網站標題
-    ========================== -->
+    <!-- ==================== 標題 ==================== -->
 
     <header>
-
         <h1>
             台灣買房租屋比較網
         </h1>
@@ -468,16 +312,12 @@
         <div class="subtitle">
             每月2號更新資料
         </div>
-
     </header>
 
 
     <main class="container">
 
-
-        <!-- =========================
-             台灣地圖
-        ========================== -->
+        <!-- ==================== 台灣地圖 ==================== -->
 
         <section class="section">
 
@@ -486,74 +326,46 @@
             </h2>
 
             <div class="map-wrapper">
-
                 <svg
                     id="taiwanMap"
                     viewBox="0 0 800 900"
                     preserveAspectRatio="xMidYMid meet">
                 </svg>
-
             </div>
 
         </section>
 
 
-        <!-- =========================
-             房價資料表
-        ========================== -->
+        <!-- ==================== 資料表 ==================== -->
 
         <section class="section">
 
             <div
                 id="tableTitle"
                 class="table-title">
-
                 台北市住宅市場資料
-
             </div>
-
 
             <div class="table-container">
 
                 <table>
 
                     <thead>
-
                         <tr>
-
-                            <th>
-                                行政區
-                            </th>
-
-                            <th>
-                                中位數房價
-                            </th>
-
-                            <th>
-                                平均租金
-                            </th>
-
-                            <th>
-                                房價/所得
-                            </th>
-
-                            <th>
-                                建議
-                            </th>
-
+                            <th>行政區</th>
+                            <th>中位數房價</th>
+                            <th>平均租金</th>
+                            <th>房價/所得</th>
+                            <th>建議</th>
                         </tr>
-
                     </thead>
-
 
                     <tbody id="housingTableBody">
 
                         <tr>
-
                             <td colspan="5">
                                 資料載入中...
                             </td>
-
                         </tr>
 
                     </tbody>
@@ -563,29 +375,19 @@
             </div>
 
 
-            <!-- =========================
-                 40年買房租屋說明
-            ========================== -->
-
             <div class="notice">
 
-                <strong>
-                    買房／租屋比較說明：
-                </strong>
+                <strong>買房／租屋比較說明：</strong>
 
                 本網站以目前房價與平均月租金進行簡單的
-                <strong>
-                    40年買房與租屋金額比較
-                </strong>。
+                <strong>40年買房與租屋金額比較</strong>。
 
                 <br>
 
-                計算方式：
+                計算方式為：
 
                 <strong>
-                    40年租金
-                    =
-                    平均月租金 × 12 × 40
+                    40年租金 = 平均月租金 × 12 × 40
                 </strong>
 
                 <br>
@@ -605,9 +407,7 @@
         </section>
 
 
-        <!-- =========================
-             資料來源
-        ========================== -->
+        <!-- ==================== 資料來源 ==================== -->
 
         <section class="section">
 
@@ -615,63 +415,41 @@
                 資料來源
             </h2>
 
-
             <div class="sources">
 
                 <p>
-
                     房價資料：
-
                     <a
                         href="https://plvr.land.moi.gov.tw/DownloadOpenData"
                         target="_blank"
                         rel="noopener noreferrer">
-
                         內政部不動產資訊平台
-
                     </a>
-
                 </p>
 
-
                 <p>
-
                     租金資料：
-
                     <a
                         href="https://data.gov.tw/dataset/25118"
                         target="_blank"
                         rel="noopener noreferrer">
-
                         政府資料開放平台
-
                     </a>
-
                 </p>
 
-
                 <p>
-
                     所得資料：
-
                     <a
                         href="https://data.gov.tw/dataset/9415"
                         target="_blank"
                         rel="noopener noreferrer">
-
                         行政院主計總處
-
                     </a>
-
                 </p>
 
-
                 <p>
-
                     地圖資料：
-
                     Taiwan Atlas
-
                 </p>
 
             </div>
@@ -679,140 +457,100 @@
         </section>
 
 
-        <!-- =========================
-             網頁瀏覽人數
-        ========================== -->
+        <!-- ==================== 網頁瀏覽人數 ==================== -->
 
         <div class="visitor-counter">
 
             👁 網頁瀏覽人數：
-
             <span id="visitorCount">
                 載入中...
             </span>
 
         </div>
 
-
     </main>
 
 
-    <!-- =========================
-         Footer
-    ========================== -->
+    <!-- ==================== Footer ==================== -->
 
     <footer>
-
         台灣買房租屋比較網
-
     </footer>
 
 
-    <!-- =========================
-         D3
-    ========================== -->
+    <!-- ==================== D3 ==================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 
 
-    <!-- =========================
-         瀏覽人數
-    ========================== -->
+    <!-- ==================== CounterAPI ==================== -->
+
+    <script
+        async
+        src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js">
+    </script>
+
+
+    <!-- ==================== 網頁瀏覽人數 ==================== -->
 
     <script>
 
-        /*
-         * Cloudflare Worker
-         *
-         * 同一個 IP：
-         * 今天第一次進網站 → +1
-         * 今天 F5 100 次 → 不增加
-         * 明天再進 → +1
-         */
+        document.addEventListener(
+            "DOMContentLoaded",
+            async function () {
 
-        const COUNTER_API =
-            "https://sweet-darkness-6a06.virnesshuang.workers.dev/";
+                try {
+
+                    /*
+                     * 這個 workspace 名稱請保持唯一。
+                     * 建議直接使用自己的網站名稱。
+                     */
+
+                    const counter = new Counter({
+                        workspace: "virness-taiwan-housing"
+                    });
 
 
-        async function loadVisitorCount() {
+                    /*
+                     * 每次有人開啟網頁，
+                     * page-views 就 +1
+                     */
 
-            try {
+                    const result =
+                        await counter.up("page-views");
 
-                const response =
-                    await fetch(
-                        COUNTER_API,
-                        {
-                            method: "GET",
-                            cache: "no-store"
-                        }
+
+                    document.getElementById(
+                        "visitorCount"
+                    ).textContent =
+                        Number(result.value)
+                            .toLocaleString("zh-TW");
+
+                } catch (error) {
+
+                    console.error(
+                        "瀏覽人數載入失敗：",
+                        error
                     );
 
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        "Counter HTTP " +
-                        response.status
-                    );
+                    document.getElementById(
+                        "visitorCount"
+                    ).textContent = "—";
 
                 }
-
-
-                const data =
-                    await response.json();
-
-
-                if (
-                    !data.success ||
-                    typeof data.visitors !== "number"
-                ) {
-
-                    throw new Error(
-                        "Counter data invalid"
-                    );
-
-                }
-
-
-                document.getElementById(
-                    "visitorCount"
-                ).textContent =
-                    data.visitors
-                        .toLocaleString("zh-TW");
-
-
-            } catch (error) {
-
-                console.error(
-                    "瀏覽人數載入失敗：",
-                    error
-                );
-
-
-                document.getElementById(
-                    "visitorCount"
-                ).textContent =
-                    "—";
 
             }
-
-        }
-
-
-        loadVisitorCount();
+        );
 
     </script>
 
 
-    <!-- =========================
-         房價資料與地圖
-    ========================== -->
+    <!-- ==================== 房價資料 ==================== -->
 
     <script src="housing.js?v=9"></script>
 
 
 </body>
-
 </html>
