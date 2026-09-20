@@ -6,12 +6,6 @@ const count = document.getElementById("count");
 let housingData = [];
 
 
-/*
-========================================================
-格式化數字
-========================================================
-*/
-
 function formatNumber(value) {
 
     if (
@@ -25,12 +19,6 @@ function formatNumber(value) {
     return Number(value).toLocaleString("zh-TW");
 }
 
-
-/*
-========================================================
-格式化房價
-========================================================
-*/
 
 function formatPrice(value) {
 
@@ -46,12 +34,6 @@ function formatPrice(value) {
 }
 
 
-/*
-========================================================
-格式化租金
-========================================================
-*/
-
 function formatRent(value) {
 
     if (
@@ -65,12 +47,6 @@ function formatRent(value) {
     return formatNumber(value) + " 元/月";
 }
 
-
-/*
-========================================================
-格式化房價所得比
-========================================================
-*/
 
 function formatIncomeRatio(value) {
 
@@ -86,12 +62,6 @@ function formatIncomeRatio(value) {
 }
 
 
-/*
-========================================================
-建立縣市選單
-========================================================
-*/
-
 function createCitySelect() {
 
     const cities = [
@@ -100,10 +70,9 @@ function createCitySelect() {
         )
     ];
 
-    cities.sort((a, b) =>
-        a.localeCompare(b, "zh-TW")
+    cities.sort(
+        (a, b) => a.localeCompare(b, "zh-TW")
     );
-
 
     cities.forEach(city => {
 
@@ -117,15 +86,8 @@ function createCitySelect() {
         citySelect.appendChild(option);
 
     });
-
 }
 
-
-/*
-========================================================
-顯示表格
-========================================================
-*/
 
 function renderTable() {
 
@@ -162,49 +124,26 @@ function renderTable() {
         });
 
 
-    /*
-    ================================================
-    顯示筆數
-    ================================================
-    */
-
     count.textContent =
         `共 ${filteredData.length} 個行政區`;
 
 
-    /*
-    ================================================
-    沒有資料
-    ================================================
-    */
-
     if (filteredData.length === 0) {
 
         tableBody.innerHTML = `
-
             <tr>
-
                 <td
                     colspan="4"
                     class="empty"
                 >
                     找不到符合的行政區
                 </td>
-
             </tr>
-
         `;
 
         return;
-
     }
 
-
-    /*
-    ================================================
-    建立表格
-    ================================================
-    */
 
     tableBody.innerHTML =
         filteredData.map(item => {
@@ -213,43 +152,48 @@ function renderTable() {
                 `${item.city}${item.district}`;
 
 
-            return `
+            /*
+             * 租金欄位
+             *
+             * 目前 JSON：
+             * average_monthly_rent
+             *
+             * 同時支援舊名稱：
+             * average_rent
+             */
 
+            const rent =
+                item.average_monthly_rent ??
+                item.average_rent ??
+                null;
+
+
+            return `
                 <tr>
 
                     <td>
                         ${districtName}
                     </td>
 
-
                     <td class="number">
-
                         ${formatPrice(
                             item.median_price_per_ping
                         )}
-
                     </td>
 
-
                     <td class="number">
-
                         ${formatRent(
-                            item.average_monthly_rent
+                            rent
                         )}
-
                     </td>
 
-
                     <td class="number">
-
                         ${formatIncomeRatio(
                             item.price_income_ratio
                         )}
-
                     </td>
 
                 </tr>
-
             `;
 
         }).join("");
@@ -257,19 +201,17 @@ function renderTable() {
 }
 
 
-/*
-========================================================
-讀取 JSON
-========================================================
-*/
-
 async function loadHousingData() {
 
     try {
 
+        /*
+         * 加版本號避免 GitHub Pages / 瀏覽器快取舊 JS
+         */
+
         const response =
             await fetch(
-                "data/taiwan_housing.json"
+                "data/taiwan_housing.json?v=2"
             );
 
 
@@ -286,12 +228,6 @@ async function loadHousingData() {
             await response.json();
 
 
-        /*
-        ============================================
-        防止 JSON 格式錯誤
-        ============================================
-        */
-
         if (!Array.isArray(housingData)) {
 
             throw new Error(
@@ -301,20 +237,7 @@ async function loadHousingData() {
         }
 
 
-        /*
-        ============================================
-        建立縣市選單
-        ============================================
-        */
-
         createCitySelect();
-
-
-        /*
-        ============================================
-        顯示資料
-        ============================================
-        */
 
         renderTable();
 
@@ -333,18 +256,14 @@ async function loadHousingData() {
 
 
         tableBody.innerHTML = `
-
             <tr>
-
                 <td
                     colspan="4"
                     class="empty"
                 >
                     房價資料載入失敗
                 </td>
-
             </tr>
-
         `;
 
     }
@@ -352,34 +271,16 @@ async function loadHousingData() {
 }
 
 
-/*
-========================================================
-搜尋事件
-========================================================
-*/
-
 searchInput.addEventListener(
     "input",
     renderTable
 );
 
 
-/*
-========================================================
-縣市篩選事件
-========================================================
-*/
-
 citySelect.addEventListener(
     "change",
     renderTable
 );
 
-
-/*
-========================================================
-開始載入
-========================================================
-*/
 
 loadHousingData();
