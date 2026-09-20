@@ -12,13 +12,16 @@
 
     <title>台灣行政區房價、租金與所得</title>
 
+
     <style>
 
         * {
             box-sizing: border-box;
         }
 
+
         body {
+
             margin: 0;
 
             background: #f5f6f8;
@@ -59,7 +62,7 @@
 
             margin-top: 8px;
 
-            margin-bottom: 25px;
+            margin-bottom: 20px;
 
             color: #777;
 
@@ -70,56 +73,147 @@
 
 
         /* =========================
-           搜尋區
+           地圖區
         ========================= */
 
-        .toolbar {
-
-            display: flex;
-
-            gap: 10px;
-
-            flex-wrap: wrap;
-
-            margin-bottom: 12px;
-        }
-
-
-        select,
-        input {
-
-            height: 42px;
-
-            border: 1px solid #d7dbe0;
-
-            border-radius: 8px;
+        .map-section {
 
             background: white;
 
-            padding: 0 12px;
+            border: 1px solid #e2e5e9;
 
-            font-size: 15px;
+            border-radius: 12px;
 
-            outline: none;
+            padding: 20px;
+
+            margin-bottom: 15px;
         }
 
 
-        select:focus,
-        input:focus {
+        .map-title {
 
-            border-color: #999;
+            font-size: 18px;
+
+            font-weight: 600;
+
+            margin-bottom: 5px;
         }
 
 
-        select {
+        .map-hint {
 
-            min-width: 150px;
+            color: #888;
+
+            font-size: 13px;
+
+            margin-bottom: 10px;
         }
 
 
-        input {
+        #taiwanMap {
 
-            width: 260px;
+            width: 100%;
+
+            height: 560px;
+
+            position: relative;
+        }
+
+
+        #taiwanMap svg {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+        }
+
+
+        .county {
+
+            fill: #e8edf2;
+
+            stroke: #ffffff;
+
+            stroke-width: 1.5;
+
+            cursor: pointer;
+
+            transition:
+                fill 0.15s ease,
+                stroke-width 0.15s ease;
+        }
+
+
+        .county:hover {
+
+            fill: #cbd8e5;
+
+            stroke-width: 2;
+        }
+
+
+        .county.selected {
+
+            fill: #9db8d0;
+
+            stroke: #222;
+
+            stroke-width: 2;
+        }
+
+
+        /* =========================
+           地圖 Tooltip
+        ========================= */
+
+        #mapTooltip {
+
+            position: absolute;
+
+            display: none;
+
+            pointer-events: none;
+
+            background: rgba(30, 35, 40, 0.95);
+
+            color: white;
+
+            padding: 10px 14px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.15);
+
+            z-index: 10;
+        }
+
+
+        #mapTooltip strong {
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           目前選擇
+        ========================= */
+
+        .selected-city {
+
+            margin-top: 10px;
+
+            text-align: center;
+
+            font-size: 20px;
+
+            font-weight: 600;
         }
 
 
@@ -218,7 +312,7 @@
 
 
         /* =========================
-           資料說明
+           租金說明
         ========================= */
 
         .notice {
@@ -227,7 +321,7 @@
 
             padding: 14px 16px;
 
-            background: #fff;
+            background: white;
 
             border: 1px solid #e2e5e9;
 
@@ -248,7 +342,7 @@
 
 
         /* =========================
-           租屋 / 買屋分析區
+           租屋買屋
         ========================= */
 
         .analysis-section {
@@ -353,27 +447,21 @@
             }
 
 
-            .subtitle {
+            .map-section {
 
-                font-size: 14px;
+                padding: 12px;
             }
 
 
-            input {
+            #taiwanMap {
 
-                width: 100%;
+                height: 470px;
             }
 
 
-            select {
+            .selected-city {
 
-                width: 100%;
-            }
-
-
-            .analysis-section {
-
-                padding: 18px;
+                font-size: 18px;
             }
 
         }
@@ -406,25 +494,36 @@
 
 
     <!-- =========================
-         搜尋
+         台灣地圖
     ========================= -->
 
-    <div class="toolbar">
+    <div class="map-section">
 
-        <select id="citySelect">
-
-            <option value="">
-                全部縣市
-            </option>
-
-        </select>
+        <div class="map-title">
+            選擇縣市
+        </div>
 
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="搜尋行政區，例如：中壢區"
+        <div class="map-hint">
+
+            滑鼠移到縣市查看名稱，點擊即可選擇
+
+        </div>
+
+
+        <div id="taiwanMap">
+
+            <div id="mapTooltip"></div>
+
+        </div>
+
+
+        <div
+            class="selected-city"
+            id="selectedCity"
         >
+            台北市
+        </div>
 
     </div>
 
@@ -440,7 +539,7 @@
 
 
     <!-- =========================
-         房價表格
+         表格
     ========================= -->
 
     <div class="table-container">
@@ -496,7 +595,7 @@
 
 
     <!-- =========================
-         租金資料說明
+         租金說明
     ========================= -->
 
     <div class="notice">
@@ -518,7 +617,7 @@
 
 
     <!-- =========================
-         買房 / 租房分析
+         租屋 vs 買屋
     ========================= -->
 
     <div class="analysis-section">
@@ -586,6 +685,13 @@
         <br>
 
 
+        地圖：
+        台灣行政區界線資料
+
+
+        <br>
+
+
         資料會透過 GitHub Actions 定期更新。
 
     </div>
@@ -595,10 +701,24 @@
 
 
 <!-- =========================
-     JavaScript
+     D3
 ========================= -->
 
-<script src="housing.js?v=3"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+
+<!-- =========================
+     TopoJSON
+========================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+
+
+<!-- =========================
+     主要程式
+========================= -->
+
+<script src="housing.js?v=4"></script>
 
 
 </body>
