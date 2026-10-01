@@ -1,970 +1,860 @@
 [
   {
     "city": "南投縣",
-    "district": "中寮鄉",
-    "median_total_price": 4600000,
-    "median_price_per_ping": 135494,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 916281,
-    "income_year": "2025",
-    "price_income_ratio": 5.02
-  },
-  {
-    "city": "南投縣",
     "district": "南投市",
-    "median_total_price": 14490000,
-    "median_price_per_ping": 272658,
-    "average_monthly_rent": 12342,
+    "median_total_price": 15340000,
+    "median_price_per_ping": 294195,
+    "average_monthly_rent": 20200,
     "annual_disposable_income": 916281,
     "income_year": "2025",
-    "price_income_ratio": 15.81
+    "price_income_ratio": 16.74
   },
   {
     "city": "南投縣",
     "district": "名間鄉",
-    "median_total_price": 8180000,
-    "median_price_per_ping": 1341296,
+    "median_total_price": 4840000,
+    "median_price_per_ping": 119499,
     "average_monthly_rent": null,
     "annual_disposable_income": 916281,
     "income_year": "2025",
-    "price_income_ratio": 8.93
-  },
-  {
-    "city": "南投縣",
-    "district": "國姓鄉",
-    "median_total_price": 10650000,
-    "median_price_per_ping": 230851,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 916281,
-    "income_year": "2025",
-    "price_income_ratio": 11.62
+    "price_income_ratio": 5.28
   },
   {
     "city": "南投縣",
     "district": "埔里鎮",
-    "median_total_price": 10000000,
-    "median_price_per_ping": 208172,
-    "average_monthly_rent": 14933,
+    "median_total_price": 4500000,
+    "median_price_per_ping": 90245,
+    "average_monthly_rent": 14050,
     "annual_disposable_income": 916281,
     "income_year": "2025",
-    "price_income_ratio": 10.91
-  },
-  {
-    "city": "南投縣",
-    "district": "水里鄉",
-    "median_total_price": 5125000,
-    "median_price_per_ping": 106874,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 916281,
-    "income_year": "2025",
-    "price_income_ratio": 5.59
+    "price_income_ratio": 4.91
   },
   {
     "city": "南投縣",
     "district": "竹山鎮",
-    "median_total_price": 5000000,
-    "median_price_per_ping": 192231,
+    "median_total_price": 3200000,
+    "median_price_per_ping": 110192,
     "average_monthly_rent": null,
     "annual_disposable_income": 916281,
     "income_year": "2025",
-    "price_income_ratio": 5.46
+    "price_income_ratio": 3.49
   },
   {
     "city": "南投縣",
     "district": "草屯鎮",
-    "median_total_price": 9085000,
-    "median_price_per_ping": 230481,
-    "average_monthly_rent": 7997,
+    "median_total_price": 10500000,
+    "median_price_per_ping": 239170,
+    "average_monthly_rent": 8129,
     "annual_disposable_income": 916281,
     "income_year": "2025",
-    "price_income_ratio": 9.92
+    "price_income_ratio": 11.46
   },
   {
     "city": "南投縣",
-    "district": "魚池鄉",
-    "median_total_price": 9500000,
-    "median_price_per_ping": 104770,
+    "district": "集集鎮",
+    "median_total_price": 17000000,
+    "median_price_per_ping": 141498,
     "average_monthly_rent": null,
     "annual_disposable_income": 916281,
     "income_year": "2025",
-    "price_income_ratio": 10.37
+    "price_income_ratio": 18.55
   },
   {
     "city": "台中市",
     "district": "中區",
-    "median_total_price": 10880000,
-    "median_price_per_ping": 390972,
-    "average_monthly_rent": 9725,
+    "median_total_price": 7400000,
+    "median_price_per_ping": 246788,
+    "average_monthly_rent": 8767,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 8.95
+    "price_income_ratio": 6.09
   },
   {
     "city": "台中市",
     "district": "北區",
-    "median_total_price": 8450000,
-    "median_price_per_ping": 285549,
-    "average_monthly_rent": 15189,
+    "median_total_price": 7200000,
+    "median_price_per_ping": 236572,
+    "average_monthly_rent": 16442,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 6.95
+    "price_income_ratio": 5.92
   },
   {
     "city": "台中市",
     "district": "北屯區",
-    "median_total_price": 18400000,
-    "median_price_per_ping": 532059,
-    "average_monthly_rent": 17751,
+    "median_total_price": 24200000,
+    "median_price_per_ping": 544698,
+    "average_monthly_rent": 17039,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 15.13
+    "price_income_ratio": 19.9
   },
   {
     "city": "台中市",
     "district": "南區",
-    "median_total_price": 15620000,
-    "median_price_per_ping": 461831,
-    "average_monthly_rent": 14574,
+    "median_total_price": 19000000,
+    "median_price_per_ping": 424711,
+    "average_monthly_rent": 13054,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 12.84
+    "price_income_ratio": 15.62
   },
   {
     "city": "台中市",
     "district": "南屯區",
-    "median_total_price": 19980000,
-    "median_price_per_ping": 495521,
-    "average_monthly_rent": 19408,
+    "median_total_price": 16420000,
+    "median_price_per_ping": 379478,
+    "average_monthly_rent": 19855,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 16.43
+    "price_income_ratio": 13.5
   },
   {
     "city": "台中市",
     "district": "后里區",
-    "median_total_price": 8650000,
-    "median_price_per_ping": 291448,
-    "average_monthly_rent": 12000,
+    "median_total_price": 13080000,
+    "median_price_per_ping": 353650,
+    "average_monthly_rent": 10000,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 7.11
+    "price_income_ratio": 10.76
   },
   {
     "city": "台中市",
     "district": "外埔區",
-    "median_total_price": 6000000,
-    "median_price_per_ping": 132327,
-    "average_monthly_rent": 20000,
+    "median_total_price": 8080000,
+    "median_price_per_ping": 260360,
+    "average_monthly_rent": 15000,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 4.93
+    "price_income_ratio": 6.64
   },
   {
     "city": "台中市",
     "district": "大安區",
-    "median_total_price": 1800000,
-    "median_price_per_ping": 82714,
+    "median_total_price": 7900000,
+    "median_price_per_ping": 200367,
     "average_monthly_rent": null,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 1.48
+    "price_income_ratio": 6.5
   },
   {
     "city": "台中市",
     "district": "大甲區",
-    "median_total_price": 9500000,
-    "median_price_per_ping": 289534,
-    "average_monthly_rent": 12783,
+    "median_total_price": 7900000,
+    "median_price_per_ping": 224083,
+    "average_monthly_rent": 9833,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 7.81
+    "price_income_ratio": 6.5
   },
   {
     "city": "台中市",
     "district": "大肚區",
-    "median_total_price": 15180000,
-    "median_price_per_ping": 426160,
-    "average_monthly_rent": 13300,
-    "annual_disposable_income": 1216050,
-    "income_year": "2025",
-    "price_income_ratio": 12.48
-  },
-  {
-    "city": "台中市",
-    "district": "大里區",
-    "median_total_price": 9700000,
-    "median_price_per_ping": 257544,
+    "median_total_price": 5400000,
+    "median_price_per_ping": 235441,
     "average_monthly_rent": null,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 7.98
+    "price_income_ratio": 4.44
   },
   {
     "city": "台中市",
     "district": "大雅區",
-    "median_total_price": 10500000,
-    "median_price_per_ping": 293640,
-    "average_monthly_rent": 15750,
+    "median_total_price": 13000000,
+    "median_price_per_ping": 434869,
+    "average_monthly_rent": 12260,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 8.63
+    "price_income_ratio": 10.69
   },
   {
     "city": "台中市",
     "district": "太平區",
-    "median_total_price": 14750000,
-    "median_price_per_ping": 345965,
-    "average_monthly_rent": 19124,
+    "median_total_price": 15880000,
+    "median_price_per_ping": 366856,
+    "average_monthly_rent": 16898,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 12.13
+    "price_income_ratio": 13.06
   },
   {
     "city": "台中市",
     "district": "新社區",
-    "median_total_price": 17200000,
-    "median_price_per_ping": 539567,
+    "median_total_price": 8060000,
+    "median_price_per_ping": 140000,
     "average_monthly_rent": null,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 14.14
+    "price_income_ratio": 6.63
   },
   {
     "city": "台中市",
     "district": "東勢區",
-    "median_total_price": 13300000,
-    "median_price_per_ping": 252532,
-    "average_monthly_rent": null,
+    "median_total_price": 12230000,
+    "median_price_per_ping": 210012,
+    "average_monthly_rent": 10000,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 10.94
+    "price_income_ratio": 10.06
   },
   {
     "city": "台中市",
     "district": "東區",
-    "median_total_price": 15300000,
-    "median_price_per_ping": 305969,
-    "average_monthly_rent": 14574,
+    "median_total_price": 17800000,
+    "median_price_per_ping": 348050,
+    "average_monthly_rent": 15395,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 12.58
+    "price_income_ratio": 14.64
   },
   {
     "city": "台中市",
     "district": "梧棲區",
-    "median_total_price": 10900000,
-    "median_price_per_ping": 244496,
-    "average_monthly_rent": 16704,
+    "median_total_price": 8800000,
+    "median_price_per_ping": 249688,
+    "average_monthly_rent": 14580,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 8.96
+    "price_income_ratio": 7.24
   },
   {
     "city": "台中市",
     "district": "沙鹿區",
-    "median_total_price": 13375000,
-    "median_price_per_ping": 339307,
+    "median_total_price": 11340000,
+    "median_price_per_ping": 298443,
     "average_monthly_rent": null,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 11.0
-  },
-  {
-    "city": "台中市",
-    "district": "清水區",
-    "median_total_price": 9045000,
-    "median_price_per_ping": 198993,
-    "average_monthly_rent": 14948,
-    "annual_disposable_income": 1216050,
-    "income_year": "2025",
-    "price_income_ratio": 7.44
+    "price_income_ratio": 9.33
   },
   {
     "city": "台中市",
     "district": "潭子區",
-    "median_total_price": 13150000,
-    "median_price_per_ping": 309731,
-    "average_monthly_rent": 17294,
+    "median_total_price": 16690000,
+    "median_price_per_ping": 320534,
+    "average_monthly_rent": 20312,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 10.81
+    "price_income_ratio": 13.72
   },
   {
     "city": "台中市",
     "district": "烏日區",
-    "median_total_price": 17135000,
-    "median_price_per_ping": 375369,
-    "average_monthly_rent": 20211,
+    "median_total_price": 14000000,
+    "median_price_per_ping": 410757,
+    "average_monthly_rent": 18413,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 14.09
+    "price_income_ratio": 11.51
+  },
+  {
+    "city": "台中市",
+    "district": "石岡區",
+    "median_total_price": 9400000,
+    "median_price_per_ping": 171484,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1216050,
+    "income_year": "2025",
+    "price_income_ratio": 7.73
   },
   {
     "city": "台中市",
     "district": "神岡區",
-    "median_total_price": 14325000,
-    "median_price_per_ping": 351038,
-    "average_monthly_rent": 28500,
+    "median_total_price": 12000000,
+    "median_price_per_ping": 275864,
+    "average_monthly_rent": null,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 11.78
+    "price_income_ratio": 9.87
   },
   {
     "city": "台中市",
     "district": "西區",
-    "median_total_price": 22180000,
-    "median_price_per_ping": 441562,
-    "average_monthly_rent": 15922,
+    "median_total_price": 12500000,
+    "median_price_per_ping": 324995,
+    "average_monthly_rent": 13207,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 18.24
+    "price_income_ratio": 10.28
   },
   {
     "city": "台中市",
     "district": "西屯區",
-    "median_total_price": 19585000,
-    "median_price_per_ping": 599709,
-    "average_monthly_rent": 15729,
+    "median_total_price": 22800000,
+    "median_price_per_ping": 615048,
+    "average_monthly_rent": 14820,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 16.11
+    "price_income_ratio": 18.75
   },
   {
     "city": "台中市",
     "district": "豐原區",
-    "median_total_price": 12260000,
-    "median_price_per_ping": 314945,
-    "average_monthly_rent": 14687,
+    "median_total_price": 15630000,
+    "median_price_per_ping": 362982,
+    "average_monthly_rent": 11559,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 10.08
+    "price_income_ratio": 12.85
   },
   {
     "city": "台中市",
     "district": "霧峰區",
-    "median_total_price": 8380000,
-    "median_price_per_ping": 250593,
-    "average_monthly_rent": 7246,
+    "median_total_price": 8500000,
+    "median_price_per_ping": 201970,
+    "average_monthly_rent": 6944,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 6.89
+    "price_income_ratio": 6.99
   },
   {
     "city": "台中市",
     "district": "龍井區",
-    "median_total_price": 11850000,
-    "median_price_per_ping": 318800,
-    "average_monthly_rent": 10052,
+    "median_total_price": 9770000,
+    "median_price_per_ping": 339812,
+    "average_monthly_rent": null,
     "annual_disposable_income": 1216050,
     "income_year": "2025",
-    "price_income_ratio": 9.74
+    "price_income_ratio": 8.03
   },
   {
     "city": "台北市",
     "district": "中山區",
-    "median_total_price": 31300000,
-    "median_price_per_ping": 1167970,
-    "average_monthly_rent": 30817,
+    "median_total_price": 21250000,
+    "median_price_per_ping": 903709,
+    "average_monthly_rent": 30667,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 20.13
+    "price_income_ratio": 13.67
   },
   {
     "city": "台北市",
     "district": "中正區",
-    "median_total_price": 25565000,
-    "median_price_per_ping": 1050678,
-    "average_monthly_rent": 34625,
+    "median_total_price": 36800000,
+    "median_price_per_ping": 1279463,
+    "average_monthly_rent": 24512,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 16.44
+    "price_income_ratio": 23.67
   },
   {
     "city": "台北市",
     "district": "信義區",
-    "median_total_price": 23900000,
-    "median_price_per_ping": 926497,
-    "average_monthly_rent": 30717,
+    "median_total_price": 24105000,
+    "median_price_per_ping": 817246,
+    "average_monthly_rent": 32874,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 15.37
+    "price_income_ratio": 15.51
   },
   {
     "city": "台北市",
     "district": "內湖區",
-    "median_total_price": 20000000,
-    "median_price_per_ping": 672592,
-    "average_monthly_rent": 25192,
+    "median_total_price": 20500000,
+    "median_price_per_ping": 736028,
+    "average_monthly_rent": 28847,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 12.86
+    "price_income_ratio": 13.19
   },
   {
     "city": "台北市",
     "district": "北投區",
-    "median_total_price": 37080000,
-    "median_price_per_ping": 1103719,
-    "average_monthly_rent": 29157,
+    "median_total_price": 33000000,
+    "median_price_per_ping": 985696,
+    "average_monthly_rent": 27165,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 23.85
+    "price_income_ratio": 21.23
   },
   {
     "city": "台北市",
     "district": "南港區",
-    "median_total_price": 40065000,
-    "median_price_per_ping": 1106691,
-    "average_monthly_rent": 23824,
+    "median_total_price": 31600000,
+    "median_price_per_ping": 1114952,
+    "average_monthly_rent": 28406,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 25.77
+    "price_income_ratio": 20.33
   },
   {
     "city": "台北市",
     "district": "士林區",
-    "median_total_price": 37850000,
-    "median_price_per_ping": 871251,
-    "average_monthly_rent": 32508,
+    "median_total_price": 28880000,
+    "median_price_per_ping": 859299,
+    "average_monthly_rent": 25580,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 24.35
+    "price_income_ratio": 18.58
   },
   {
     "city": "台北市",
     "district": "大同區",
-    "median_total_price": 31845000,
-    "median_price_per_ping": 913699,
-    "average_monthly_rent": 28696,
+    "median_total_price": 23300000,
+    "median_price_per_ping": 1034403,
+    "average_monthly_rent": 33306,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 20.48
+    "price_income_ratio": 14.99
   },
   {
     "city": "台北市",
     "district": "大安區",
-    "median_total_price": 39100000,
-    "median_price_per_ping": 1293772,
-    "average_monthly_rent": 40505,
+    "median_total_price": 33580000,
+    "median_price_per_ping": 1201481,
+    "average_monthly_rent": 33109,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 25.15
+    "price_income_ratio": 21.6
   },
   {
     "city": "台北市",
     "district": "文山區",
-    "median_total_price": 26350000,
-    "median_price_per_ping": 750511,
-    "average_monthly_rent": 22286,
+    "median_total_price": 24840000,
+    "median_price_per_ping": 696104,
+    "average_monthly_rent": 19200,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 16.95
+    "price_income_ratio": 15.98
   },
   {
     "city": "台北市",
     "district": "松山區",
-    "median_total_price": 27290000,
-    "median_price_per_ping": 1091742,
-    "average_monthly_rent": 26329,
+    "median_total_price": 38280000,
+    "median_price_per_ping": 1057296,
+    "average_monthly_rent": 26074,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 17.55
+    "price_income_ratio": 24.62
   },
   {
     "city": "台北市",
     "district": "萬華區",
-    "median_total_price": 21000000,
-    "median_price_per_ping": 712152,
-    "average_monthly_rent": 22014,
+    "median_total_price": 20230000,
+    "median_price_per_ping": 715256,
+    "average_monthly_rent": 19592,
     "annual_disposable_income": 1554620,
     "income_year": "2025",
-    "price_income_ratio": 13.51
+    "price_income_ratio": 13.01
   },
   {
     "city": "台南市",
     "district": "下營區",
-    "median_total_price": 13480000,
-    "median_price_per_ping": 276063,
+    "median_total_price": 2100000,
+    "median_price_per_ping": 39266,
     "average_monthly_rent": null,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 12.9
+    "price_income_ratio": 2.01
   },
   {
     "city": "台南市",
     "district": "中西區",
-    "median_total_price": 19000000,
-    "median_price_per_ping": 464169,
-    "average_monthly_rent": 10435,
+    "median_total_price": 16150000,
+    "median_price_per_ping": 352565,
+    "average_monthly_rent": 11761,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 18.18
+    "price_income_ratio": 15.46
   },
   {
     "city": "台南市",
     "district": "仁德區",
-    "median_total_price": 9300000,
-    "median_price_per_ping": 286486,
-    "average_monthly_rent": 16232,
+    "median_total_price": 13440000,
+    "median_price_per_ping": 314021,
+    "average_monthly_rent": 15553,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 8.9
+    "price_income_ratio": 12.86
   },
   {
     "city": "台南市",
     "district": "佳里區",
-    "median_total_price": 9500000,
-    "median_price_per_ping": 194499,
-    "average_monthly_rent": 15500,
+    "median_total_price": 11940000,
+    "median_price_per_ping": 215997,
+    "average_monthly_rent": 15900,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 9.09
+    "price_income_ratio": 11.43
   },
   {
     "city": "台南市",
     "district": "六甲區",
-    "median_total_price": 8700000,
-    "median_price_per_ping": 217587,
+    "median_total_price": 8500000,
+    "median_price_per_ping": 259712,
     "average_monthly_rent": null,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 8.33
+    "price_income_ratio": 8.14
   },
   {
     "city": "台南市",
     "district": "北區",
-    "median_total_price": 8710000,
-    "median_price_per_ping": 259828,
-    "average_monthly_rent": 12944,
+    "median_total_price": 11390000,
+    "median_price_per_ping": 242716,
+    "average_monthly_rent": 14535,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 8.34
+    "price_income_ratio": 10.9
   },
   {
     "city": "台南市",
     "district": "南區",
-    "median_total_price": 10500000,
-    "median_price_per_ping": 231937,
-    "average_monthly_rent": 16389,
+    "median_total_price": 8800000,
+    "median_price_per_ping": 251739,
+    "average_monthly_rent": 14777,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 10.05
+    "price_income_ratio": 8.42
   },
   {
     "city": "台南市",
     "district": "善化區",
-    "median_total_price": 10700000,
-    "median_price_per_ping": 323858,
-    "average_monthly_rent": 15171,
+    "median_total_price": 11600000,
+    "median_price_per_ping": 286136,
+    "average_monthly_rent": 15625,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 10.24
+    "price_income_ratio": 11.1
   },
   {
     "city": "台南市",
     "district": "學甲區",
-    "median_total_price": 13000000,
-    "median_price_per_ping": 165977,
-    "average_monthly_rent": 6000,
+    "median_total_price": 1300000,
+    "median_price_per_ping": 42486,
+    "average_monthly_rent": 6750,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 12.44
+    "price_income_ratio": 1.24
   },
   {
     "city": "台南市",
     "district": "安南區",
-    "median_total_price": 12685000,
-    "median_price_per_ping": 298395,
-    "average_monthly_rent": 18422,
+    "median_total_price": 11100000,
+    "median_price_per_ping": 308628,
+    "average_monthly_rent": 18593,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 12.14
+    "price_income_ratio": 10.62
   },
   {
     "city": "台南市",
     "district": "安定區",
-    "median_total_price": 14500000,
-    "median_price_per_ping": 244965,
-    "average_monthly_rent": 13500,
+    "median_total_price": 14150000,
+    "median_price_per_ping": 235916,
+    "average_monthly_rent": 11733,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 13.88
+    "price_income_ratio": 13.54
   },
   {
     "city": "台南市",
     "district": "安平區",
-    "median_total_price": 18006428,
-    "median_price_per_ping": 286056,
-    "average_monthly_rent": 17193,
+    "median_total_price": 20493593,
+    "median_price_per_ping": 296517,
+    "average_monthly_rent": 17263,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 17.23
+    "price_income_ratio": 19.61
   },
   {
     "city": "台南市",
-    "district": "後壁區",
-    "median_total_price": 12800000,
-    "median_price_per_ping": 232354,
-    "average_monthly_rent": null,
+    "district": "官田區",
+    "median_total_price": 9800000,
+    "median_price_per_ping": 233610,
+    "average_monthly_rent": 11833,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 12.25
+    "price_income_ratio": 9.38
   },
   {
     "city": "台南市",
     "district": "新化區",
-    "median_total_price": 12450000,
-    "median_price_per_ping": 297413,
-    "average_monthly_rent": 13504,
+    "median_total_price": 7800000,
+    "median_price_per_ping": 168740,
+    "average_monthly_rent": 15000,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 11.92
+    "price_income_ratio": 7.47
   },
   {
     "city": "台南市",
     "district": "新市區",
-    "median_total_price": 7750000,
-    "median_price_per_ping": 294592,
-    "average_monthly_rent": 10882,
+    "median_total_price": 11050000,
+    "median_price_per_ping": 325841,
+    "average_monthly_rent": 10431,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 7.42
+    "price_income_ratio": 10.58
   },
   {
     "city": "台南市",
     "district": "新營區",
-    "median_total_price": 10690000,
-    "median_price_per_ping": 202962,
+    "median_total_price": 9200000,
+    "median_price_per_ping": 269421,
     "average_monthly_rent": 12807,
+    "annual_disposable_income": 1044835,
+    "income_year": "2025",
+    "price_income_ratio": 8.81
+  },
+  {
+    "city": "台南市",
+    "district": "東區",
+    "median_total_price": 16315000,
+    "median_price_per_ping": 373549,
+    "average_monthly_rent": 13572,
+    "annual_disposable_income": 1044835,
+    "income_year": "2025",
+    "price_income_ratio": 15.61
+  },
+  {
+    "city": "台南市",
+    "district": "柳營區",
+    "median_total_price": 10690000,
+    "median_price_per_ping": 229369,
+    "average_monthly_rent": 17250,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
     "price_income_ratio": 10.23
   },
   {
     "city": "台南市",
-    "district": "東區",
-    "median_total_price": 17320000,
-    "median_price_per_ping": 584555,
-    "average_monthly_rent": 14703,
+    "district": "歸仁區",
+    "median_total_price": 10785000,
+    "median_price_per_ping": 311046,
+    "average_monthly_rent": 14822,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 16.58
+    "price_income_ratio": 10.32
   },
   {
     "city": "台南市",
-    "district": "東山區",
+    "district": "永康區",
+    "median_total_price": 8680000,
+    "median_price_per_ping": 223187,
+    "average_monthly_rent": 11112,
+    "annual_disposable_income": 1044835,
+    "income_year": "2025",
+    "price_income_ratio": 8.31
+  },
+  {
+    "city": "台南市",
+    "district": "白河區",
     "median_total_price": 11800000,
-    "median_price_per_ping": 200043,
-    "average_monthly_rent": null,
+    "median_price_per_ping": 253203,
+    "average_monthly_rent": 7067,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
     "price_income_ratio": 11.29
   },
   {
     "city": "台南市",
-    "district": "柳營區",
-    "median_total_price": 19600000,
-    "median_price_per_ping": 159524,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1044835,
-    "income_year": "2025",
-    "price_income_ratio": 18.76
-  },
-  {
-    "city": "台南市",
-    "district": "楠西區",
-    "median_total_price": 650000,
-    "median_price_per_ping": 28641,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1044835,
-    "income_year": "2025",
-    "price_income_ratio": 0.62
-  },
-  {
-    "city": "台南市",
-    "district": "歸仁區",
-    "median_total_price": 9950000,
-    "median_price_per_ping": 307365,
-    "average_monthly_rent": 15500,
-    "annual_disposable_income": 1044835,
-    "income_year": "2025",
-    "price_income_ratio": 9.52
-  },
-  {
-    "city": "台南市",
-    "district": "永康區",
-    "median_total_price": 11605000,
-    "median_price_per_ping": 320347,
-    "average_monthly_rent": 12090,
-    "annual_disposable_income": 1044835,
-    "income_year": "2025",
-    "price_income_ratio": 11.11
-  },
-  {
-    "city": "台南市",
-    "district": "玉井區",
-    "median_total_price": 10605000,
-    "median_price_per_ping": 174686,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1044835,
-    "income_year": "2025",
-    "price_income_ratio": 10.15
-  },
-  {
-    "city": "台南市",
     "district": "西港區",
-    "median_total_price": 7815000,
-    "median_price_per_ping": 210818,
-    "average_monthly_rent": 15000,
+    "median_total_price": 7200000,
+    "median_price_per_ping": 182136,
+    "average_monthly_rent": null,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 7.48
+    "price_income_ratio": 6.89
   },
   {
     "city": "台南市",
     "district": "關廟區",
-    "median_total_price": 17151750,
-    "median_price_per_ping": 243107,
-    "average_monthly_rent": 16000,
+    "median_total_price": 11750000,
+    "median_price_per_ping": 249030,
+    "average_monthly_rent": 20000,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 16.42
+    "price_income_ratio": 11.25
   },
   {
     "city": "台南市",
     "district": "鹽水區",
-    "median_total_price": 11850000,
-    "median_price_per_ping": 200337,
-    "average_monthly_rent": 5500,
+    "median_total_price": 7070000,
+    "median_price_per_ping": 215779,
+    "average_monthly_rent": 8300,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 11.34
+    "price_income_ratio": 6.77
   },
   {
     "city": "台南市",
     "district": "麻豆區",
-    "median_total_price": 11890960,
-    "median_price_per_ping": 263402,
-    "average_monthly_rent": 13794,
+    "median_total_price": 6600000,
+    "median_price_per_ping": 195193,
+    "average_monthly_rent": 22825,
     "annual_disposable_income": 1044835,
     "income_year": "2025",
-    "price_income_ratio": 11.38
+    "price_income_ratio": 6.32
+  },
+  {
+    "city": "台東縣",
+    "district": "卑南鄉",
+    "median_total_price": 520000,
+    "median_price_per_ping": 37957,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 825085,
+    "income_year": "2025",
+    "price_income_ratio": 0.63
   },
   {
     "city": "台東縣",
     "district": "台東市",
-    "median_total_price": 9380000,
-    "median_price_per_ping": 252502,
-    "average_monthly_rent": 11355,
+    "median_total_price": 8567500,
+    "median_price_per_ping": 236407,
+    "average_monthly_rent": 11345,
     "annual_disposable_income": 825085,
     "income_year": "2025",
-    "price_income_ratio": 11.37
-  },
-  {
-    "city": "台東縣",
-    "district": "太麻里鄉",
-    "median_total_price": 600000,
-    "median_price_per_ping": 28221,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 825085,
-    "income_year": "2025",
-    "price_income_ratio": 0.73
-  },
-  {
-    "city": "台東縣",
-    "district": "池上鄉",
-    "median_total_price": 9250000,
-    "median_price_per_ping": 154102,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 825085,
-    "income_year": "2025",
-    "price_income_ratio": 11.21
-  },
-  {
-    "city": "台東縣",
-    "district": "關山鎮",
-    "median_total_price": 7700000,
-    "median_price_per_ping": 173587,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 825085,
-    "income_year": "2025",
-    "price_income_ratio": 9.33
-  },
-  {
-    "city": "台東縣",
-    "district": "鹿野鄉",
-    "median_total_price": 3850000,
-    "median_price_per_ping": 244426,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 825085,
-    "income_year": "2025",
-    "price_income_ratio": 4.67
+    "price_income_ratio": 10.38
   },
   {
     "city": "嘉義市",
     "district": "嘉義市",
-    "median_total_price": 9000000,
-    "median_price_per_ping": 243871,
-    "average_monthly_rent": 12104,
+    "median_total_price": 8875000,
+    "median_price_per_ping": 238261,
+    "average_monthly_rent": 12267,
     "annual_disposable_income": 1213702,
+    "income_year": "2025",
+    "price_income_ratio": 7.31
+  },
+  {
+    "city": "嘉義縣",
+    "district": "中埔鄉",
+    "median_total_price": 11300000,
+    "median_price_per_ping": 256430,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 889260,
+    "income_year": "2025",
+    "price_income_ratio": 12.71
+  },
+  {
+    "city": "嘉義縣",
+    "district": "大林鎮",
+    "median_total_price": 6600000,
+    "median_price_per_ping": 298962,
+    "average_monthly_rent": 15500,
+    "annual_disposable_income": 889260,
     "income_year": "2025",
     "price_income_ratio": 7.42
   },
   {
     "city": "嘉義縣",
-    "district": "中埔鄉",
-    "median_total_price": 6390000,
-    "median_price_per_ping": 154676,
-    "average_monthly_rent": 12267,
-    "annual_disposable_income": 889260,
-    "income_year": "2025",
-    "price_income_ratio": 7.19
-  },
-  {
-    "city": "嘉義縣",
-    "district": "大林鎮",
-    "median_total_price": 7650000,
-    "median_price_per_ping": 261408,
-    "average_monthly_rent": 9500,
-    "annual_disposable_income": 889260,
-    "income_year": "2025",
-    "price_income_ratio": 8.6
-  },
-  {
-    "city": "嘉義縣",
     "district": "太保市",
-    "median_total_price": 10460000,
-    "median_price_per_ping": 291531,
-    "average_monthly_rent": 18662,
+    "median_total_price": 15000000,
+    "median_price_per_ping": 279283,
+    "average_monthly_rent": 14773,
     "annual_disposable_income": 889260,
     "income_year": "2025",
-    "price_income_ratio": 11.76
+    "price_income_ratio": 16.87
   },
   {
     "city": "嘉義縣",
     "district": "新港鄉",
-    "median_total_price": 15300000,
-    "median_price_per_ping": 220524,
-    "average_monthly_rent": 6150,
+    "median_total_price": 12600000,
+    "median_price_per_ping": 219626,
+    "average_monthly_rent": 15700,
     "annual_disposable_income": 889260,
     "income_year": "2025",
-    "price_income_ratio": 17.21
+    "price_income_ratio": 14.17
   },
   {
     "city": "嘉義縣",
     "district": "朴子市",
-    "median_total_price": 8435000,
-    "median_price_per_ping": 295843,
-    "average_monthly_rent": 16400,
+    "median_total_price": 9750000,
+    "median_price_per_ping": 262231,
+    "average_monthly_rent": 12025,
     "annual_disposable_income": 889260,
     "income_year": "2025",
-    "price_income_ratio": 9.49
-  },
-  {
-    "city": "嘉義縣",
-    "district": "東石鄉",
-    "median_total_price": 3500000,
-    "median_price_per_ping": 64136,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 889260,
-    "income_year": "2025",
-    "price_income_ratio": 3.94
-  },
-  {
-    "city": "嘉義縣",
-    "district": "梅山鄉",
-    "median_total_price": 14683946,
-    "median_price_per_ping": 272417,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 889260,
-    "income_year": "2025",
-    "price_income_ratio": 16.51
+    "price_income_ratio": 10.96
   },
   {
     "city": "嘉義縣",
     "district": "民雄鄉",
-    "median_total_price": 13700000,
-    "median_price_per_ping": 278096,
-    "average_monthly_rent": 7400,
+    "median_total_price": 12880000,
+    "median_price_per_ping": 240512,
+    "average_monthly_rent": 10400,
     "annual_disposable_income": 889260,
     "income_year": "2025",
-    "price_income_ratio": 15.41
+    "price_income_ratio": 14.48
   },
   {
     "city": "嘉義縣",
     "district": "水上鄉",
-    "median_total_price": 17000000,
-    "median_price_per_ping": 204826,
-    "average_monthly_rent": 11500,
-    "annual_disposable_income": 889260,
-    "income_year": "2025",
-    "price_income_ratio": 19.12
-  },
-  {
-    "city": "嘉義縣",
-    "district": "溪口鄉",
-    "median_total_price": 4350000,
-    "median_price_per_ping": 94314,
+    "median_total_price": 21600000,
+    "median_price_per_ping": 355762,
     "average_monthly_rent": null,
     "annual_disposable_income": 889260,
     "income_year": "2025",
-    "price_income_ratio": 4.89
+    "price_income_ratio": 24.29
   },
   {
     "city": "嘉義縣",
     "district": "番路鄉",
-    "median_total_price": 4550000,
-    "median_price_per_ping": 132091,
+    "median_total_price": 8800000,
+    "median_price_per_ping": 98106,
     "average_monthly_rent": null,
     "annual_disposable_income": 889260,
     "income_year": "2025",
-    "price_income_ratio": 5.12
+    "price_income_ratio": 9.9
   },
   {
     "city": "嘉義縣",
     "district": "竹崎鄉",
-    "median_total_price": 7250000,
-    "median_price_per_ping": 149889,
+    "median_total_price": 4000000,
+    "median_price_per_ping": 100258,
+    "average_monthly_rent": 15000,
+    "annual_disposable_income": 889260,
+    "income_year": "2025",
+    "price_income_ratio": 4.5
+  },
+  {
+    "city": "嘉義縣",
+    "district": "義竹鄉",
+    "median_total_price": 4250000,
+    "median_price_per_ping": 104489,
     "average_monthly_rent": null,
     "annual_disposable_income": 889260,
     "income_year": "2025",
-    "price_income_ratio": 8.15
+    "price_income_ratio": 4.78
   },
   {
     "city": "嘉義縣",
     "district": "鹿草鄉",
-    "median_total_price": 16225000,
-    "median_price_per_ping": 324157,
+    "median_total_price": 14800000,
+    "median_price_per_ping": 332172,
     "average_monthly_rent": null,
     "annual_disposable_income": 889260,
     "income_year": "2025",
-    "price_income_ratio": 18.25
+    "price_income_ratio": 16.64
   },
   {
     "city": "基隆市",
     "district": "七堵區",
-    "median_total_price": 5300000,
-    "median_price_per_ping": 241018,
-    "average_monthly_rent": 14255,
+    "median_total_price": 7800000,
+    "median_price_per_ping": 254089,
+    "average_monthly_rent": 13417,
     "annual_disposable_income": 982179,
     "income_year": "2025",
-    "price_income_ratio": 5.4
+    "price_income_ratio": 7.94
   },
   {
     "city": "基隆市",
     "district": "中山區",
-    "median_total_price": 8000000,
-    "median_price_per_ping": 322433,
-    "average_monthly_rent": 12169,
+    "median_total_price": 7750000,
+    "median_price_per_ping": 283498,
+    "average_monthly_rent": 12350,
     "annual_disposable_income": 982179,
     "income_year": "2025",
-    "price_income_ratio": 8.15
+    "price_income_ratio": 7.89
   },
   {
     "city": "基隆市",
     "district": "中正區",
     "median_total_price": 5000000,
-    "median_price_per_ping": 177782,
-    "average_monthly_rent": 9279,
+    "median_price_per_ping": 164243,
+    "average_monthly_rent": 10363,
     "annual_disposable_income": 982179,
     "income_year": "2025",
     "price_income_ratio": 5.09
@@ -972,1581 +862,1571 @@
   {
     "city": "基隆市",
     "district": "仁愛區",
-    "median_total_price": 3250000,
-    "median_price_per_ping": 181975,
-    "average_monthly_rent": 13129,
+    "median_total_price": 9500000,
+    "median_price_per_ping": 254076,
+    "average_monthly_rent": 12167,
     "annual_disposable_income": 982179,
     "income_year": "2025",
-    "price_income_ratio": 3.31
+    "price_income_ratio": 9.67
   },
   {
     "city": "基隆市",
     "district": "信義區",
-    "median_total_price": 5050000,
-    "median_price_per_ping": 191537,
-    "average_monthly_rent": 12982,
+    "median_total_price": 8700000,
+    "median_price_per_ping": 214413,
+    "average_monthly_rent": 12993,
     "annual_disposable_income": 982179,
     "income_year": "2025",
-    "price_income_ratio": 5.14
+    "price_income_ratio": 8.86
   },
   {
     "city": "基隆市",
     "district": "安樂區",
-    "median_total_price": 6090000,
-    "median_price_per_ping": 186955,
-    "average_monthly_rent": 11330,
+    "median_total_price": 6375000,
+    "median_price_per_ping": 177030,
+    "average_monthly_rent": 11219,
     "annual_disposable_income": 982179,
     "income_year": "2025",
-    "price_income_ratio": 6.2
+    "price_income_ratio": 6.49
   },
   {
     "city": "基隆市",
     "district": "暖暖區",
-    "median_total_price": 9100000,
-    "median_price_per_ping": 236142,
-    "average_monthly_rent": 11800,
+    "median_total_price": 7950000,
+    "median_price_per_ping": 206221,
+    "average_monthly_rent": 11969,
     "annual_disposable_income": 982179,
     "income_year": "2025",
-    "price_income_ratio": 9.27
+    "price_income_ratio": 8.09
   },
   {
     "city": "宜蘭縣",
     "district": "三星鄉",
-    "median_total_price": 8890000,
-    "median_price_per_ping": 235083,
-    "average_monthly_rent": null,
+    "median_total_price": 12500000,
+    "median_price_per_ping": 242089,
+    "average_monthly_rent": 14000,
     "annual_disposable_income": 997168,
     "income_year": "2025",
-    "price_income_ratio": 8.92
+    "price_income_ratio": 12.54
   },
   {
     "city": "宜蘭縣",
     "district": "五結鄉",
-    "median_total_price": 10385000,
-    "median_price_per_ping": 297215,
-    "average_monthly_rent": 14233,
+    "median_total_price": 8475000,
+    "median_price_per_ping": 232271,
+    "average_monthly_rent": 12633,
     "annual_disposable_income": 997168,
     "income_year": "2025",
-    "price_income_ratio": 10.41
+    "price_income_ratio": 8.5
   },
   {
     "city": "宜蘭縣",
     "district": "冬山鄉",
-    "median_total_price": 11900000,
-    "median_price_per_ping": 218598,
-    "average_monthly_rent": 14600,
+    "median_total_price": 9265000,
+    "median_price_per_ping": 238679,
+    "average_monthly_rent": 15700,
     "annual_disposable_income": 997168,
     "income_year": "2025",
-    "price_income_ratio": 11.93
+    "price_income_ratio": 9.29
   },
   {
     "city": "宜蘭縣",
     "district": "員山鄉",
-    "median_total_price": 8100000,
-    "median_price_per_ping": 248390,
-    "average_monthly_rent": null,
+    "median_total_price": 10270000,
+    "median_price_per_ping": 235511,
+    "average_monthly_rent": 13125,
     "annual_disposable_income": 997168,
     "income_year": "2025",
-    "price_income_ratio": 8.12
+    "price_income_ratio": 10.3
   },
   {
     "city": "宜蘭縣",
     "district": "壯圍鄉",
-    "median_total_price": 8490000,
-    "median_price_per_ping": 206332,
-    "average_monthly_rent": 15000,
+    "median_total_price": 12300000,
+    "median_price_per_ping": 258198,
+    "average_monthly_rent": null,
     "annual_disposable_income": 997168,
     "income_year": "2025",
-    "price_income_ratio": 8.51
+    "price_income_ratio": 12.33
   },
   {
     "city": "宜蘭縣",
     "district": "宜蘭市",
-    "median_total_price": 12400000,
-    "median_price_per_ping": 294545,
-    "average_monthly_rent": 12398,
+    "median_total_price": 9765000,
+    "median_price_per_ping": 284159,
+    "average_monthly_rent": 11523,
     "annual_disposable_income": 997168,
     "income_year": "2025",
-    "price_income_ratio": 12.44
+    "price_income_ratio": 9.79
   },
   {
     "city": "宜蘭縣",
     "district": "礁溪鄉",
-    "median_total_price": 8015000,
-    "median_price_per_ping": 285967,
-    "average_monthly_rent": 10121,
+    "median_total_price": 6950000,
+    "median_price_per_ping": 257694,
+    "average_monthly_rent": 14160,
     "annual_disposable_income": 997168,
     "income_year": "2025",
-    "price_income_ratio": 8.04
+    "price_income_ratio": 6.97
   },
   {
     "city": "宜蘭縣",
     "district": "羅東鎮",
-    "median_total_price": 6700000,
-    "median_price_per_ping": 252783,
-    "average_monthly_rent": 13925,
+    "median_total_price": 9000000,
+    "median_price_per_ping": 220043,
+    "average_monthly_rent": 16600,
     "annual_disposable_income": 997168,
     "income_year": "2025",
-    "price_income_ratio": 6.72
+    "price_income_ratio": 9.03
   },
   {
     "city": "宜蘭縣",
     "district": "蘇澳鎮",
-    "median_total_price": 5370000,
-    "median_price_per_ping": 182813,
-    "average_monthly_rent": 14667,
+    "median_total_price": 9850000,
+    "median_price_per_ping": 215967,
+    "average_monthly_rent": 7667,
     "annual_disposable_income": 997168,
     "income_year": "2025",
-    "price_income_ratio": 5.39
+    "price_income_ratio": 9.88
   },
   {
     "city": "宜蘭縣",
     "district": "頭城鎮",
-    "median_total_price": 7500000,
-    "median_price_per_ping": 230403,
-    "average_monthly_rent": 6750,
+    "median_total_price": 8300000,
+    "median_price_per_ping": 245636,
+    "average_monthly_rent": 12950,
     "annual_disposable_income": 997168,
     "income_year": "2025",
-    "price_income_ratio": 7.52
-  },
-  {
-    "city": "屏東縣",
-    "district": "三地門鄉",
-    "median_total_price": 1280000,
-    "median_price_per_ping": 25821,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 965466,
-    "income_year": "2025",
-    "price_income_ratio": 1.33
+    "price_income_ratio": 8.32
   },
   {
     "city": "屏東縣",
     "district": "九如鄉",
-    "median_total_price": 7715000,
-    "median_price_per_ping": 236491,
-    "average_monthly_rent": 12500,
+    "median_total_price": 17500000,
+    "median_price_per_ping": 266360,
+    "average_monthly_rent": null,
     "annual_disposable_income": 965466,
     "income_year": "2025",
-    "price_income_ratio": 7.99
+    "price_income_ratio": 18.13
+  },
+  {
+    "city": "屏東縣",
+    "district": "佳冬鄉",
+    "median_total_price": 5800000,
+    "median_price_per_ping": 104902,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 965466,
+    "income_year": "2025",
+    "price_income_ratio": 6.01
   },
   {
     "city": "屏東縣",
     "district": "內埔鄉",
-    "median_total_price": 7835000,
-    "median_price_per_ping": 185764,
-    "average_monthly_rent": 5804,
+    "median_total_price": 4800000,
+    "median_price_per_ping": 126668,
+    "average_monthly_rent": 5925,
     "annual_disposable_income": 965466,
     "income_year": "2025",
-    "price_income_ratio": 8.12
+    "price_income_ratio": 4.97
   },
   {
     "city": "屏東縣",
     "district": "屏東市",
+    "median_total_price": 9100000,
+    "median_price_per_ping": 206456,
+    "average_monthly_rent": 11364,
+    "annual_disposable_income": 965466,
+    "income_year": "2025",
+    "price_income_ratio": 9.43
+  },
+  {
+    "city": "屏東縣",
+    "district": "恆春鎮",
+    "median_total_price": 19000000,
+    "median_price_per_ping": 261448,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 965466,
+    "income_year": "2025",
+    "price_income_ratio": 19.68
+  },
+  {
+    "city": "屏東縣",
+    "district": "新園鄉",
+    "median_total_price": 4050000,
+    "median_price_per_ping": 137936,
+    "average_monthly_rent": 17500,
+    "annual_disposable_income": 965466,
+    "income_year": "2025",
+    "price_income_ratio": 4.19
+  },
+  {
+    "city": "屏東縣",
+    "district": "東港鎮",
     "median_total_price": 9000000,
-    "median_price_per_ping": 288859,
-    "average_monthly_rent": 11290,
+    "median_price_per_ping": 211993,
+    "average_monthly_rent": null,
     "annual_disposable_income": 965466,
     "income_year": "2025",
     "price_income_ratio": 9.32
   },
   {
     "city": "屏東縣",
-    "district": "崁頂鄉",
-    "median_total_price": 2000000,
-    "median_price_per_ping": 57124,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 965466,
-    "income_year": "2025",
-    "price_income_ratio": 2.07
-  },
-  {
-    "city": "屏東縣",
-    "district": "恆春鎮",
-    "median_total_price": 3600000,
-    "median_price_per_ping": 188311,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 965466,
-    "income_year": "2025",
-    "price_income_ratio": 3.73
-  },
-  {
-    "city": "屏東縣",
-    "district": "新園鄉",
-    "median_total_price": 8890000,
-    "median_price_per_ping": 220496,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 965466,
-    "income_year": "2025",
-    "price_income_ratio": 9.21
-  },
-  {
-    "city": "屏東縣",
-    "district": "新埤鄉",
-    "median_total_price": 2380000,
-    "median_price_per_ping": 92119,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 965466,
-    "income_year": "2025",
-    "price_income_ratio": 2.47
-  },
-  {
-    "city": "屏東縣",
-    "district": "東港鎮",
-    "median_total_price": 9500000,
-    "median_price_per_ping": 233114,
-    "average_monthly_rent": 17000,
-    "annual_disposable_income": 965466,
-    "income_year": "2025",
-    "price_income_ratio": 9.84
-  },
-  {
-    "city": "屏東縣",
     "district": "枋寮鄉",
-    "median_total_price": 3850000,
-    "median_price_per_ping": 237929,
+    "median_total_price": 4000000,
+    "median_price_per_ping": 99957,
     "average_monthly_rent": null,
     "annual_disposable_income": 965466,
     "income_year": "2025",
-    "price_income_ratio": 3.99
-  },
-  {
-    "city": "屏東縣",
-    "district": "林邊鄉",
-    "median_total_price": 4036000,
-    "median_price_per_ping": 99845,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 965466,
-    "income_year": "2025",
-    "price_income_ratio": 4.18
+    "price_income_ratio": 4.14
   },
   {
     "city": "屏東縣",
     "district": "潮州鎮",
-    "median_total_price": 8375000,
-    "median_price_per_ping": 194850,
-    "average_monthly_rent": 15900,
+    "median_total_price": 7150000,
+    "median_price_per_ping": 234357,
+    "average_monthly_rent": 14000,
     "annual_disposable_income": 965466,
     "income_year": "2025",
-    "price_income_ratio": 8.67
-  },
-  {
-    "city": "屏東縣",
-    "district": "牡丹鄉",
-    "median_total_price": 730000,
-    "median_price_per_ping": 15051,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 965466,
-    "income_year": "2025",
-    "price_income_ratio": 0.76
-  },
-  {
-    "city": "屏東縣",
-    "district": "竹田鄉",
-    "median_total_price": 5250000,
-    "median_price_per_ping": 205517,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 965466,
-    "income_year": "2025",
-    "price_income_ratio": 5.44
+    "price_income_ratio": 7.41
   },
   {
     "city": "屏東縣",
     "district": "萬丹鄉",
-    "median_total_price": 8300000,
-    "median_price_per_ping": 253048,
-    "average_monthly_rent": 4500,
+    "median_total_price": 13980000,
+    "median_price_per_ping": 253755,
+    "average_monthly_rent": 9000,
     "annual_disposable_income": 965466,
     "income_year": "2025",
-    "price_income_ratio": 8.6
+    "price_income_ratio": 14.48
   },
   {
     "city": "屏東縣",
     "district": "萬巒鄉",
-    "median_total_price": 10800000,
-    "median_price_per_ping": 228774,
+    "median_total_price": 4650000,
+    "median_price_per_ping": 72142,
     "average_monthly_rent": null,
     "annual_disposable_income": 965466,
     "income_year": "2025",
-    "price_income_ratio": 11.19
+    "price_income_ratio": 4.82
+  },
+  {
+    "city": "屏東縣",
+    "district": "車城鄉",
+    "median_total_price": 650000,
+    "median_price_per_ping": 55124,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 965466,
+    "income_year": "2025",
+    "price_income_ratio": 0.67
   },
   {
     "city": "屏東縣",
     "district": "長治鄉",
-    "median_total_price": 9880000,
-    "median_price_per_ping": 222744,
-    "average_monthly_rent": 16000,
-    "annual_disposable_income": 965466,
-    "income_year": "2025",
-    "price_income_ratio": 10.23
-  },
-  {
-    "city": "屏東縣",
-    "district": "高樹鄉",
-    "median_total_price": 6000000,
-    "median_price_per_ping": 272793,
+    "median_total_price": 8850000,
+    "median_price_per_ping": 230266,
     "average_monthly_rent": null,
     "annual_disposable_income": 965466,
     "income_year": "2025",
-    "price_income_ratio": 6.21
+    "price_income_ratio": 9.17
   },
   {
     "city": "屏東縣",
     "district": "麟洛鄉",
-    "median_total_price": 6295000,
-    "median_price_per_ping": 208059,
+    "median_total_price": 8650000,
+    "median_price_per_ping": 327134,
     "average_monthly_rent": null,
     "annual_disposable_income": 965466,
     "income_year": "2025",
-    "price_income_ratio": 6.52
+    "price_income_ratio": 8.96
   },
   {
     "city": "彰化縣",
     "district": "二林鎮",
-    "median_total_price": 13180000,
-    "median_price_per_ping": 249630,
-    "average_monthly_rent": 15900,
+    "median_total_price": 7500000,
+    "median_price_per_ping": 149874,
+    "average_monthly_rent": 16000,
     "annual_disposable_income": 922379,
     "income_year": "2025",
-    "price_income_ratio": 14.29
+    "price_income_ratio": 8.13
   },
   {
     "city": "彰化縣",
-    "district": "北斗鎮",
-    "median_total_price": 9065000,
-    "median_price_per_ping": 272403,
-    "average_monthly_rent": 11333,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 9.83
-  },
-  {
-    "city": "彰化縣",
-    "district": "和美鎮",
-    "median_total_price": 16000000,
-    "median_price_per_ping": 300979,
-    "average_monthly_rent": 17800,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 17.35
-  },
-  {
-    "city": "彰化縣",
-    "district": "員林市",
-    "median_total_price": 9960000,
-    "median_price_per_ping": 287134,
-    "average_monthly_rent": 13373,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 10.8
-  },
-  {
-    "city": "彰化縣",
-    "district": "埔心鄉",
-    "median_total_price": 7200000,
-    "median_price_per_ping": 266268,
+    "district": "二水鄉",
+    "median_total_price": 1400405,
+    "median_price_per_ping": 30235,
     "average_monthly_rent": null,
     "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 7.81
-  },
-  {
-    "city": "彰化縣",
-    "district": "埔鹽鄉",
-    "median_total_price": 7350000,
-    "median_price_per_ping": 165727,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 7.97
-  },
-  {
-    "city": "彰化縣",
-    "district": "埤頭鄉",
-    "median_total_price": 9580000,
-    "median_price_per_ping": 232026,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 10.39
-  },
-  {
-    "city": "彰化縣",
-    "district": "大城鄉",
-    "median_total_price": 13000000,
-    "median_price_per_ping": 93051,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 14.09
-  },
-  {
-    "city": "彰化縣",
-    "district": "彰化市",
-    "median_total_price": 12200000,
-    "median_price_per_ping": 301084,
-    "average_monthly_rent": 10525,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 13.23
-  },
-  {
-    "city": "彰化縣",
-    "district": "永靖鄉",
-    "median_total_price": 9575000,
-    "median_price_per_ping": 208102,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 10.38
-  },
-  {
-    "city": "彰化縣",
-    "district": "溪州鄉",
-    "median_total_price": 12000000,
-    "median_price_per_ping": 257111,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 13.01
-  },
-  {
-    "city": "彰化縣",
-    "district": "溪湖鎮",
-    "median_total_price": 9075000,
-    "median_price_per_ping": 300850,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 9.84
-  },
-  {
-    "city": "彰化縣",
-    "district": "田中鎮",
-    "median_total_price": 10000000,
-    "median_price_per_ping": 273716,
-    "average_monthly_rent": 13000,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 10.84
-  },
-  {
-    "city": "彰化縣",
-    "district": "社頭鄉",
-    "median_total_price": 12380000,
-    "median_price_per_ping": 235759,
-    "average_monthly_rent": 22000,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 13.42
-  },
-  {
-    "city": "彰化縣",
-    "district": "福興鄉",
-    "median_total_price": 6500000,
-    "median_price_per_ping": 147977,
-    "average_monthly_rent": 11000,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 7.05
-  },
-  {
-    "city": "彰化縣",
-    "district": "秀水鄉",
-    "median_total_price": 14050000,
-    "median_price_per_ping": 246742,
-    "average_monthly_rent": 15000,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 15.23
-  },
-  {
-    "city": "彰化縣",
-    "district": "竹塘鄉",
-    "median_total_price": 18900000,
-    "median_price_per_ping": 105846,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 20.49
-  },
-  {
-    "city": "彰化縣",
-    "district": "線西鄉",
-    "median_total_price": 3000000,
-    "median_price_per_ping": 268909,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 3.25
-  },
-  {
-    "city": "彰化縣",
-    "district": "花壇鄉",
-    "median_total_price": 9400000,
-    "median_price_per_ping": 205564,
-    "average_monthly_rent": 19500,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 10.19
-  },
-  {
-    "city": "彰化縣",
-    "district": "芳苑鄉",
-    "median_total_price": 5150000,
-    "median_price_per_ping": 120820,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 5.58
-  },
-  {
-    "city": "彰化縣",
-    "district": "鹿港鎮",
-    "median_total_price": 8640000,
-    "median_price_per_ping": 212572,
-    "average_monthly_rent": 13800,
-    "annual_disposable_income": 922379,
-    "income_year": "2025",
-    "price_income_ratio": 9.37
-  },
-  {
-    "city": "新北市",
-    "district": "三峽區",
-    "median_total_price": 14840000,
-    "median_price_per_ping": 340172,
-    "average_monthly_rent": 17932,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 11.75
-  },
-  {
-    "city": "新北市",
-    "district": "三芝區",
-    "median_total_price": 5800000,
-    "median_price_per_ping": 287927,
-    "average_monthly_rent": 9190,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 4.59
-  },
-  {
-    "city": "新北市",
-    "district": "三重區",
-    "median_total_price": 21240000,
-    "median_price_per_ping": 689094,
-    "average_monthly_rent": 24146,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 16.82
-  },
-  {
-    "city": "新北市",
-    "district": "中和區",
-    "median_total_price": 17650000,
-    "median_price_per_ping": 615978,
-    "average_monthly_rent": 20667,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 13.97
-  },
-  {
-    "city": "新北市",
-    "district": "五股區",
-    "median_total_price": 14700000,
-    "median_price_per_ping": 403521,
-    "average_monthly_rent": 21780,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 11.64
-  },
-  {
-    "city": "新北市",
-    "district": "八里區",
-    "median_total_price": 9200000,
-    "median_price_per_ping": 270607,
-    "average_monthly_rent": 17618,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 7.28
-  },
-  {
-    "city": "新北市",
-    "district": "土城區",
-    "median_total_price": 18450000,
-    "median_price_per_ping": 604757,
-    "average_monthly_rent": 22693,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 14.61
-  },
-  {
-    "city": "新北市",
-    "district": "新店區",
-    "median_total_price": 17050000,
-    "median_price_per_ping": 557990,
-    "average_monthly_rent": 23686,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 13.5
-  },
-  {
-    "city": "新北市",
-    "district": "新莊區",
-    "median_total_price": 20945000,
-    "median_price_per_ping": 565230,
-    "average_monthly_rent": 22427,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 16.58
-  },
-  {
-    "city": "新北市",
-    "district": "板橋區",
-    "median_total_price": 18190000,
-    "median_price_per_ping": 548843,
-    "average_monthly_rent": 20922,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 14.4
-  },
-  {
-    "city": "新北市",
-    "district": "林口區",
-    "median_total_price": 20670000,
-    "median_price_per_ping": 540641,
-    "average_monthly_rent": 26574,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 16.37
-  },
-  {
-    "city": "新北市",
-    "district": "樹林區",
-    "median_total_price": 13200000,
-    "median_price_per_ping": 413531,
-    "average_monthly_rent": 18733,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 10.45
-  },
-  {
-    "city": "新北市",
-    "district": "永和區",
-    "median_total_price": 18892000,
-    "median_price_per_ping": 780367,
-    "average_monthly_rent": 23191,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 14.96
-  },
-  {
-    "city": "新北市",
-    "district": "汐止區",
-    "median_total_price": 12780000,
-    "median_price_per_ping": 424957,
-    "average_monthly_rent": 21058,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 10.12
-  },
-  {
-    "city": "新北市",
-    "district": "泰山區",
-    "median_total_price": 21945000,
-    "median_price_per_ping": 578817,
-    "average_monthly_rent": 20838,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 17.37
-  },
-  {
-    "city": "新北市",
-    "district": "淡水區",
-    "median_total_price": 11350000,
-    "median_price_per_ping": 345021,
-    "average_monthly_rent": 16744,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 8.99
-  },
-  {
-    "city": "新北市",
-    "district": "深坑區",
-    "median_total_price": 8975000,
-    "median_price_per_ping": 303342,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 7.11
-  },
-  {
-    "city": "新北市",
-    "district": "瑞芳區",
-    "median_total_price": 3550000,
-    "median_price_per_ping": 161514,
-    "average_monthly_rent": 8000,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 2.81
-  },
-  {
-    "city": "新北市",
-    "district": "萬里區",
-    "median_total_price": 1925000,
-    "median_price_per_ping": 98436,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1263026,
     "income_year": "2025",
     "price_income_ratio": 1.52
   },
   {
+    "city": "彰化縣",
+    "district": "伸港鄉",
+    "median_total_price": 15325000,
+    "median_price_per_ping": 235304,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 16.61
+  },
+  {
+    "city": "彰化縣",
+    "district": "北斗鎮",
+    "median_total_price": 11850000,
+    "median_price_per_ping": 268131,
+    "average_monthly_rent": 33750,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 12.85
+  },
+  {
+    "city": "彰化縣",
+    "district": "和美鎮",
+    "median_total_price": 11000000,
+    "median_price_per_ping": 281545,
+    "average_monthly_rent": 15000,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 11.93
+  },
+  {
+    "city": "彰化縣",
+    "district": "員林市",
+    "median_total_price": 12680000,
+    "median_price_per_ping": 256985,
+    "average_monthly_rent": 13929,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 13.75
+  },
+  {
+    "city": "彰化縣",
+    "district": "埔心鄉",
+    "median_total_price": 10750000,
+    "median_price_per_ping": 242587,
+    "average_monthly_rent": 12000,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 11.65
+  },
+  {
+    "city": "彰化縣",
+    "district": "埔鹽鄉",
+    "median_total_price": 7800000,
+    "median_price_per_ping": 257524,
+    "average_monthly_rent": 20000,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 8.46
+  },
+  {
+    "city": "彰化縣",
+    "district": "埤頭鄉",
+    "median_total_price": 8400000,
+    "median_price_per_ping": 222863,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 9.11
+  },
+  {
+    "city": "彰化縣",
+    "district": "大村鄉",
+    "median_total_price": 9500000,
+    "median_price_per_ping": 169871,
+    "average_monthly_rent": 6229,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 10.3
+  },
+  {
+    "city": "彰化縣",
+    "district": "彰化市",
+    "median_total_price": 11500000,
+    "median_price_per_ping": 252350,
+    "average_monthly_rent": 9976,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 12.47
+  },
+  {
+    "city": "彰化縣",
+    "district": "永靖鄉",
+    "median_total_price": 8000000,
+    "median_price_per_ping": 213802,
+    "average_monthly_rent": 11567,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 8.67
+  },
+  {
+    "city": "彰化縣",
+    "district": "溪州鄉",
+    "median_total_price": 4390000,
+    "median_price_per_ping": 195954,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 4.76
+  },
+  {
+    "city": "彰化縣",
+    "district": "溪湖鎮",
+    "median_total_price": 8500000,
+    "median_price_per_ping": 179607,
+    "average_monthly_rent": 10667,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 9.22
+  },
+  {
+    "city": "彰化縣",
+    "district": "田中鎮",
+    "median_total_price": 12100000,
+    "median_price_per_ping": 266678,
+    "average_monthly_rent": 10250,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 13.12
+  },
+  {
+    "city": "彰化縣",
+    "district": "田尾鄉",
+    "median_total_price": 5100000,
+    "median_price_per_ping": 157653,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 5.53
+  },
+  {
+    "city": "彰化縣",
+    "district": "社頭鄉",
+    "median_total_price": 14080000,
+    "median_price_per_ping": 234936,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 15.26
+  },
+  {
+    "city": "彰化縣",
+    "district": "福興鄉",
+    "median_total_price": 11880000,
+    "median_price_per_ping": 302916,
+    "average_monthly_rent": 8000,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 12.88
+  },
+  {
+    "city": "彰化縣",
+    "district": "秀水鄉",
+    "median_total_price": 11225000,
+    "median_price_per_ping": 263109,
+    "average_monthly_rent": 15000,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 12.17
+  },
+  {
+    "city": "彰化縣",
+    "district": "竹塘鄉",
+    "median_total_price": 5206300,
+    "median_price_per_ping": 112598,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 5.64
+  },
+  {
+    "city": "彰化縣",
+    "district": "線西鄉",
+    "median_total_price": 8015000,
+    "median_price_per_ping": 257367,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 8.69
+  },
+  {
+    "city": "彰化縣",
+    "district": "花壇鄉",
+    "median_total_price": 5500000,
+    "median_price_per_ping": 119861,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 5.96
+  },
+  {
+    "city": "彰化縣",
+    "district": "芳苑鄉",
+    "median_total_price": 1200000,
+    "median_price_per_ping": 34873,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 1.3
+  },
+  {
+    "city": "彰化縣",
+    "district": "鹿港鎮",
+    "median_total_price": 9650000,
+    "median_price_per_ping": 288517,
+    "average_monthly_rent": 15133,
+    "annual_disposable_income": 922379,
+    "income_year": "2025",
+    "price_income_ratio": 10.46
+  },
+  {
+    "city": "新北市",
+    "district": "三峽區",
+    "median_total_price": 19150000,
+    "median_price_per_ping": 524658,
+    "average_monthly_rent": 18435,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 15.16
+  },
+  {
+    "city": "新北市",
+    "district": "三芝區",
+    "median_total_price": 4860000,
+    "median_price_per_ping": 241691,
+    "average_monthly_rent": 9208,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 3.85
+  },
+  {
+    "city": "新北市",
+    "district": "三重區",
+    "median_total_price": 18100000,
+    "median_price_per_ping": 648192,
+    "average_monthly_rent": 23531,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 14.33
+  },
+  {
+    "city": "新北市",
+    "district": "中和區",
+    "median_total_price": 16000000,
+    "median_price_per_ping": 622291,
+    "average_monthly_rent": 20476,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 12.67
+  },
+  {
+    "city": "新北市",
+    "district": "五股區",
+    "median_total_price": 15680000,
+    "median_price_per_ping": 420198,
+    "average_monthly_rent": 20934,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 12.41
+  },
+  {
+    "city": "新北市",
+    "district": "八里區",
+    "median_total_price": 10200000,
+    "median_price_per_ping": 268284,
+    "average_monthly_rent": 16935,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 8.08
+  },
+  {
+    "city": "新北市",
+    "district": "土城區",
+    "median_total_price": 17155000,
+    "median_price_per_ping": 522529,
+    "average_monthly_rent": 20458,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 13.58
+  },
+  {
+    "city": "新北市",
+    "district": "新店區",
+    "median_total_price": 13800000,
+    "median_price_per_ping": 482175,
+    "average_monthly_rent": 22501,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 10.93
+  },
+  {
+    "city": "新北市",
+    "district": "新莊區",
+    "median_total_price": 18495000,
+    "median_price_per_ping": 619316,
+    "average_monthly_rent": 21572,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 14.64
+  },
+  {
+    "city": "新北市",
+    "district": "板橋區",
+    "median_total_price": 19500000,
+    "median_price_per_ping": 645131,
+    "average_monthly_rent": 21040,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 15.44
+  },
+  {
+    "city": "新北市",
+    "district": "林口區",
+    "median_total_price": 19765000,
+    "median_price_per_ping": 509299,
+    "average_monthly_rent": 36610,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 15.65
+  },
+  {
+    "city": "新北市",
+    "district": "樹林區",
+    "median_total_price": 15750000,
+    "median_price_per_ping": 383812,
+    "average_monthly_rent": 20831,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 12.47
+  },
+  {
+    "city": "新北市",
+    "district": "永和區",
+    "median_total_price": 19530000,
+    "median_price_per_ping": 587531,
+    "average_monthly_rent": 18333,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 15.46
+  },
+  {
+    "city": "新北市",
+    "district": "汐止區",
+    "median_total_price": 13700000,
+    "median_price_per_ping": 433066,
+    "average_monthly_rent": 19758,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 10.85
+  },
+  {
+    "city": "新北市",
+    "district": "泰山區",
+    "median_total_price": 22580000,
+    "median_price_per_ping": 598425,
+    "average_monthly_rent": 17605,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 17.88
+  },
+  {
+    "city": "新北市",
+    "district": "淡水區",
+    "median_total_price": 11790000,
+    "median_price_per_ping": 362296,
+    "average_monthly_rent": 16263,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 9.33
+  },
+  {
+    "city": "新北市",
+    "district": "深坑區",
+    "median_total_price": 9500000,
+    "median_price_per_ping": 291028,
+    "average_monthly_rent": 15000,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 7.52
+  },
+  {
+    "city": "新北市",
+    "district": "瑞芳區",
+    "median_total_price": 5150000,
+    "median_price_per_ping": 174674,
+    "average_monthly_rent": 11833,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 4.08
+  },
+  {
+    "city": "新北市",
+    "district": "石門區",
+    "median_total_price": 3880000,
+    "median_price_per_ping": 90383,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 3.07
+  },
+  {
+    "city": "新北市",
+    "district": "萬里區",
+    "median_total_price": 2650000,
+    "median_price_per_ping": 148203,
+    "average_monthly_rent": 8300,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 2.1
+  },
+  {
     "city": "新北市",
     "district": "蘆洲區",
-    "median_total_price": 17500000,
-    "median_price_per_ping": 507950,
-    "average_monthly_rent": 24063,
+    "median_total_price": 15250000,
+    "median_price_per_ping": 499531,
+    "average_monthly_rent": 23735,
     "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 13.86
-  },
-  {
-    "city": "新北市",
-    "district": "貢寮區",
-    "median_total_price": 3500000,
-    "median_price_per_ping": 98496,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 2.77
-  },
-  {
-    "city": "新北市",
-    "district": "金山區",
-    "median_total_price": 3400000,
-    "median_price_per_ping": 128807,
-    "average_monthly_rent": 10500,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 2.69
-  },
-  {
-    "city": "新北市",
-    "district": "鶯歌區",
-    "median_total_price": 17180000,
-    "median_price_per_ping": 492514,
-    "average_monthly_rent": 16293,
-    "annual_disposable_income": 1263026,
-    "income_year": "2025",
-    "price_income_ratio": 13.6
-  },
-  {
-    "city": "新竹市",
-    "district": "新竹市",
-    "median_total_price": 16675000,
-    "median_price_per_ping": 425950,
-    "average_monthly_rent": 13903,
-    "annual_disposable_income": 1604946,
-    "income_year": "2025",
-    "price_income_ratio": 10.39
-  },
-  {
-    "city": "新竹縣",
-    "district": "北埔鄉",
-    "median_total_price": 10075000,
-    "median_price_per_ping": 330193,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1569915,
-    "income_year": "2025",
-    "price_income_ratio": 6.42
-  },
-  {
-    "city": "新竹縣",
-    "district": "寶山鄉",
-    "median_total_price": 17060000,
-    "median_price_per_ping": 245372,
-    "average_monthly_rent": 14000,
-    "annual_disposable_income": 1569915,
-    "income_year": "2025",
-    "price_income_ratio": 10.87
-  },
-  {
-    "city": "新竹縣",
-    "district": "新埔鎮",
-    "median_total_price": 40750000,
-    "median_price_per_ping": 466392,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1569915,
-    "income_year": "2025",
-    "price_income_ratio": 25.96
-  },
-  {
-    "city": "新竹縣",
-    "district": "新豐鄉",
-    "median_total_price": 10160000,
-    "median_price_per_ping": 306063,
-    "average_monthly_rent": 18333,
-    "annual_disposable_income": 1569915,
-    "income_year": "2025",
-    "price_income_ratio": 6.47
-  },
-  {
-    "city": "新竹縣",
-    "district": "湖口鄉",
-    "median_total_price": 12190000,
-    "median_price_per_ping": 271916,
-    "average_monthly_rent": 15288,
-    "annual_disposable_income": 1569915,
-    "income_year": "2025",
-    "price_income_ratio": 7.76
-  },
-  {
-    "city": "新竹縣",
-    "district": "竹北市",
-    "median_total_price": 32400000,
-    "median_price_per_ping": 624000,
-    "average_monthly_rent": 18436,
-    "annual_disposable_income": 1569915,
-    "income_year": "2025",
-    "price_income_ratio": 20.64
-  },
-  {
-    "city": "新竹縣",
-    "district": "竹東鎮",
-    "median_total_price": 15615000,
-    "median_price_per_ping": 318863,
-    "average_monthly_rent": 14975,
-    "annual_disposable_income": 1569915,
-    "income_year": "2025",
-    "price_income_ratio": 9.95
-  },
-  {
-    "city": "新竹縣",
-    "district": "芎林鄉",
-    "median_total_price": 19200000,
-    "median_price_per_ping": 431015,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1569915,
-    "income_year": "2025",
-    "price_income_ratio": 12.23
-  },
-  {
-    "city": "新竹縣",
-    "district": "關西鎮",
-    "median_total_price": 6525000,
-    "median_price_per_ping": 259369,
-    "average_monthly_rent": 23000,
-    "annual_disposable_income": 1569915,
-    "income_year": "2025",
-    "price_income_ratio": 4.16
-  },
-  {
-    "city": "桃園市",
-    "district": "中壢區",
-    "median_total_price": 15565000,
-    "median_price_per_ping": 441927,
-    "average_monthly_rent": 13787,
-    "annual_disposable_income": 1281683,
-    "income_year": "2025",
-    "price_income_ratio": 12.14
-  },
-  {
-    "city": "桃園市",
-    "district": "八德區",
-    "median_total_price": 13380000,
-    "median_price_per_ping": 357031,
-    "average_monthly_rent": 17031,
-    "annual_disposable_income": 1281683,
-    "income_year": "2025",
-    "price_income_ratio": 10.44
-  },
-  {
-    "city": "桃園市",
-    "district": "大園區",
-    "median_total_price": 15465000,
-    "median_price_per_ping": 422336,
-    "average_monthly_rent": 17313,
-    "annual_disposable_income": 1281683,
     "income_year": "2025",
     "price_income_ratio": 12.07
   },
   {
-    "city": "桃園市",
-    "district": "大溪區",
-    "median_total_price": 9000000,
-    "median_price_per_ping": 245379,
-    "average_monthly_rent": 13355,
-    "annual_disposable_income": 1281683,
+    "city": "新北市",
+    "district": "貢寮區",
+    "median_total_price": 5575000,
+    "median_price_per_ping": 150764,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1263026,
     "income_year": "2025",
-    "price_income_ratio": 7.02
+    "price_income_ratio": 4.41
   },
   {
-    "city": "桃園市",
-    "district": "平鎮區",
-    "median_total_price": 12170000,
-    "median_price_per_ping": 304519,
-    "average_monthly_rent": 14699,
-    "annual_disposable_income": 1281683,
+    "city": "新北市",
+    "district": "金山區",
+    "median_total_price": 6800000,
+    "median_price_per_ping": 187202,
+    "average_monthly_rent": 12500,
+    "annual_disposable_income": 1263026,
+    "income_year": "2025",
+    "price_income_ratio": 5.38
+  },
+  {
+    "city": "新北市",
+    "district": "鶯歌區",
+    "median_total_price": 12000000,
+    "median_price_per_ping": 321078,
+    "average_monthly_rent": 17452,
+    "annual_disposable_income": 1263026,
     "income_year": "2025",
     "price_income_ratio": 9.5
   },
   {
+    "city": "新竹市",
+    "district": "新竹市",
+    "median_total_price": 18350000,
+    "median_price_per_ping": 440443,
+    "average_monthly_rent": 16962,
+    "annual_disposable_income": 1604946,
+    "income_year": "2025",
+    "price_income_ratio": 11.43
+  },
+  {
+    "city": "新竹縣",
+    "district": "北埔鄉",
+    "median_total_price": 21000000,
+    "median_price_per_ping": 281531,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1569915,
+    "income_year": "2025",
+    "price_income_ratio": 13.38
+  },
+  {
+    "city": "新竹縣",
+    "district": "寶山鄉",
+    "median_total_price": 18430000,
+    "median_price_per_ping": 358701,
+    "average_monthly_rent": 65000,
+    "annual_disposable_income": 1569915,
+    "income_year": "2025",
+    "price_income_ratio": 11.74
+  },
+  {
+    "city": "新竹縣",
+    "district": "新埔鎮",
+    "median_total_price": 53450000,
+    "median_price_per_ping": 454183,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1569915,
+    "income_year": "2025",
+    "price_income_ratio": 34.05
+  },
+  {
+    "city": "新竹縣",
+    "district": "新豐鄉",
+    "median_total_price": 11180000,
+    "median_price_per_ping": 347893,
+    "average_monthly_rent": 13867,
+    "annual_disposable_income": 1569915,
+    "income_year": "2025",
+    "price_income_ratio": 7.12
+  },
+  {
+    "city": "新竹縣",
+    "district": "橫山鄉",
+    "median_total_price": 3500000,
+    "median_price_per_ping": 99263,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1569915,
+    "income_year": "2025",
+    "price_income_ratio": 2.23
+  },
+  {
+    "city": "新竹縣",
+    "district": "湖口鄉",
+    "median_total_price": 11900000,
+    "median_price_per_ping": 337567,
+    "average_monthly_rent": 18683,
+    "annual_disposable_income": 1569915,
+    "income_year": "2025",
+    "price_income_ratio": 7.58
+  },
+  {
+    "city": "新竹縣",
+    "district": "竹北市",
+    "median_total_price": 25140000,
+    "median_price_per_ping": 517947,
+    "average_monthly_rent": 25279,
+    "annual_disposable_income": 1569915,
+    "income_year": "2025",
+    "price_income_ratio": 16.01
+  },
+  {
+    "city": "新竹縣",
+    "district": "竹東鎮",
+    "median_total_price": 14485000,
+    "median_price_per_ping": 458957,
+    "average_monthly_rent": 14750,
+    "annual_disposable_income": 1569915,
+    "income_year": "2025",
+    "price_income_ratio": 9.23
+  },
+  {
+    "city": "新竹縣",
+    "district": "芎林鄉",
+    "median_total_price": 19625000,
+    "median_price_per_ping": 368704,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1569915,
+    "income_year": "2025",
+    "price_income_ratio": 12.5
+  },
+  {
+    "city": "新竹縣",
+    "district": "關西鎮",
+    "median_total_price": 12150000,
+    "median_price_per_ping": 261170,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1569915,
+    "income_year": "2025",
+    "price_income_ratio": 7.74
+  },
+  {
     "city": "桃園市",
-    "district": "新屋區",
-    "median_total_price": 8450000,
-    "median_price_per_ping": 248610,
-    "average_monthly_rent": 14660,
+    "district": "中壢區",
+    "median_total_price": 15100000,
+    "median_price_per_ping": 384527,
+    "average_monthly_rent": 14379,
     "annual_disposable_income": 1281683,
     "income_year": "2025",
-    "price_income_ratio": 6.59
+    "price_income_ratio": 11.78
+  },
+  {
+    "city": "桃園市",
+    "district": "八德區",
+    "median_total_price": 12700000,
+    "median_price_per_ping": 358089,
+    "average_monthly_rent": 16774,
+    "annual_disposable_income": 1281683,
+    "income_year": "2025",
+    "price_income_ratio": 9.91
+  },
+  {
+    "city": "桃園市",
+    "district": "大園區",
+    "median_total_price": 16780000,
+    "median_price_per_ping": 484585,
+    "average_monthly_rent": 17233,
+    "annual_disposable_income": 1281683,
+    "income_year": "2025",
+    "price_income_ratio": 13.09
+  },
+  {
+    "city": "桃園市",
+    "district": "大溪區",
+    "median_total_price": 13000000,
+    "median_price_per_ping": 276340,
+    "average_monthly_rent": 14063,
+    "annual_disposable_income": 1281683,
+    "income_year": "2025",
+    "price_income_ratio": 10.14
+  },
+  {
+    "city": "桃園市",
+    "district": "平鎮區",
+    "median_total_price": 10580000,
+    "median_price_per_ping": 247812,
+    "average_monthly_rent": 15150,
+    "annual_disposable_income": 1281683,
+    "income_year": "2025",
+    "price_income_ratio": 8.25
+  },
+  {
+    "city": "桃園市",
+    "district": "新屋區",
+    "median_total_price": 7915000,
+    "median_price_per_ping": 258526,
+    "average_monthly_rent": 15467,
+    "annual_disposable_income": 1281683,
+    "income_year": "2025",
+    "price_income_ratio": 6.18
   },
   {
     "city": "桃園市",
     "district": "桃園區",
-    "median_total_price": 14500000,
-    "median_price_per_ping": 400575,
-    "average_monthly_rent": 17194,
+    "median_total_price": 14150000,
+    "median_price_per_ping": 379534,
+    "average_monthly_rent": 16854,
     "annual_disposable_income": 1281683,
     "income_year": "2025",
-    "price_income_ratio": 11.31
+    "price_income_ratio": 11.04
   },
   {
     "city": "桃園市",
     "district": "楊梅區",
-    "median_total_price": 8315000,
-    "median_price_per_ping": 240782,
-    "average_monthly_rent": 14977,
+    "median_total_price": 9625000,
+    "median_price_per_ping": 264012,
+    "average_monthly_rent": 14383,
     "annual_disposable_income": 1281683,
     "income_year": "2025",
-    "price_income_ratio": 6.49
+    "price_income_ratio": 7.51
   },
   {
     "city": "桃園市",
     "district": "蘆竹區",
-    "median_total_price": 10920000,
-    "median_price_per_ping": 339127,
-    "average_monthly_rent": 16104,
+    "median_total_price": 12800000,
+    "median_price_per_ping": 333641,
+    "average_monthly_rent": 10929,
     "annual_disposable_income": 1281683,
     "income_year": "2025",
-    "price_income_ratio": 8.52
+    "price_income_ratio": 9.99
   },
   {
     "city": "桃園市",
     "district": "觀音區",
-    "median_total_price": 7650000,
-    "median_price_per_ping": 281259,
-    "average_monthly_rent": 13889,
+    "median_total_price": 6440000,
+    "median_price_per_ping": 293577,
+    "average_monthly_rent": 13814,
     "annual_disposable_income": 1281683,
     "income_year": "2025",
-    "price_income_ratio": 5.97
+    "price_income_ratio": 5.02
   },
   {
     "city": "桃園市",
     "district": "龍潭區",
-    "median_total_price": 9170000,
-    "median_price_per_ping": 271990,
-    "average_monthly_rent": 13281,
+    "median_total_price": 8975000,
+    "median_price_per_ping": 217841,
+    "average_monthly_rent": 14256,
     "annual_disposable_income": 1281683,
     "income_year": "2025",
-    "price_income_ratio": 7.15
+    "price_income_ratio": 7.0
   },
   {
     "city": "桃園市",
     "district": "龜山區",
-    "median_total_price": 11265000,
-    "median_price_per_ping": 389197,
-    "average_monthly_rent": 16088,
+    "median_total_price": 12580000,
+    "median_price_per_ping": 394370,
+    "average_monthly_rent": 15006,
     "annual_disposable_income": 1281683,
     "income_year": "2025",
-    "price_income_ratio": 8.79
-  },
-  {
-    "city": "花蓮縣",
-    "district": "光復鄉",
-    "median_total_price": 3500000,
-    "median_price_per_ping": 64532,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 900801,
-    "income_year": "2025",
-    "price_income_ratio": 3.89
+    "price_income_ratio": 9.82
   },
   {
     "city": "花蓮縣",
     "district": "吉安鄉",
-    "median_total_price": 7390000,
-    "median_price_per_ping": 253036,
-    "average_monthly_rent": 19833,
+    "median_total_price": 8940000,
+    "median_price_per_ping": 203493,
+    "average_monthly_rent": 14750,
     "annual_disposable_income": 900801,
     "income_year": "2025",
-    "price_income_ratio": 8.2
+    "price_income_ratio": 9.92
   },
   {
     "city": "花蓮縣",
     "district": "壽豐鄉",
-    "median_total_price": 11400000,
-    "median_price_per_ping": 251702,
+    "median_total_price": 1090000,
+    "median_price_per_ping": 83737,
     "average_monthly_rent": null,
     "annual_disposable_income": 900801,
     "income_year": "2025",
-    "price_income_ratio": 12.66
+    "price_income_ratio": 1.21
   },
   {
     "city": "花蓮縣",
-    "district": "富里鄉",
-    "median_total_price": 12800000,
-    "median_price_per_ping": 157458,
-    "average_monthly_rent": null,
+    "district": "新城鄉",
+    "median_total_price": 5650000,
+    "median_price_per_ping": 175501,
+    "average_monthly_rent": 20500,
     "annual_disposable_income": 900801,
     "income_year": "2025",
-    "price_income_ratio": 14.21
+    "price_income_ratio": 6.27
   },
   {
     "city": "花蓮縣",
     "district": "玉里鎮",
-    "median_total_price": 4700000,
-    "median_price_per_ping": 197742,
+    "median_total_price": 6600000,
+    "median_price_per_ping": 179250,
     "average_monthly_rent": null,
     "annual_disposable_income": 900801,
     "income_year": "2025",
-    "price_income_ratio": 5.22
+    "price_income_ratio": 7.33
   },
   {
     "city": "花蓮縣",
     "district": "花蓮市",
-    "median_total_price": 8665000,
-    "median_price_per_ping": 288631,
-    "average_monthly_rent": 10567,
+    "median_total_price": 10280000,
+    "median_price_per_ping": 300142,
+    "average_monthly_rent": 11013,
     "annual_disposable_income": 900801,
     "income_year": "2025",
-    "price_income_ratio": 9.62
+    "price_income_ratio": 11.41
+  },
+  {
+    "city": "花蓮縣",
+    "district": "鳳林鎮",
+    "median_total_price": 850000,
+    "median_price_per_ping": 29802,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 900801,
+    "income_year": "2025",
+    "price_income_ratio": 0.94
   },
   {
     "city": "苗栗縣",
     "district": "三義鄉",
-    "median_total_price": 6100000,
-    "median_price_per_ping": 124787,
+    "median_total_price": 5160000,
+    "median_price_per_ping": 136463,
     "average_monthly_rent": null,
     "annual_disposable_income": 1165539,
     "income_year": "2025",
-    "price_income_ratio": 5.23
+    "price_income_ratio": 4.43
   },
   {
     "city": "苗栗縣",
     "district": "公館鄉",
-    "median_total_price": 6650000,
-    "median_price_per_ping": 183246,
-    "average_monthly_rent": 16000,
-    "annual_disposable_income": 1165539,
-    "income_year": "2025",
-    "price_income_ratio": 5.71
-  },
-  {
-    "city": "苗栗縣",
-    "district": "大湖鄉",
-    "median_total_price": 6000000,
-    "median_price_per_ping": 86036,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1165539,
-    "income_year": "2025",
-    "price_income_ratio": 5.15
-  },
-  {
-    "city": "苗栗縣",
-    "district": "後龍鎮",
-    "median_total_price": 10350000,
-    "median_price_per_ping": 293273,
-    "average_monthly_rent": 21500,
-    "annual_disposable_income": 1165539,
-    "income_year": "2025",
-    "price_income_ratio": 8.88
-  },
-  {
-    "city": "苗栗縣",
-    "district": "竹南鎮",
-    "median_total_price": 13840000,
-    "median_price_per_ping": 295185,
-    "average_monthly_rent": 18128,
-    "annual_disposable_income": 1165539,
-    "income_year": "2025",
-    "price_income_ratio": 11.87
-  },
-  {
-    "city": "苗栗縣",
-    "district": "苑裡鎮",
-    "median_total_price": 7700000,
-    "median_price_per_ping": 221402,
-    "average_monthly_rent": 18500,
-    "annual_disposable_income": 1165539,
-    "income_year": "2025",
-    "price_income_ratio": 6.61
-  },
-  {
-    "city": "苗栗縣",
-    "district": "苗栗市",
-    "median_total_price": 8580000,
-    "median_price_per_ping": 222433,
-    "average_monthly_rent": 13246,
-    "annual_disposable_income": 1165539,
-    "income_year": "2025",
-    "price_income_ratio": 7.36
-  },
-  {
-    "city": "苗栗縣",
-    "district": "通霄鎮",
-    "median_total_price": 2300000,
-    "median_price_per_ping": 69322,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1165539,
-    "income_year": "2025",
-    "price_income_ratio": 1.97
-  },
-  {
-    "city": "苗栗縣",
-    "district": "造橋鄉",
-    "median_total_price": 1080000,
-    "median_price_per_ping": 121686,
-    "average_monthly_rent": 4100,
-    "annual_disposable_income": 1165539,
-    "income_year": "2025",
-    "price_income_ratio": 0.93
-  },
-  {
-    "city": "苗栗縣",
-    "district": "銅鑼鄉",
-    "median_total_price": 5800000,
-    "median_price_per_ping": 155425,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1165539,
-    "income_year": "2025",
-    "price_income_ratio": 4.98
-  },
-  {
-    "city": "苗栗縣",
-    "district": "頭份市",
-    "median_total_price": 11300000,
-    "median_price_per_ping": 291587,
-    "average_monthly_rent": 20800,
-    "annual_disposable_income": 1165539,
-    "income_year": "2025",
-    "price_income_ratio": 9.7
-  },
-  {
-    "city": "雲林縣",
-    "district": "二崙鄉",
-    "median_total_price": 7100000,
-    "median_price_per_ping": 140572,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 7.59
-  },
-  {
-    "city": "雲林縣",
-    "district": "元長鄉",
     "median_total_price": 6680000,
-    "median_price_per_ping": 143511,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 7.14
-  },
-  {
-    "city": "雲林縣",
-    "district": "北港鎮",
-    "median_total_price": 7300000,
-    "median_price_per_ping": 191226,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 7.8
-  },
-  {
-    "city": "雲林縣",
-    "district": "古坑鄉",
-    "median_total_price": 6470000,
-    "median_price_per_ping": 139392,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 6.91
-  },
-  {
-    "city": "雲林縣",
-    "district": "土庫鎮",
-    "median_total_price": 9500000,
-    "median_price_per_ping": 201388,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 10.15
-  },
-  {
-    "city": "雲林縣",
-    "district": "崙背鄉",
-    "median_total_price": 5360000,
-    "median_price_per_ping": 212992,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 935705,
+    "median_price_per_ping": 211157,
+    "average_monthly_rent": 8000,
+    "annual_disposable_income": 1165539,
     "income_year": "2025",
     "price_income_ratio": 5.73
   },
   {
-    "city": "雲林縣",
-    "district": "斗六市",
-    "median_total_price": 9800000,
-    "median_price_per_ping": 273544,
-    "average_monthly_rent": 11583,
-    "annual_disposable_income": 935705,
+    "city": "苗栗縣",
+    "district": "後龍鎮",
+    "median_total_price": 9230000,
+    "median_price_per_ping": 284519,
+    "average_monthly_rent": 29582,
+    "annual_disposable_income": 1165539,
     "income_year": "2025",
-    "price_income_ratio": 10.47
+    "price_income_ratio": 7.92
+  },
+  {
+    "city": "苗栗縣",
+    "district": "竹南鎮",
+    "median_total_price": 16000000,
+    "median_price_per_ping": 301005,
+    "average_monthly_rent": 15236,
+    "annual_disposable_income": 1165539,
+    "income_year": "2025",
+    "price_income_ratio": 13.73
+  },
+  {
+    "city": "苗栗縣",
+    "district": "苗栗市",
+    "median_total_price": 7900000,
+    "median_price_per_ping": 248569,
+    "average_monthly_rent": 8700,
+    "annual_disposable_income": 1165539,
+    "income_year": "2025",
+    "price_income_ratio": 6.78
+  },
+  {
+    "city": "苗栗縣",
+    "district": "通霄鎮",
+    "median_total_price": 8500000,
+    "median_price_per_ping": 221388,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1165539,
+    "income_year": "2025",
+    "price_income_ratio": 7.29
+  },
+  {
+    "city": "苗栗縣",
+    "district": "造橋鄉",
+    "median_total_price": 2575000,
+    "median_price_per_ping": 186856,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1165539,
+    "income_year": "2025",
+    "price_income_ratio": 2.21
+  },
+  {
+    "city": "苗栗縣",
+    "district": "銅鑼鄉",
+    "median_total_price": 8050000,
+    "median_price_per_ping": 268198,
+    "average_monthly_rent": 54613,
+    "annual_disposable_income": 1165539,
+    "income_year": "2025",
+    "price_income_ratio": 6.91
+  },
+  {
+    "city": "苗栗縣",
+    "district": "頭份市",
+    "median_total_price": 11090000,
+    "median_price_per_ping": 295755,
+    "average_monthly_rent": 14517,
+    "annual_disposable_income": 1165539,
+    "income_year": "2025",
+    "price_income_ratio": 9.51
+  },
+  {
+    "city": "苗栗縣",
+    "district": "頭屋鄉",
+    "median_total_price": 6080000,
+    "median_price_per_ping": 254258,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1165539,
+    "income_year": "2025",
+    "price_income_ratio": 5.22
   },
   {
     "city": "雲林縣",
-    "district": "斗南鎮",
-    "median_total_price": 8225000,
-    "median_price_per_ping": 252074,
-    "average_monthly_rent": 11500,
-    "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 8.79
-  },
-  {
-    "city": "雲林縣",
-    "district": "林內鄉",
-    "median_total_price": 1000000,
-    "median_price_per_ping": 56965,
+    "district": "二崙鄉",
+    "median_total_price": 10000000,
+    "median_price_per_ping": 97131,
     "average_monthly_rent": null,
     "annual_disposable_income": 935705,
     "income_year": "2025",
-    "price_income_ratio": 1.07
+    "price_income_ratio": 10.69
   },
   {
     "city": "雲林縣",
-    "district": "莿桐鄉",
-    "median_total_price": 1350000,
-    "median_price_per_ping": 104797,
+    "district": "北港鎮",
+    "median_total_price": 5680000,
+    "median_price_per_ping": 124268,
     "average_monthly_rent": null,
     "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 1.44
-  },
-  {
-    "city": "雲林縣",
-    "district": "虎尾鎮",
-    "median_total_price": 11580000,
-    "median_price_per_ping": 236770,
-    "average_monthly_rent": 20000,
-    "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 12.38
-  },
-  {
-    "city": "雲林縣",
-    "district": "褒忠鄉",
-    "median_total_price": 17300000,
-    "median_price_per_ping": 199484,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 18.49
-  },
-  {
-    "city": "雲林縣",
-    "district": "西螺鎮",
-    "median_total_price": 13200000,
-    "median_price_per_ping": 220545,
-    "average_monthly_rent": 17500,
-    "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 14.11
-  },
-  {
-    "city": "雲林縣",
-    "district": "麥寮鄉",
-    "median_total_price": 6500000,
-    "median_price_per_ping": 144666,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 935705,
-    "income_year": "2025",
-    "price_income_ratio": 6.95
-  },
-  {
-    "city": "高雄市",
-    "district": "三民區",
-    "median_total_price": 14165000,
-    "median_price_per_ping": 355574,
-    "average_monthly_rent": 14953,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 11.75
-  },
-  {
-    "city": "高雄市",
-    "district": "仁武區",
-    "median_total_price": 10450000,
-    "median_price_per_ping": 289140,
-    "average_monthly_rent": 20805,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 8.66
-  },
-  {
-    "city": "高雄市",
-    "district": "六龜區",
-    "median_total_price": 1850000,
-    "median_price_per_ping": 64896,
-    "average_monthly_rent": null,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 1.53
-  },
-  {
-    "city": "高雄市",
-    "district": "前金區",
-    "median_total_price": 7700000,
-    "median_price_per_ping": 262220,
-    "average_monthly_rent": 15259,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 6.38
-  },
-  {
-    "city": "高雄市",
-    "district": "前鎮區",
-    "median_total_price": 12960000,
-    "median_price_per_ping": 379888,
-    "average_monthly_rent": 16225,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 10.75
-  },
-  {
-    "city": "高雄市",
-    "district": "大寮區",
-    "median_total_price": 7320000,
-    "median_price_per_ping": 237990,
-    "average_monthly_rent": 11595,
-    "annual_disposable_income": 1206020,
     "income_year": "2025",
     "price_income_ratio": 6.07
   },
   {
-    "city": "高雄市",
-    "district": "大樹區",
-    "median_total_price": 6280000,
-    "median_price_per_ping": 219481,
-    "average_monthly_rent": 7000,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 5.21
-  },
-  {
-    "city": "高雄市",
-    "district": "大社區",
-    "median_total_price": 7350000,
-    "median_price_per_ping": 255494,
-    "average_monthly_rent": 13156,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 6.09
-  },
-  {
-    "city": "高雄市",
-    "district": "小港區",
-    "median_total_price": 9125004,
-    "median_price_per_ping": 223689,
-    "average_monthly_rent": 13714,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 7.57
-  },
-  {
-    "city": "高雄市",
-    "district": "岡山區",
-    "median_total_price": 9150000,
-    "median_price_per_ping": 208909,
-    "average_monthly_rent": 17092,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 7.59
-  },
-  {
-    "city": "高雄市",
-    "district": "左營區",
-    "median_total_price": 13680000,
-    "median_price_per_ping": 384759,
-    "average_monthly_rent": 22386,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 11.34
-  },
-  {
-    "city": "高雄市",
-    "district": "新興區",
-    "median_total_price": 10300000,
-    "median_price_per_ping": 357755,
-    "average_monthly_rent": 14621,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 8.54
-  },
-  {
-    "city": "高雄市",
-    "district": "旗山區",
-    "median_total_price": 7290000,
-    "median_price_per_ping": 153987,
-    "average_monthly_rent": 10800,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 6.04
-  },
-  {
-    "city": "高雄市",
-    "district": "林園區",
-    "median_total_price": 4500000,
-    "median_price_per_ping": 166317,
-    "average_monthly_rent": 13529,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 3.73
-  },
-  {
-    "city": "高雄市",
-    "district": "梓官區",
-    "median_total_price": 8550000,
-    "median_price_per_ping": 246907,
+    "city": "雲林縣",
+    "district": "古坑鄉",
+    "median_total_price": 4680000,
+    "median_price_per_ping": 98390,
     "average_monthly_rent": null,
-    "annual_disposable_income": 1206020,
+    "annual_disposable_income": 935705,
     "income_year": "2025",
-    "price_income_ratio": 7.09
+    "price_income_ratio": 5.0
   },
   {
-    "city": "高雄市",
-    "district": "楠梓區",
-    "median_total_price": 12830000,
-    "median_price_per_ping": 325263,
-    "average_monthly_rent": 15470,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 10.64
-  },
-  {
-    "city": "高雄市",
-    "district": "橋頭區",
-    "median_total_price": 8755000,
-    "median_price_per_ping": 314610,
-    "average_monthly_rent": 20743,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 7.26
-  },
-  {
-    "city": "高雄市",
-    "district": "湖內區",
-    "median_total_price": 5250000,
-    "median_price_per_ping": 169423,
-    "average_monthly_rent": 7131,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 4.35
-  },
-  {
-    "city": "高雄市",
-    "district": "燕巢區",
-    "median_total_price": 12160000,
-    "median_price_per_ping": 299560,
-    "average_monthly_rent": 17591,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 10.08
-  },
-  {
-    "city": "高雄市",
-    "district": "苓雅區",
-    "median_total_price": 10880000,
-    "median_price_per_ping": 343699,
-    "average_monthly_rent": 15521,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 9.02
-  },
-  {
-    "city": "高雄市",
-    "district": "茄萣區",
-    "median_total_price": 3300000,
-    "median_price_per_ping": 62144,
+    "city": "雲林縣",
+    "district": "台西鄉",
+    "median_total_price": 3980000,
+    "median_price_per_ping": 62919,
     "average_monthly_rent": null,
-    "annual_disposable_income": 1206020,
+    "annual_disposable_income": 935705,
     "income_year": "2025",
-    "price_income_ratio": 2.74
+    "price_income_ratio": 4.25
   },
   {
-    "city": "高雄市",
-    "district": "路竹區",
-    "median_total_price": 11180000,
-    "median_price_per_ping": 263653,
-    "average_monthly_rent": 25000,
-    "annual_disposable_income": 1206020,
-    "income_year": "2025",
-    "price_income_ratio": 9.27
-  },
-  {
-    "city": "高雄市",
-    "district": "那瑪夏區",
-    "median_total_price": 1000000,
-    "median_price_per_ping": 20813,
+    "city": "雲林縣",
+    "district": "土庫鎮",
+    "median_total_price": 8530000,
+    "median_price_per_ping": 176883,
     "average_monthly_rent": null,
-    "annual_disposable_income": 1206020,
+    "annual_disposable_income": 935705,
     "income_year": "2025",
-    "price_income_ratio": 0.83
+    "price_income_ratio": 9.12
   },
   {
-    "city": "高雄市",
-    "district": "阿蓮區",
+    "city": "雲林縣",
+    "district": "大埤鄉",
+    "median_total_price": 3350000,
+    "median_price_per_ping": 82033,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 935705,
+    "income_year": "2025",
+    "price_income_ratio": 3.58
+  },
+  {
+    "city": "雲林縣",
+    "district": "斗六市",
     "median_total_price": 9360000,
-    "median_price_per_ping": 264345,
-    "average_monthly_rent": 10000,
-    "annual_disposable_income": 1206020,
+    "median_price_per_ping": 204807,
+    "average_monthly_rent": 17618,
+    "annual_disposable_income": 935705,
     "income_year": "2025",
-    "price_income_ratio": 7.76
+    "price_income_ratio": 10.0
+  },
+  {
+    "city": "雲林縣",
+    "district": "斗南鎮",
+    "median_total_price": 6000000,
+    "median_price_per_ping": 217354,
+    "average_monthly_rent": 15667,
+    "annual_disposable_income": 935705,
+    "income_year": "2025",
+    "price_income_ratio": 6.41
+  },
+  {
+    "city": "雲林縣",
+    "district": "林內鄉",
+    "median_total_price": 4250000,
+    "median_price_per_ping": 86881,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 935705,
+    "income_year": "2025",
+    "price_income_ratio": 4.54
+  },
+  {
+    "city": "雲林縣",
+    "district": "莿桐鄉",
+    "median_total_price": 5500000,
+    "median_price_per_ping": 159045,
+    "average_monthly_rent": 10900,
+    "annual_disposable_income": 935705,
+    "income_year": "2025",
+    "price_income_ratio": 5.88
+  },
+  {
+    "city": "雲林縣",
+    "district": "虎尾鎮",
+    "median_total_price": 10440000,
+    "median_price_per_ping": 245124,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 935705,
+    "income_year": "2025",
+    "price_income_ratio": 11.16
+  },
+  {
+    "city": "雲林縣",
+    "district": "褒忠鄉",
+    "median_total_price": 4460000,
+    "median_price_per_ping": 89709,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 935705,
+    "income_year": "2025",
+    "price_income_ratio": 4.77
+  },
+  {
+    "city": "雲林縣",
+    "district": "西螺鎮",
+    "median_total_price": 13500000,
+    "median_price_per_ping": 229626,
+    "average_monthly_rent": 17400,
+    "annual_disposable_income": 935705,
+    "income_year": "2025",
+    "price_income_ratio": 14.43
   },
   {
     "city": "高雄市",
-    "district": "鳥松區",
-    "median_total_price": 9680000,
-    "median_price_per_ping": 301484,
-    "average_monthly_rent": 13177,
+    "district": "三民區",
+    "median_total_price": 13000000,
+    "median_price_per_ping": 340754,
+    "average_monthly_rent": 15936,
     "annual_disposable_income": 1206020,
     "income_year": "2025",
-    "price_income_ratio": 8.03
+    "price_income_ratio": 10.78
   },
   {
     "city": "高雄市",
-    "district": "鳳山區",
+    "district": "仁武區",
+    "median_total_price": 12460000,
+    "median_price_per_ping": 317471,
+    "average_monthly_rent": 20657,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 10.33
+  },
+  {
+    "city": "高雄市",
+    "district": "六龜區",
+    "median_total_price": 6800000,
+    "median_price_per_ping": 197881,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 5.64
+  },
+  {
+    "city": "高雄市",
+    "district": "前金區",
+    "median_total_price": 6900000,
+    "median_price_per_ping": 225964,
+    "average_monthly_rent": 15392,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 5.72
+  },
+  {
+    "city": "高雄市",
+    "district": "前鎮區",
+    "median_total_price": 12380000,
+    "median_price_per_ping": 367372,
+    "average_monthly_rent": 18189,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 10.27
+  },
+  {
+    "city": "高雄市",
+    "district": "大寮區",
     "median_total_price": 8580000,
-    "median_price_per_ping": 268836,
-    "average_monthly_rent": 17145,
+    "median_price_per_ping": 264912,
+    "average_monthly_rent": 12129,
     "annual_disposable_income": 1206020,
     "income_year": "2025",
     "price_income_ratio": 7.11
   },
   {
     "city": "高雄市",
-    "district": "鹽埕區",
-    "median_total_price": 4400000,
-    "median_price_per_ping": 168585,
-    "average_monthly_rent": 8370,
+    "district": "大樹區",
+    "median_total_price": 5375000,
+    "median_price_per_ping": 245785,
+    "average_monthly_rent": 2000,
     "annual_disposable_income": 1206020,
     "income_year": "2025",
-    "price_income_ratio": 3.65
+    "price_income_ratio": 4.46
+  },
+  {
+    "city": "高雄市",
+    "district": "大社區",
+    "median_total_price": 8580000,
+    "median_price_per_ping": 316387,
+    "average_monthly_rent": 11722,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 7.11
+  },
+  {
+    "city": "高雄市",
+    "district": "小港區",
+    "median_total_price": 10340000,
+    "median_price_per_ping": 241974,
+    "average_monthly_rent": 15197,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 8.57
+  },
+  {
+    "city": "高雄市",
+    "district": "岡山區",
+    "median_total_price": 10250000,
+    "median_price_per_ping": 310557,
+    "average_monthly_rent": 17951,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 8.5
+  },
+  {
+    "city": "高雄市",
+    "district": "左營區",
+    "median_total_price": 13125000,
+    "median_price_per_ping": 379069,
+    "average_monthly_rent": 20502,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 10.88
+  },
+  {
+    "city": "高雄市",
+    "district": "彌陀區",
+    "median_total_price": 6300000,
+    "median_price_per_ping": 140443,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 5.22
+  },
+  {
+    "city": "高雄市",
+    "district": "新興區",
+    "median_total_price": 12120000,
+    "median_price_per_ping": 369855,
+    "average_monthly_rent": 14368,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 10.05
+  },
+  {
+    "city": "高雄市",
+    "district": "旗山區",
+    "median_total_price": 3800000,
+    "median_price_per_ping": 83041,
+    "average_monthly_rent": 5000,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 3.15
+  },
+  {
+    "city": "高雄市",
+    "district": "旗津區",
+    "median_total_price": 4045000,
+    "median_price_per_ping": 183688,
+    "average_monthly_rent": 18000,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 3.35
+  },
+  {
+    "city": "高雄市",
+    "district": "林園區",
+    "median_total_price": 6955000,
+    "median_price_per_ping": 221124,
+    "average_monthly_rent": 12040,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 5.77
+  },
+  {
+    "city": "高雄市",
+    "district": "梓官區",
+    "median_total_price": 8185000,
+    "median_price_per_ping": 266246,
+    "average_monthly_rent": 5000,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 6.79
+  },
+  {
+    "city": "高雄市",
+    "district": "楠梓區",
+    "median_total_price": 10760000,
+    "median_price_per_ping": 298615,
+    "average_monthly_rent": 18526,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 8.92
+  },
+  {
+    "city": "高雄市",
+    "district": "橋頭區",
+    "median_total_price": 11605000,
+    "median_price_per_ping": 321040,
+    "average_monthly_rent": 19750,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 9.62
+  },
+  {
+    "city": "高雄市",
+    "district": "湖內區",
+    "median_total_price": 6950000,
+    "median_price_per_ping": 213595,
+    "average_monthly_rent": 6918,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 5.76
+  },
+  {
+    "city": "高雄市",
+    "district": "美濃區",
+    "median_total_price": 23800000,
+    "median_price_per_ping": 335828,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 19.73
+  },
+  {
+    "city": "高雄市",
+    "district": "苓雅區",
+    "median_total_price": 12860000,
+    "median_price_per_ping": 383124,
+    "average_monthly_rent": 14130,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 10.66
+  },
+  {
+    "city": "高雄市",
+    "district": "茄萣區",
+    "median_total_price": 5500000,
+    "median_price_per_ping": 93203,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 4.56
+  },
+  {
+    "city": "高雄市",
+    "district": "路竹區",
+    "median_total_price": 16740000,
+    "median_price_per_ping": 294817,
+    "average_monthly_rent": 6000,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 13.88
+  },
+  {
+    "city": "高雄市",
+    "district": "阿蓮區",
+    "median_total_price": 7525000,
+    "median_price_per_ping": 229059,
+    "average_monthly_rent": null,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 6.24
+  },
+  {
+    "city": "高雄市",
+    "district": "鳥松區",
+    "median_total_price": 16800000,
+    "median_price_per_ping": 258797,
+    "average_monthly_rent": 11242,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 13.93
+  },
+  {
+    "city": "高雄市",
+    "district": "鳳山區",
+    "median_total_price": 11500000,
+    "median_price_per_ping": 322803,
+    "average_monthly_rent": 17509,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 9.54
+  },
+  {
+    "city": "高雄市",
+    "district": "鹽埕區",
+    "median_total_price": 3555000,
+    "median_price_per_ping": 194883,
+    "average_monthly_rent": 13121,
+    "annual_disposable_income": 1206020,
+    "income_year": "2025",
+    "price_income_ratio": 2.95
   },
   {
     "city": "高雄市",
     "district": "鼓山區",
-    "median_total_price": 14415000,
-    "median_price_per_ping": 481266,
-    "average_monthly_rent": 20254,
+    "median_total_price": 14200000,
+    "median_price_per_ping": 426218,
+    "average_monthly_rent": 21054,
     "annual_disposable_income": 1206020,
     "income_year": "2025",
-    "price_income_ratio": 11.95
+    "price_income_ratio": 11.77
   }
 ]
